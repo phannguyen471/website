@@ -89,7 +89,7 @@
    },
    {
     "slug": "tui-du-lich-ca-nhan",
-    "name": "tui du lich ca nhan",
+    "name": "Túi du lịch cá nhân",
     "price": "Liên hệ",
     "image": "assets/upload/product/fe1a9b8e3062913cc873-7405.jpg"
    },
@@ -119,7 +119,7 @@
    },
    {
     "slug": "tui-du-lich-mini",
-    "name": "tui du lich mini",
+    "name": "Túi du lịch mini",
     "price": "Liên hệ",
     "image": "assets/upload/product/36b8cd7a6796c6c89f87-1338.jpg"
    },
@@ -143,7 +143,7 @@
    },
    {
     "slug": "tui-nhua-luoi",
-    "name": "tui nhua luoi",
+    "name": "Túi nhựa lưới",
     "price": "Liên hệ",
     "image": "assets/upload/product/df850dbe9460353e6c71-8602.jpg"
    },
@@ -251,7 +251,7 @@
    },
    {
     "slug": "tui-phao-chan-bong-2-lop",
-    "name": "tui phao chan bong",
+    "name": "Túi phao chần bông 2 lớp",
     "price": "Liên hệ",
     "image": "assets/upload/product/ea143961af8d0ed3579c-3206.jpg"
    },
@@ -263,7 +263,7 @@
    },
    {
     "slug": "tui-phao-chan-bong",
-    "name": "tui phao chan bong",
+    "name": "Túi phao chần bông",
     "price": "Liên hệ",
     "image": "assets/upload/product/24a3ed85515bf005a94a-9927.jpg"
    },
@@ -317,7 +317,7 @@
    },
    {
     "slug": "tui-xach-cac-loai",
-    "name": "tui xach tay",
+    "name": "Túi xách các loại",
     "price": "Liên hệ",
     "image": "assets/upload/product/92866a22a9fc08a251ed-5573.jpg"
    },
@@ -425,7 +425,7 @@
    },
    {
     "slug": "tui-dung-my-pham-gia-da",
-    "name": "Tui dung my pham",
+    "name": "Túi đựng mỹ phẩm giả da",
     "price": "Liên hệ",
     "image": "assets/upload/product/974b2bb4a76a06345f7b-5208.jpg"
    },
@@ -689,7 +689,7 @@
    },
    {
     "slug": "non-kaki-in-mo",
-    "name": "non kaki in mo",
+    "name": "Nón kaki in mờ",
     "price": "Liên hệ",
     "image": "assets/upload/product/8c7f56629abb3be562aa-3685.jpg"
    },
@@ -701,43 +701,43 @@
    },
    {
     "slug": "non-kaki-nhieu-mau",
-    "name": "non kaki nhieu mau",
+    "name": "Nón kaki nhiều màu",
     "price": "Liên hệ",
     "image": "assets/upload/product/a5291280c15960073948-1321.jpg"
    },
    {
     "slug": "non-kaki-phoi-luoi-the-thao",
-    "name": "non kaki phoi luoi the thao",
+    "name": "Nón kaki phối lưới thể thao",
     "price": "Liên hệ",
     "image": "assets/upload/product/62fe1498d741761f2f50-8699.jpg"
    },
    {
     "slug": "non-kaki-phoi-mau",
-    "name": "non kaki phoi mau",
+    "name": "Nón kaki phối màu",
     "price": "Liên hệ",
     "image": "assets/upload/product/7bbb2258f18150df0990-4201.jpg"
    },
    {
     "slug": "non-kaki-vn",
-    "name": "non kaki vn",
+    "name": "Nón kaki VN",
     "price": "Liên hệ",
     "image": "assets/upload/product/e36244b6966f37316e7e-6950.jpg"
    },
    {
     "slug": "non-nu-vai-du-chong-nuoc",
-    "name": "non nu vai du chong nuoc",
+    "name": "Nón nữ vải dù chống nước",
     "price": "Liên hệ",
     "image": "assets/upload/product/18422dd1870826567f19-9072.jpg"
    },
    {
     "slug": "non-tai-beo-hinh-gau-truc",
-    "name": "non tai beo hinh gau truc",
+    "name": "Nón tai bèo hình gấu trúc",
     "price": "Liên hệ",
     "image": "assets/upload/product/fc7d3343a69a07c45e8b-9416.jpg"
    },
    {
     "slug": "non-tai-beo-jean",
-    "name": "non tai beo jean",
+    "name": "Nón tai bèo jean",
     "price": "Liên hệ",
     "image": "assets/upload/product/83dabce16038c1669829-5815.jpg"
    },
@@ -749,19 +749,19 @@
    },
    {
     "slug": "non-the-thao-trang",
-    "name": "non the thao trang",
+    "name": "Nón thể thao trắng",
     "price": "Liên hệ",
     "image": "assets/upload/product/cb8d0f0699df388161ce-2229.jpg"
    },
    {
     "slug": "non-vai-jean-xanh-nhat",
-    "name": "non vai jean xanh nhat",
+    "name": "Nón vải jean xanh nhạt",
     "price": "Liên hệ",
     "image": "assets/upload/product/5085b3bc7c65dd3b8474-1218.jpg"
    },
    {
     "slug": "non-vanh-to-the-thao",
-    "name": "non vanh to the thao",
+    "name": "Nón vành to thể thao",
     "price": "Liên hệ",
     "image": "assets/upload/product/52a5038ead570c095546-2460.jpg"
    }
