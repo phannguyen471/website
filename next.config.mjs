@@ -8,9 +8,20 @@
  */
 const allowIndexing = process.env.ALLOW_INDEXING === "true"
 
+/**
+ * Khi biến `CLAUDE_VERIFY_BUILD` được đặt, build ghi ra `.next-verify/`
+ * thay vì `.next/` — để build kiểm chứng của Claude không bao giờ đụng vào
+ * cache mà `pnpm dev` của người dùng đang đọc dở giữa chừng (từng gây lỗi
+ * "Cannot find module './xxx.js'" ba lần). Không đặt biến này thì hành vi
+ * giống hệt mặc định của Next.js — không ảnh hưởng gì tới `pnpm dev` /
+ * `pnpm build` / `pnpm start` bình thường của người dùng.
+ */
+const verifyBuild = process.env.CLAUDE_VERIFY_BUILD === "1"
+
 /** @type {import('next').NextConfig} */
 export default {
   images: { unoptimized: true },
+  ...(verifyBuild ? { distDir: ".next-verify" } : {}),
   async headers() {
     if (allowIndexing) return []
     return [
