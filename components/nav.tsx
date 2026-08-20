@@ -7,6 +7,6 @@ import NavClient from "@/components/nav-client"
  * component client, để dữ liệu sản phẩm không bị đóng gói vào bundle trình duyệt.
  */
 export default function Nav({ locale }: { locale: Locale }) {
-  const { brand, groups } = content(locale)
-  return <NavClient locale={locale} brand={brand} groups={groups} />
+  const { brand } = content(locale)
+  return <NavClient locale={locale} brand={brand} />
 }

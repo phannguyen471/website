@@ -4,30 +4,34 @@ import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
-import type { LBrand, LGroup } from "@/lib/content"
+import type { LBrand } from "@/lib/content"
 import { dict } from "@/lib/dictionary"
 import type { Locale } from "@/lib/i18n"
-import { path, productsPath } from "@/lib/routes"
+import { path } from "@/lib/routes"
 import { cn, media } from "@/lib/utils"
-import { IconMail, IconPhone, IconChevron } from "@/components/icons"
+import { IconMail, IconPhone } from "@/components/icons"
 import LanguageSwitcher from "@/components/language-switcher"
 
 type Props = {
   locale: Locale
   brand: LBrand
-  groups: LGroup[]
 }
 
-export default function NavClient({ locale, brand, groups }: Props) {
+/**
+ * Nav phẳng, không mega menu — theo đúng cách macv.com.vn làm: "Products"
+ * chỉ là một link bình thường, mọi phân loại nhóm/danh mục nằm hẳn trong
+ * trang /san-pham (xem components/product-browser.tsx), không phải ở dropdown
+ * hover trên thanh điều hướng.
+ */
+export default function NavClient({ locale, brand }: Props) {
   const t = dict(locale)
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-  const [openGroup, setOpenGroup] = useState<string | null>(null)
   const pathname = usePathname()
 
   const navLinks = [
     { href: path(locale, "gioi-thieu"), label: t.nav.links.about },
-    { href: path(locale, "san-pham"), label: t.nav.links.products, menu: true },
+    { href: path(locale, "san-pham"), label: t.nav.links.products },
     { href: path(locale, "uu-dai"), label: t.nav.links.promotions },
     { href: path(locale, "tin-tuc"), label: t.nav.links.news },
     { href: path(locale, "lien-he"), label: t.nav.links.contact },
@@ -43,7 +47,6 @@ export default function NavClient({ locale, brand, groups }: Props) {
   // Đóng drawer khi chuyển trang
   useEffect(() => {
     setOpen(false)
-    setOpenGroup(null)
   }, [pathname])
 
   // Khoá scroll nền khi drawer mở
@@ -126,7 +129,6 @@ export default function NavClient({ locale, brand, groups }: Props) {
                   )}
                 >
                   {link.label}
-                  {link.menu && <IconChevron className="size-3 opacity-60" />}
                 </Link>
 
                 {/* Gạch chân active */}
@@ -136,47 +138,6 @@ export default function NavClient({ locale, brand, groups }: Props) {
                     isActive(link.href) ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100",
                   )}
                 />
-
-                {/* Mega menu danh mục */}
-                {link.menu && (
-                  <div className="invisible absolute top-full left-1/2 w-[880px] -translate-x-1/2 pt-0 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                    <div className="grid grid-cols-4 gap-x-8 gap-y-6 border border-line bg-white p-7 shadow-xl">
-                      {groups.map((group) => (
-                        <div key={group.slug}>
-                          <Link
-                            href={productsPath(locale, { group: group.slug })}
-                            className="eyebrow text-navy-500 hover:text-brand-red"
-                          >
-                            {group.name}
-                            <span className="ml-1.5 font-normal text-ink-soft/60">
-                              ({group.count})
-                            </span>
-                          </Link>
-                          <span className="mt-3 block h-px w-8 bg-brand-gold" />
-                          {/* Nhóm chỉ có 1 danh mục con (ví dụ "Nón") thì không lặp lại
-                              tên — link ở trên đã đủ, liệt kê lại sẽ thừa. */}
-                          {group.children.length > 1 && (
-                            <ul className="mt-3 flex flex-col gap-2">
-                              {group.children.map((child) => (
-                                <li key={child.slug}>
-                                  <Link
-                                    href={productsPath(locale, { category: child.slug })}
-                                    className="flex items-baseline justify-between gap-3 text-sm text-ink-soft transition-colors hover:text-brand-red"
-                                  >
-                                    <span>{child.name}</span>
-                                    <span className="text-[11px] text-ink-soft/60">
-                                      {child.count}
-                                    </span>
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
               </div>
             ))}
           </nav>
@@ -256,69 +217,16 @@ export default function NavClient({ locale, brand, groups }: Props) {
 
         <nav className="flex flex-col px-5 py-4">
           {navLinks.map((link) => (
-            <div key={link.href} className="border-b border-line/70">
-              <div className="flex items-center justify-between">
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "flex-1 py-4 text-sm tracking-[0.12em] uppercase",
-                    isActive(link.href) ? "font-semibold text-brand-red" : "text-ink",
-                  )}
-                >
-                  {link.label}
-                </Link>
-                {link.menu && (
-                  <button
-                    type="button"
-                    onClick={() => setOpenGroup(openGroup === link.href ? null : link.href)}
-                    aria-label={t.nav.openCategories}
-                    className="p-3 text-ink-soft"
-                  >
-                    <IconChevron
-                      className={cn(
-                        "size-4 transition-transform",
-                        openGroup === link.href && "rotate-180",
-                      )}
-                    />
-                  </button>
-                )}
-              </div>
-
-              {link.menu && openGroup === link.href && (
-                <div className="pb-4">
-                  {groups.map((group) => (
-                    <div key={group.slug} className="mb-4">
-                      <Link
-                        href={productsPath(locale, { group: group.slug })}
-                        className="eyebrow mb-2 block text-navy-500"
-                      >
-                        {group.name}
-                        <span className="ml-1.5 font-normal text-ink-soft/60">
-                          ({group.count})
-                        </span>
-                      </Link>
-                      {/* Nhóm chỉ có 1 danh mục con (ví dụ "Nón") thì không lặp lại
-                          tên — link ở trên đã đủ, liệt kê lại sẽ thừa. */}
-                      {group.children.length > 1 && (
-                        <ul className="flex flex-col gap-2 border-l border-line pl-3">
-                          {group.children.map((child) => (
-                            <li key={child.slug}>
-                              <Link
-                                href={productsPath(locale, { category: child.slug })}
-                                className="flex justify-between text-sm text-ink-soft"
-                              >
-                                <span>{child.name}</span>
-                                <span className="text-[11px] opacity-60">{child.count}</span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))}
-                </div>
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "border-b border-line/70 py-4 text-sm tracking-[0.12em] uppercase",
+                isActive(link.href) ? "font-semibold text-brand-red" : "text-ink",
               )}
-            </div>
+            >
+              {link.label}
+            </Link>
           ))}
         </nav>
 

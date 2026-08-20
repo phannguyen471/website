@@ -77,22 +77,33 @@ export default function ProductBrowser({
 
   return (
     <div className="container-brand py-14 lg:py-20">
-      {/* Dải tab cuộn ngang — mobile & tablet */}
+      {/* Hàng tab nhóm lớn — hiện ở mọi kích thước màn hình, thay cho mega
+          menu trên thanh điều hướng (đã gỡ). Đây là nơi duy nhất chọn nhóm,
+          giống cách macv.com.vn làm ở /products: mọi phân loại nằm hẳn
+          trong trang, không phải dropdown hover trên nav. */}
+      <div className="no-scrollbar -mx-6 mb-8 flex gap-6 overflow-x-auto border-b border-line px-6 sm:mx-0 sm:gap-8 sm:px-0">
+        <TabLink active={!category && !group} onClick={() => pick("", "")}>
+          {t.products.all}
+        </TabLink>
+        {groups.map((g) => (
+          <TabLink key={g.slug} active={group === g.slug && !category} onClick={() => pick("", g.slug)}>
+            {g.name}
+          </TabLink>
+        ))}
+      </div>
+
+      {/* Dải danh mục con cuộn ngang — mobile & tablet, chỉ hiện khi có
+          nhóm đang chọn (hoặc "Tất cả") để không lặp lại việc chọn nhóm
+          đã có ở hàng tab bên trên. */}
       <div className="mb-8 lg:hidden">
         <div className="no-scrollbar -mx-6 flex gap-2 overflow-x-auto px-6 pb-1">
-          <TabButton active={!category && !group} onClick={() => pick("", "")}>
-            {t.products.all}
-          </TabButton>
-          {groups.map((g) => (
-            <TabButton key={g.slug} active={group === g.slug} onClick={() => pick("", g.slug)}>
-              {g.name}
-            </TabButton>
-          ))}
-          {allCategories.map((c) => (
-            <TabButton key={c.slug} active={category === c.slug} onClick={() => pick(c.slug, "")}>
-              {c.name}
-            </TabButton>
-          ))}
+          {(group ? groups.find((g) => g.slug === group)?.children ?? [] : allCategories).map(
+            (c) => (
+              <TabButton key={c.slug} active={category === c.slug} onClick={() => pick(c.slug, "")}>
+                {c.name}
+              </TabButton>
+            ),
+          )}
         </div>
       </div>
 
@@ -237,6 +248,36 @@ function TabButton({
       )}
     >
       {children}
+    </button>
+  )
+}
+
+/** Tab nhóm lớn — gạch chân active, khớp mô-típ đã dùng ở thanh điều hướng chính */
+function TabLink({
+  active,
+  onClick,
+  children,
+}: {
+  active: boolean
+  onClick: () => void
+  children: React.ReactNode
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={cn(
+        "relative shrink-0 py-3.5 text-[13px] tracking-[0.12em] whitespace-nowrap uppercase transition-colors",
+        active ? "font-semibold text-navy-500" : "text-ink-soft hover:text-navy-500",
+      )}
+    >
+      {children}
+      <span
+        className={cn(
+          "absolute inset-x-0 bottom-0 h-[2px] bg-brand-red transition-transform duration-300",
+          active ? "scale-x-100" : "scale-x-0",
+        )}
+      />
     </button>
   )
 }
