@@ -16,9 +16,21 @@ import { cn, media } from "@/lib/utils"
 import ProductGallery from "@/components/product-gallery"
 import ProductCard from "@/components/product-card"
 import QuoteForm from "@/components/quote-form"
-import { IconArrowRight, IconPhone, IconShield, IconSparkle, IconTruck } from "@/components/icons"
+import {
+  IconArrowRight,
+  IconChat,
+  IconContract,
+  IconFactory,
+  IconPen,
+  IconPhone,
+  IconSample,
+  IconShield,
+  IconSparkle,
+  IconTruck,
+} from "@/components/icons"
 
 const PROMISE_ICONS = [IconSparkle, IconShield, IconTruck]
+const STEP_ICONS = [IconChat, IconPen, IconSample, IconContract, IconFactory, IconTruck]
 
 type Params = { params: Promise<{ locale: string; slug: string }> }
 
@@ -258,6 +270,45 @@ export default async function ProductPage({ params }: Params) {
           <div className="border border-line bg-white p-6 lg:p-8">
             <QuoteForm locale={locale} productName={product.name} />
           </div>
+        </div>
+      </section>
+
+      {/* Quy trình xử lý đơn hàng — dạng cột nối ngang, chỉ 1 hàng ngang thật
+          sự ở lg+ (đường nối một đoạn thẳng tuyệt đối, không cần tính pixel
+          theo padding như bản dọc đã thử và bỏ ở khối "Cam kết"). Dưới lg,
+          lưới tự xuống dòng nên ẩn đường nối để không bị gãy giữa các hàng. */}
+      <section className="border-y border-line bg-shell py-16 lg:py-20">
+        <div className="container-brand">
+          <div className="mb-12 max-w-2xl">
+            <p className="eyebrow text-brand-red">{t.home.processEyebrow}</p>
+            <h2 className="mt-4 font-display text-2xl leading-tight font-bold text-navy-500 lg:text-3xl">
+              {t.home.processTitle}
+            </h2>
+          </div>
+
+          <ol className="relative grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-2">
+            <div
+              aria-hidden="true"
+              className="absolute inset-x-0 top-[23px] hidden h-px bg-line lg:block"
+            />
+            {brand.process.map((step, i) => {
+              const Icon = STEP_ICONS[i] ?? IconSparkle
+              return (
+                <li key={step.step} className="relative flex flex-col items-center text-center">
+                  <span className="relative z-10 flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-navy-500 bg-shell lg:bg-white">
+                    <Icon className="size-[18px] text-navy-500" />
+                  </span>
+                  <span className="mt-3 font-display text-[11px] font-bold tracking-[0.1em] text-brand-gold">
+                    {String(step.step).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-1 font-display text-sm font-bold text-navy-500">
+                    {step.name}
+                  </h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-ink-soft">{step.desc}</p>
+                </li>
+              )
+            })}
+          </ol>
         </div>
       </section>
 
