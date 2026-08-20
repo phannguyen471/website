@@ -1,0 +1,581 @@
+{
+ "_generated": "scripts/build-en.mjs — không sửa tay, sửa bảng dịch trong script rồi chạy lại",
+ "brand": {
+  "legal_name": "PHAN NGUYEN PRODUCTION – TRADING – SERVICE ONE MEMBER CO., LTD",
+  "brand_name": "Phan Nguyen",
+  "tagline": "PHAN NGUYEN – LEADING THE CORPORATE GIFT TREND",
+  "motto": "Distinctive design, optimal quality, fair pricing, flawless service",
+  "experience": "Over 10 years in the corporate gift industry",
+  "industry": "Design and manufacture of corporate gifts and promotional items (bags, backpacks, t-shirts, caps and more)",
+  "address": "471/25/2 Pham Van Bach Street, Ward 15, Tan Binh District, Ho Chi Minh City, Vietnam",
+  "street_address": "471/25/2 Pham Van Bach Street, Ward 15",
+  "locality": "Tan Binh District, Ho Chi Minh City",
+  "placename": "Ho Chi Minh City",
+  "clients": {
+   "Tập đoàn L'Oréal Việt Nam": "L'Oréal Vietnam Group",
+   "AMOREPACIFIC Việt Nam": "AMOREPACIFIC Vietnam",
+   "Kao Việt Nam": "Kao Vietnam",
+   "Shiseido Việt Nam": "Shiseido Vietnam",
+   "Cô Gái Hà Lan": "Dutch Lady"
+  },
+  "process": {
+   "1": {
+    "name": "CONSULTATION",
+    "desc": "We take your brief and advise on the gift that best fits your audience, campaign goals and budget, then send a quotation."
+   },
+   "2": {
+    "name": "DESIGN",
+    "desc": "We develop the concept, product styling and logo artwork for you to review and adjust as you wish."
+   },
+   "3": {
+    "name": "SAMPLING",
+    "desc": "We produce a sample and confirm it with you."
+   },
+   "4": {
+    "name": "CONTRACT",
+    "desc": "Both parties negotiate and sign the contract."
+   },
+   "5": {
+    "name": "PRODUCTION",
+    "desc": "Manufacturing and printing are carried out exactly to the agreed specification."
+   },
+   "6": {
+    "name": "DELIVERY",
+    "desc": "We pack and deliver on the schedule agreed in the contract."
+   }
+  }
+ },
+ "groups": {
+  "tui-xach": {
+   "slug": "bags",
+   "name": "Bags"
+  },
+  "ao-non": {
+   "slug": "apparel-and-caps",
+   "name": "Apparel & caps"
+  }
+ },
+ "categories": {
+  "ao-thun": {
+   "slug": "t-shirts",
+   "name": "T-shirts"
+  },
+  "ao-non-cac-loai": {
+   "slug": "shirts-and-caps",
+   "name": "Shirts & caps"
+  },
+  "tui-cac-loai": {
+   "slug": "bags-and-backpacks",
+   "name": "Bags & backpacks"
+  },
+  "tui-xach-tay": {
+   "slug": "handbags",
+   "name": "Handbags"
+  }
+ },
+ "products": {
+  "ao-3-lo": {
+   "slug": "tank-top",
+   "name": "Tank top"
+  },
+  "ao-boi-in-chuyen": {
+   "slug": "sublimation-printed-swim-top",
+   "name": "Sublimation-printed swim top"
+  },
+  "ao-ca-sau-poly": {
+   "slug": "polyester-pique-polo-shirt",
+   "name": "Polyester piqué polo shirt"
+  },
+  "ao-cotton-in-decal": {
+   "slug": "decal-printed-cotton-t-shirt",
+   "name": "Decal-printed cotton t-shirt"
+  },
+  "ao-dong-phuc": {
+   "slug": "corporate-uniform-shirt",
+   "name": "Corporate uniform shirt"
+  },
+  "ao-khoac-du-loai": {
+   "slug": "jackets-all-styles",
+   "name": "Jackets, all styles"
+  },
+  "ao-luoi-1-lop": {
+   "slug": "single-layer-mesh-jersey",
+   "name": "Single-layer mesh jersey"
+  },
+  "ao-luoi-2-lop": {
+   "slug": "two-layer-mesh-jersey",
+   "name": "Two-layer mesh jersey"
+  },
+  "ao-luoi-in-chuyen-nhiet": {
+   "slug": "heat-transfer-printed-mesh-jersey",
+   "name": "Heat-transfer printed mesh jersey"
+  },
+  "ao-polo-du-loai": {
+   "slug": "polo-shirts-all-styles",
+   "name": "Polo shirts, all styles"
+  },
+  "ao-polo-in-chuyen": {
+   "slug": "sublimation-printed-polo-shirt",
+   "name": "Sublimation-printed polo shirt",
+   "description": "Material: piqué knit\nComposition: 100% polyester\n- UV protection\n- Sublimation printing\n- Water repellent\n- Quick drying\n- Smart and youthful"
+  },
+  "ao-polo": {
+   "slug": "polo-shirt",
+   "name": "Polo shirt"
+  },
+  "ao-tank-top-nam": {
+   "slug": "mens-tank-top",
+   "name": "Men's tank top"
+  },
+  "ao-thun-co-tron-in-full": {
+   "slug": "full-print-crew-neck-t-shirt",
+   "name": "Full-print crew neck t-shirt"
+  },
+  "ao-thun-cotton-den": {
+   "slug": "black-cotton-t-shirt",
+   "name": "Black cotton t-shirt"
+  },
+  "ao-thun-in-chuyen-em-be": {
+   "slug": "baby-sublimation-printed-t-shirt",
+   "name": "Baby sublimation-printed t-shirt"
+  },
+  "ao-thun-in-chuyen-nhiet": {
+   "slug": "heat-transfer-printed-t-shirt",
+   "name": "Heat-transfer printed t-shirt"
+  },
+  "ao-thun-in-nhiet": {
+   "slug": "heat-printed-t-shirt",
+   "name": "Heat-printed t-shirt"
+  },
+  "ao-thun-lanh-in-chuyen": {
+   "slug": "sublimation-printed-cool-touch-t-shirt",
+   "name": "Sublimation-printed cool-touch t-shirt"
+  },
+  "ao-thun-lanh": {
+   "slug": "cool-touch-t-shirt",
+   "name": "Cool-touch t-shirt"
+  },
+  "ao-thun-me-in-chuyen-nhiet": {
+   "slug": "heat-transfer-printed-textured-knit-t-shirt",
+   "name": "Heat-transfer printed textured-knit t-shirt"
+  },
+  "ao-thun-me": {
+   "slug": "textured-knit-t-shirt",
+   "name": "Textured-knit t-shirt",
+   "description": "Textured-knit crew neck t-shirt"
+  },
+  "ao-tre-em-in-chuyen-nhiet": {
+   "slug": "heat-transfer-printed-kids-t-shirt",
+   "name": "Heat-transfer printed kids' t-shirt"
+  },
+  "ao-youth-in-chuyen": {
+   "slug": "sublimation-printed-youth-t-shirt",
+   "name": "Sublimation-printed youth t-shirt"
+  },
+  "ao-youth": {
+   "slug": "youth-t-shirt",
+   "name": "Youth t-shirt"
+  },
+  "balo-em-be-hinh-thu": {
+   "slug": "animal-shaped-kids-backpack",
+   "name": "Animal-shaped kids' backpack"
+  },
+  "balo-hoc-sinh-in-chuyen": {
+   "slug": "sublimation-printed-school-backpack",
+   "name": "Sublimation-printed school backpack"
+  },
+  "balo-hoc-sinh-trung-hoc": {
+   "slug": "high-school-backpack",
+   "name": "High school backpack"
+  },
+  "balo-hoc-sinh": {
+   "slug": "school-backpack",
+   "name": "School backpack"
+  },
+  "balo-pg": {
+   "slug": "p-and-g-backpack",
+   "name": "P&G backpack"
+  },
+  "balo-rut-in-chuyen-nhiet": {
+   "slug": "heat-transfer-printed-drawstring-backpack",
+   "name": "Heat-transfer printed drawstring backpack"
+  },
+  "balo-rut-nhua-pvc": {
+   "slug": "pvc-drawstring-backpack",
+   "name": "PVC drawstring backpack"
+  },
+  "balo-rut-phoi-pvc-cao-cap": {
+   "slug": "premium-pvc-panel-drawstring-backpack",
+   "name": "Premium PVC-panel drawstring backpack"
+  },
+  "balo-rut-vai-canvas": {
+   "slug": "canvas-drawstring-backpack",
+   "name": "Canvas drawstring backpack"
+  },
+  "balo-rut": {
+   "slug": "drawstring-backpack",
+   "name": "Drawstring backpack"
+  },
+  "combo-cac-san-pham": {
+   "slug": "gift-product-combo-set",
+   "name": "Gift product combo set"
+  },
+  "dong-phuc-mam-non": {
+   "slug": "preschool-uniform",
+   "name": "Preschool uniform"
+  },
+  "gia-do-dien-thoai": {
+   "slug": "phone-stand",
+   "name": "Phone stand"
+  },
+  "goi-co-cao-su-du-lich": {
+   "slug": "latex-travel-neck-pillow",
+   "name": "Latex travel neck pillow"
+  },
+  "hop-com-giu-nhiet": {
+   "slug": "insulated-lunch-box",
+   "name": "Insulated lunch box"
+  },
+  "non-in-lua": {
+   "slug": "screen-printed-cap",
+   "name": "Screen-printed cap"
+  },
+  "non-jean-wash": {
+   "slug": "washed-denim-cap",
+   "name": "Washed denim cap"
+  },
+  "non-kaki-du-lich-nhieu-mau": {
+   "slug": "multicolour-khaki-travel-cap",
+   "name": "Multicolour khaki travel cap"
+  },
+  "non-kaki-du-mau": {
+   "slug": "khaki-cap-in-assorted-colours",
+   "name": "Khaki cap in assorted colours"
+  },
+  "non-kaki-in-mo": {
+   "slug": "matte-print-khaki-cap",
+   "name": "Matte-print khaki cap"
+  },
+  "non-kaki-mau-den": {
+   "slug": "black-khaki-cap",
+   "name": "Black khaki cap"
+  },
+  "non-kaki-nhieu-mau": {
+   "slug": "multicolour-khaki-cap",
+   "name": "Multicolour khaki cap"
+  },
+  "non-kaki-phoi-luoi-the-thao": {
+   "slug": "khaki-sports-cap-with-mesh-panels",
+   "name": "Khaki sports cap with mesh panels"
+  },
+  "non-kaki-phoi-mau": {
+   "slug": "two-tone-khaki-cap",
+   "name": "Two-tone khaki cap"
+  },
+  "non-kaki-vn": {
+   "slug": "vietnam-khaki-cap",
+   "name": "Vietnam khaki cap"
+  },
+  "non-nu-vai-du-chong-nuoc": {
+   "slug": "womens-water-resistant-nylon-hat",
+   "name": "Women's water-resistant nylon hat"
+  },
+  "non-tai-beo-hinh-gau-truc": {
+   "slug": "panda-bucket-hat",
+   "name": "Panda bucket hat"
+  },
+  "non-tai-beo-jean": {
+   "slug": "denim-bucket-hat",
+   "name": "Denim bucket hat"
+  },
+  "non-the-thao-nua-dau": {
+   "slug": "sports-visor",
+   "name": "Sports visor"
+  },
+  "non-the-thao-trang": {
+   "slug": "white-sports-cap",
+   "name": "White sports cap"
+  },
+  "non-vai-jean-xanh-nhat": {
+   "slug": "light-blue-denim-cap",
+   "name": "Light blue denim cap"
+  },
+  "non-vanh-to-the-thao": {
+   "slug": "wide-brim-sports-hat",
+   "name": "Wide-brim sports hat"
+  },
+  "tui-bo-in-lua-xach-tay": {
+   "slug": "screen-printed-canvas-tote",
+   "name": "Screen-printed canvas tote"
+  },
+  "tui-cam-tay": {
+   "slug": "clutch-pouch-with-key-hook",
+   "name": "Clutch pouch with key hook"
+  },
+  "tui-canvas-co-day-rut": {
+   "slug": "canvas-drawstring-bag",
+   "name": "Canvas drawstring bag"
+  },
+  "tui-canvas-cotton-phoi-coi": {
+   "slug": "cotton-canvas-bag-with-straw-trim",
+   "name": "Cotton canvas bag with straw trim"
+  },
+  "tui-canvas-den": {
+   "slug": "black-canvas-bag",
+   "name": "Black canvas bag"
+  },
+  "tui-canvas-doi-mau": {
+   "slug": "colour-changing-canvas-bag",
+   "name": "Colour-changing canvas bag"
+  },
+  "tui-canvas-hat-lon": {
+   "slug": "coarse-weave-canvas-bag",
+   "name": "Coarse-weave canvas bag"
+  },
+  "tui-canvas-in-chuyen": {
+   "slug": "sublimation-printed-canvas-bag",
+   "name": "Sublimation-printed canvas bag"
+  },
+  "tui-canvas-poly-deo-vai-in-chuyen": {
+   "slug": "sublimation-printed-poly-canvas-shoulder-bag",
+   "name": "Sublimation-printed poly canvas shoulder bag"
+  },
+  "tui-canvas-poly-size-lon-in-decal": {
+   "slug": "large-decal-printed-poly-canvas-bag",
+   "name": "Large decal-printed poly canvas bag"
+  },
+  "tui-canvas-size-lon-cao-cap": {
+   "slug": "premium-large-canvas-tote",
+   "name": "Premium large canvas tote"
+  },
+  "tui-canvas-size-lon-form-cung": {
+   "slug": "large-structured-canvas-tote",
+   "name": "Large structured canvas tote"
+  },
+  "tui-canvas-size-to": {
+   "slug": "oversized-canvas-bag",
+   "name": "Oversized canvas bag",
+   "description": "Add a touch of personality to any look — this oversized bag makes a style of its own."
+  },
+  "tui-canvas-xach-tay": {
+   "slug": "canvas-hand-tote",
+   "name": "Canvas hand tote"
+  },
+  "tui-chan-bong-deo-cheo": {
+   "slug": "quilted-crossbody-bag",
+   "name": "Quilted crossbody bag"
+  },
+  "tui-coi": {
+   "slug": "straw-bag",
+   "name": "Straw bag"
+  },
+  "tui-deo-cheo": {
+   "slug": "crossbody-bag",
+   "name": "Crossbody bag"
+  },
+  "tui-deo-vai-cao-cap": {
+   "slug": "premium-shoulder-bag",
+   "name": "Premium shoulder bag"
+  },
+  "tui-deo-vai-gia-da": {
+   "slug": "faux-leather-shoulder-bag",
+   "name": "Faux leather shoulder bag"
+  },
+  "tui-deo-vai-hinh-ban-nguyet": {
+   "slug": "half-moon-shoulder-bag",
+   "name": "Half-moon shoulder bag",
+   "description": "The elegant half-moon silhouette gives this Ida bag a modern feel and makes it the ideal companion, whether you are shining on the beach or travelling with confidence. A refined balance of style and practicality, it is the perfect way to refresh a favourite outfit with a look that is as fashionable as it is comfortable."
+  },
+  "tui-deo-vai-xach-tay-tien-dung": {
+   "slug": "convertible-shoulder-and-hand-bag",
+   "name": "Convertible shoulder and hand bag"
+  },
+  "tui-deo-vai": {
+   "slug": "shoulder-bag",
+   "name": "Shoulder bag"
+  },
+  "tui-du-lich-ca-nhan": {
+   "slug": "personal-travel-bag",
+   "name": "Personal travel bag"
+  },
+  "tui-du-lich-canvas-phoi-gia-da": {
+   "slug": "canvas-travel-bag-with-faux-leather-trim",
+   "name": "Canvas travel bag with faux leather trim"
+  },
+  "tui-du-lich-canvas": {
+   "slug": "canvas-travel-bag",
+   "name": "Canvas travel bag"
+  },
+  "tui-du-lich-cao-cap": {
+   "slug": "premium-travel-bag",
+   "name": "Premium travel bag"
+  },
+  "tui-du-lich-do": {
+   "slug": "red-travel-bag",
+   "name": "Red travel bag",
+   "description": "Multi-purpose travel bag\nCan be carried on the shoulder or by hand, with several compartments for clothes, shoes and more\nAvailable in red and grey"
+  },
+  "tui-du-lich-mini": {
+   "slug": "mini-travel-bag",
+   "name": "Mini travel bag"
+  },
+  "tui-du-lich-tien-dung": {
+   "slug": "everyday-travel-bag",
+   "name": "Everyday travel bag"
+  },
+  "tui-dung-laptop-vai-canvas": {
+   "slug": "canvas-laptop-sleeve",
+   "name": "Canvas laptop sleeve"
+  },
+  "tui-dung-my-pham-du-lich": {
+   "slug": "travel-cosmetic-bag",
+   "name": "Travel cosmetic bag"
+  },
+  "tui-dung-my-pham-gia-da": {
+   "slug": "faux-leather-cosmetic-bag",
+   "name": "Faux leather cosmetic bag"
+  },
+  "tui-dung-my-pham-halogram": {
+   "slug": "holographic-cosmetic-bag",
+   "name": "Holographic cosmetic bag"
+  },
+  "tui-dung-my-pham-nhua-pvc-phoi-canvas": {
+   "slug": "pvc-and-canvas-cosmetic-bag",
+   "name": "PVC and canvas cosmetic bag"
+  },
+  "tui-dung-my-pham-pu-mo-cao-cap": {
+   "slug": "premium-matte-pu-cosmetic-bag",
+   "name": "Premium matte PU cosmetic bag"
+  },
+  "tui-dung-my-pham-si": {
+   "slug": "faux-leather-cosmetic-pouch",
+   "name": "Faux leather cosmetic pouch"
+  },
+  "tui-dung-my-pham": {
+   "slug": "cosmetic-bag",
+   "name": "Cosmetic bag"
+  },
+  "tui-in-chuyen-vai-poly": {
+   "slug": "sublimation-printed-polyester-bag",
+   "name": "Sublimation-printed polyester bag"
+  },
+  "tui-luoi-du-lich": {
+   "slug": "mesh-travel-bag",
+   "name": "Mesh travel bag"
+  },
+  "tui-luoi": {
+   "slug": "mesh-bag",
+   "name": "Mesh bag"
+  },
+  "tui-my-pham-chan-bong": {
+   "slug": "quilted-cosmetic-bag",
+   "name": "Quilted cosmetic bag"
+  },
+  "tui-nhua-luoi": {
+   "slug": "mesh-pvc-bag",
+   "name": "Mesh PVC bag"
+  },
+  "tui-phao-chan-bong-2-lop": {
+   "slug": "double-layer-puffer-bag",
+   "name": "Double-layer puffer bag"
+  },
+  "tui-phao-chan-bong-deo-cheo": {
+   "slug": "quilted-puffer-crossbody-bag",
+   "name": "Quilted puffer crossbody bag"
+  },
+  "tui-phao-chan-bong-size-lon": {
+   "slug": "large-quilted-puffer-bag",
+   "name": "Large quilted puffer bag"
+  },
+  "tui-phao-chan-bong": {
+   "slug": "quilted-puffer-bag",
+   "name": "Quilted puffer bag"
+  },
+  "tui-phao-dung-my-pham": {
+   "slug": "puffer-cosmetic-bag",
+   "name": "Puffer cosmetic bag"
+  },
+  "tui-simili-deo-cheo": {
+   "slug": "faux-leather-crossbody-bag",
+   "name": "Faux leather crossbody bag"
+  },
+  "tui-tote-size-lon-in-chuyen": {
+   "slug": "large-sublimation-printed-tote-bag",
+   "name": "Large sublimation-printed tote bag"
+  },
+  "tui-tote-size-lon": {
+   "slug": "large-tote-bag",
+   "name": "Large tote bag"
+  },
+  "tui-xach-cac-loai": {
+   "slug": "handbag-assorted-styles",
+   "name": "Handbag, assorted styles"
+  },
+  "tui-xach-tay-bo-600-pu": {
+   "slug": "600d-canvas-and-pu-handbag",
+   "name": "600D canvas and PU handbag"
+  },
+  "tui-xach-tay-canvas-phoi-pu-nau": {
+   "slug": "canvas-handbag-with-brown-pu-trim",
+   "name": "Canvas handbag with brown PU trim"
+  },
+  "tui-xach-tay-tienm-dung": {
+   "slug": "cooler-bag-with-bottle-opener",
+   "name": "Cooler bag with bottle opener"
+  },
+  "tui-xach-tay-vai-sweed": {
+   "slug": "suede-handbag",
+   "name": "Suede handbag"
+  }
+ },
+ "articles": {
+  "canton-fair-2023": {
+   "slug": "canton-fair-2023",
+   "title": "Canton Fair 2023"
+  },
+  "dan-khach-di-hc": {
+   "slug": "escorting-clients-to-trade-fairs",
+   "title": "Escorting clients to trade fairs"
+  },
+  "dan-khach-di-hoi-cho-tq": {
+   "slug": "escorting-clients-to-trade-fairs-in-china",
+   "title": "Escorting clients to trade fairs in China"
+  },
+  "dan-khach-di-nha-may-san-xuat": {
+   "slug": "factory-visit-escort-service",
+   "title": "Factory visit escort service"
+  },
+  "dich-cac-loai-sach": {
+   "slug": "translation-of-books-across-all-genres",
+   "title": "Translation of books across all genres"
+  },
+  "dich-sach": {
+   "slug": "book-translation",
+   "title": "Book translation"
+  },
+  "dich-sach-tu-viet-sang-trung": {
+   "slug": "vietnamese-to-chinese-book-translation",
+   "title": "Vietnamese to Chinese book translation"
+  },
+  "dich-truc-tiep": {
+   "slug": "live-interpreting",
+   "title": "Live interpreting"
+  },
+  "dich-truyen": {
+   "slug": "fiction-and-comic-translation",
+   "title": "Fiction and comic translation"
+  },
+  "dich-vu-dich-cabin": {
+   "slug": "simultaneous-booth-interpreting",
+   "title": "Simultaneous booth interpreting"
+  },
+  "dich-vu-dich-thuat": {
+   "slug": "translation-services",
+   "title": "Translation services"
+  },
+  "thanh-toan-qua-long-ban-tay": {
+   "slug": "palm-payment-and-facial-recognition",
+   "title": "Palm payment and facial recognition"
+  }
+ }
+}

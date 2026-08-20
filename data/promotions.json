@@ -1,0 +1,42 @@
+[
+ {
+  "slug": "goi-co-cao-su-du-lich",
+  "name": "Gối cổ cao su du lịch",
+  "image": "assets/upload/product/c50a95ed8f9b25c57c8a-6815.jpg",
+  "price_new": "80.000đ",
+  "price_old": "110.000đ",
+  "discount": "-27%"
+ },
+ {
+  "slug": "tui-du-lich-do",
+  "name": "Túi du lịch đỏ",
+  "image": "assets/upload/product/6b23146b8faf2ff176be-8104.jpg",
+  "price_new": "110.000đ",
+  "price_old": "150.000đ",
+  "discount": "-27%"
+ },
+ {
+  "slug": "tui-dung-my-pham",
+  "name": "Túi đựng mỹ phẩm",
+  "image": "assets/upload/product/screenshot-2024-06-07-140041-4530.jpg",
+  "price_new": "20.000đ",
+  "price_old": "35.000đ",
+  "discount": "-43%"
+ },
+ {
+  "slug": "gia-do-dien-thoai",
+  "name": "Giá đỡ điện thoại",
+  "image": "assets/upload/product/eeb998d6da117a4f2300-8897.jpg",
+  "price_new": "20.000đ",
+  "price_old": "40.000đ",
+  "discount": "-50%"
+ },
+ {
+  "slug": "tui-du-lich-tien-dung",
+  "name": "Túi du lịch tiện dụng",
+  "image": "assets/upload/product/d132a5493f8d9fd3c69c-2215.jpg",
+  "price_new": "110.000đ",
+  "price_old": "150.000đ",
+  "discount": "-27%"
+ }
+]

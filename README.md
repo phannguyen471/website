@@ -1,0 +1,144 @@
+# Phan Nguyễn — website mới
+
+Website dựng lại cho **CÔNG TY TNHH MTV SX TM DV PHAN NGUYỄN**.
+
+- **Giữ nguyên**: thương hiệu (logo, màu, font, slogan, thông tin liên hệ), toàn bộ 112 sản phẩm, hình ảnh, văn bản và tin tức lấy từ phannguyenbags.vn.
+- **Làm mới**: layout, navigation và ngôn ngữ thiết kế theo hướng editorial tối giản — header cố định có thanh tiện ích thu gọn khi cuộn, mega menu danh mục, lưới sản phẩm có bộ lọc, footer nhiều cột.
+- **Song ngữ**: bản tiếng Anh đầy đủ tại `/en`, URL tiếng Việt giữ nguyên như cũ.
+
+## Chạy dự án
+
+```bash
+pnpm install
+node scripts/prep.mjs     # copy dữ liệu + media từ ../content và ../assets
+node scripts/build-en.mjs # sinh bản dịch tiếng Anh
+pnpm dev                  # http://localhost:3000
+```
+
+Build production:
+
+```bash
+pnpm build && pnpm start
+```
+
+`scripts/prep.mjs` phải chạy lại mỗi khi dữ liệu ở `../content/` hoặc `../assets/` thay đổi.
+`scripts/build-en.mjs` phải chạy lại sau `prep.mjs` và mỗi khi sửa bảng dịch — script sẽ **báo lỗi và dừng** nếu có sản phẩm / danh mục / bài viết chưa có bản dịch, nên không thể vô tình đẩy nội dung thiếu tiếng Anh lên production.
+
+## Công nghệ
+
+Next.js 15 (App Router) · React 19 · TypeScript · Tailwind CSS v4 — không dùng thư viện UI ngoài, toàn bộ component tự viết.
+
+## Cấu trúc
+
+```
+app/
+  [locale]/             Mọi trang nằm dưới đây; `locale` là "vi" hoặc "en"
+    page.tsx            Trang chủ
+    san-pham/           Danh sách (SSR + lọc) và chi tiết sản phẩm
+    gioi-thieu/         Giới thiệu, khách hàng, quy trình, giấy chứng nhận
+    dich-vu/            Danh sách + chi tiết 10 dịch vụ
+    tin-tuc/            Danh sách + chi tiết bài viết
+    uu-dai/             5 sản phẩm đang giảm giá
+    lien-he/            Thông tin + bản đồ + form báo giá
+    [...rest]/          Bắt URL lạ để 404 render trong layout đúng ngôn ngữ
+    not-found.tsx       Trang 404 (đọc ngôn ngữ từ header `x-locale`)
+  api/bao-gia/          API nhận form (hiện chỉ log — xem TODO bên dưới)
+  sitemap.ts            Sitemap 262 URL, kèm hreflang cho từng trang
+
+middleware.ts           Map URL công khai → route nội bộ (xem phần Đa ngôn ngữ)
+
+components/             Nav, Footer, ProductCard, ProductBrowser, ProductGallery,
+                        PageHeader, QuoteForm, ArticleBody, ClientMarquee,
+                        LanguageSwitcher, icons
+
+lib/
+  i18n.ts               Danh sách ngôn ngữ, ngôn ngữ mặc định, nhãn hiển thị
+  routes.ts             Bảng segment URL theo ngôn ngữ + helper `path()`
+  dictionary.ts         Toàn bộ chuỗi giao diện (vi + en)
+  content.ts            Nội dung đã dịch: sản phẩm, danh mục, bài viết, thương hiệu
+  use-localized-path.ts Dịch đường dẫn hiện tại sang ngôn ngữ kia (nút đổi ngôn ngữ)
+  data.ts               Đọc JSON, dựng cây danh mục, tách tin tức / dịch vụ
+  utils.ts              cn(), media(), bỏ dấu tiếng Việt
+
+data/                   JSON sinh bởi prep.mjs (không sửa tay)
+data/i18n/              Bản dịch sinh bởi build-en.mjs (không sửa tay)
+public/media/           Toàn bộ ảnh, font, video (sinh bởi prep.mjs)
+```
+
+## Đa ngôn ngữ
+
+Tiếng Việt là ngôn ngữ mặc định và **giữ nguyên URL cũ** để không mất thứ hạng
+tìm kiếm. Tiếng Anh nằm dưới `/en` với slug tiếng Anh:
+
+| Tiếng Việt | Tiếng Anh |
+|---|---|
+| `/` | `/en` |
+| `/san-pham` | `/en/products` |
+| `/san-pham/tui-tote-size-lon` | `/en/products/large-tote-bag` |
+| `/gioi-thieu` | `/en/about` |
+| `/dich-vu` | `/en/services` |
+| `/tin-tuc` | `/en/news` |
+| `/uu-dai` | `/en/promotions` |
+| `/lien-he` | `/en/contact` |
+| `?danh-muc=` / `?nhom=` | `?category=` / `?group=` |
+
+Cách hoạt động:
+
+- Thư mục route bên trong vẫn đặt tên tiếng Việt. `middleware.ts` viết lại
+  (rewrite) URL công khai về route nội bộ: `/en/products/x` → `/en/san-pham/x`,
+  `/san-pham/x` → `/vi/san-pham/x`. Thanh địa chỉ không đổi.
+- `/vi/...` bị **redirect 301/307 về `/...`** để một nội dung không có hai URL.
+- Mỗi trang tự khai `canonical` + `hreflang` (vi / en / x-default) trỏ đúng bản
+  tương ứng; sitemap cũng gắn `xhtml:link` cho từng URL.
+- Slug sản phẩm / bài viết tra được cả hai chiều, nên link cũ dán vào `/en` vẫn
+  mở đúng trang thay vì 404.
+- Nút đổi ngôn ngữ (VI / EN, ở thanh tiện ích, drawer mobile và footer) giữ
+  nguyên trang đang xem — kể cả trang chi tiết và bộ lọc danh mục.
+
+### Thêm hoặc sửa bản dịch
+
+Mọi bản dịch **nội dung** nằm trong bảng ở đầu `scripts/build-en.mjs`
+(tên sản phẩm, mô tả, danh mục, tiêu đề bài viết, thông tin công ty).
+Sửa xong chạy `node scripts/build-en.mjs`.
+
+Mọi chuỗi **giao diện** nằm trong `lib/dictionary.ts`. Bản `en` được khai báo
+là `typeof vi`, nên chỉ cần thiếu một khoá là `pnpm typecheck` sẽ báo lỗi.
+
+Thêm ngôn ngữ thứ ba: bổ sung mã vào `locales` trong `lib/i18n.ts`, thêm cột
+vào `SEGMENTS` / `QUERY_KEYS` trong `lib/routes.ts`, thêm dictionary và bảng
+dịch nội dung tương ứng.
+
+## Hệ thống thiết kế
+
+| Token | Giá trị | Dùng cho |
+|---|---|---|
+| `navy-500` | `#0B3359` | Màu chủ đạo: header phụ, footer, khối tối, tiêu đề |
+| `brand-red` | `#EC2D3F` | CTA, giá, nhãn ưu đãi, gạch chân active |
+| `brand-gold` | `#FFC120` | Nhấn trên nền tối, gạch phân cách |
+| `ink` / `ink-soft` | `#212529` / `#6C757D` | Chữ chính / chữ phụ |
+| `line` / `shell` | `#E3E7EC` / `#F6F7F9` | Viền / nền khối |
+
+- **Font**: `OriflameSans2` (font thương hiệu gốc) cho tiêu đề, `Be Vietnam Pro` cho nội dung. OriflameSans2 có thể thiếu glyph tiếng Việt nên luôn đặt Be Vietnam Pro ngay sau trong font stack — trình duyệt tự fallback theo từng ký tự.
+- **Bo góc 2px**, viền mảnh, nhãn nhỏ in hoa giãn chữ (`.eyebrow`) là mô-típ nhận diện xuyên suốt.
+
+## Dữ liệu
+
+Sinh từ thư mục cha bằng `scripts/prep.mjs`:
+
+| File | Nội dung |
+|---|---|
+| `data/brand.json` | Thông tin công ty, liên hệ, màu, font, logo, khách hàng, quy trình 6 bước |
+| `data/products.json` | 112 sản phẩm |
+| `data/categories.json` | 4 danh mục (Túi các Loại 52, Áo Nón các loại 30, áo thun 15, Túi xách tay 15) |
+| `data/news.json` | 12 bài — tách tự động thành 2 tin tức + 10 dịch vụ theo breadcrumb gốc |
+| `data/promotions.json` | 5 sản phẩm giảm giá, parse giá cũ/mới/% từ `raw/uu-dai.html` |
+
+## Việc cần làm tiếp
+
+1. **Form báo giá chưa gửi email.** `app/api/bao-gia/route.ts` mới validate và ghi log (đã kèm `locale` để biết khách gửi từ bản tiếng nào). Cắm SMTP (nodemailer/Resend/SendGrid) vào chỗ đánh dấu `TODO` để gửi về `Phannguyen471@gmail.com`.
+2. **Link Facebook** trong `content/brand.json` đang trỏ về `facebook.com` chung — cần thay bằng fanpage thật.
+3. **107/112 sản phẩm chưa có mô tả** và giá để "Liên hệ" (nguyên trạng site cũ). Trang chi tiết đã chừa sẵn chỗ, chỉ cần bổ sung nội dung vào `content/products.json` rồi chạy lại prep — nhớ thêm bản tiếng Anh vào `PRODUCT_DESCRIPTIONS` trong `scripts/build-en.mjs`.
+4. **Tên sản phẩm tiếng Anh dịch từ tên gốc.** Một số tên gốc viết tắt hoặc sai chính tả (`non kaki in mo`, `tui phao chan bong`, `tui xach tay vải sweed`) nên bản dịch là suy đoán hợp lý nhất — nên nhờ người phụ trách sản phẩm rà lại bảng `PRODUCT_NAMES` trong `scripts/build-en.mjs`.
+5. **Hai bài tin tức chỉ có video, không có văn bản.** Bản tiếng Anh mới dịch tiêu đề; muốn đầy đủ thì cần phụ đề hoặc mô tả tiếng Anh cho video.
+6. **Ảnh sản phẩm bản gốc không có watermark** — nếu muốn giữ watermark như site cũ thì cần xử lý riêng.
+7. Bước "GIAO HÀNG" trong quy trình chưa có mô tả trên site gốc; hiện dùng câu tạm — bản tiếng Việt trong `lib/content.ts`, bản tiếng Anh trong `BRAND.process` của `scripts/build-en.mjs`.

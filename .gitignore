@@ -1,0 +1,11 @@
+node_modules
+.next
+out
+.DS_Store
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Log
+*.log
+npm-debug.log*

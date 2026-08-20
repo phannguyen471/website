@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════════════════
+   PHAN NGUYỄN — brand fonts
+   OriflameSans2 là font thương hiệu gốc. Font này có thể thiếu một số
+   glyph tiếng Việt, nên luôn xếp Be Vietnam Pro ngay sau: trình duyệt
+   tự fallback theo từng ký tự.
+   ══════════════════════════════════════════════════════════════════ */
+@font-face {
+  font-family: "OriflameSans2";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url("/media/fonts/OriflameSans2.0-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "OriflameSans2";
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+  src: url("/media/fonts/OriflameSans2.0-Bold.otf") format("opentype");
+}
+
+@theme {
+  /* ── Bảng màu thương hiệu Phan Nguyễn ── */
+  --color-navy-50: #eef3f8;
+  --color-navy-100: #d3e0ed;
+  --color-navy-200: #a3bed6;
+  --color-navy-300: #6a94b8;
+  --color-navy-400: #3a6a95;
+  --color-navy-500: #0b3359;
+  --color-navy-600: #092c4c;
+  --color-navy-700: #07223b;
+  --color-navy-800: #05192b;
+  --color-navy-900: #03101c;
+
+  --color-brand-red: #ec2d3f;
+  --color-brand-red-dark: #c31829;
+  --color-brand-gold: #ffc120;
+  --color-brand-green: #3fa07e;
+
+  --color-ink: #212529;
+  --color-ink-soft: #6c757d;
+  --color-line: #e3e7ec;
+  --color-shell: #f6f7f9;
+
+  /* ── Typography ── */
+  --font-display: "OriflameSans2", "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Be Vietnam Pro", "OriflameSans2", ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Radius: gần vuông, theo hướng editorial ── */
+  --radius-brand: 2px;
+
+  /* ── Marquee ── */
+  --animate-marquee: marquee 32s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: #ffffff;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-navy-500) 22%, transparent);
+  }
+
+  /* Ẩn thanh cuộn ngang của các dải filter/tab trên mobile */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Tiện ích dùng lại
+   ══════════════════════════════════════════════════════════════════ */
+@utility container-brand {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.5rem;
+}
+@media (min-width: 1024px) {
+  .container-brand {
+    padding-inline: 2rem;
+  }
+}
+
+/* Nhãn nhỏ in hoa, giãn chữ — mô-típ nhận diện của layout */
+@utility eyebrow {
+  font-size: 0.6875rem;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+/* Nội dung HTML từ CMS cũ (bài viết) */
+.prose-brand {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #33383d;
+}
+.prose-brand p {
+  margin-block: 1.1em;
+}
+.prose-brand h2,
+.prose-brand h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-navy-500);
+  margin-block: 1.6em 0.6em;
+  line-height: 1.3;
+}
+.prose-brand h2 {
+  font-size: 1.5rem;
+}
+.prose-brand h3 {
+  font-size: 1.25rem;
+}
+.prose-brand img,
+.prose-brand video,
+.prose-brand iframe {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-block: 1.5em;
+}
+.prose-brand ul,
+.prose-brand ol {
+  margin-block: 1.1em;
+  padding-left: 1.4em;
+}
+.prose-brand ul {
+  list-style: disc;
+}
+.prose-brand ol {
+  list-style: decimal;
+}
+.prose-brand li {
+  margin-block: 0.4em;
+}
+.prose-brand a {
+  color: var(--color-brand-red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.prose-brand strong {
+  color: var(--color-ink);
+  font-weight: 700;
+}
+.prose-brand table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 1.5em;
+  font-size: 0.9375rem;
+}
+.prose-brand th,
+.prose-brand td {
+  border: 1px solid var(--color-line);
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+}
+.prose-brand th {
+  background: var(--color-shell);
+  font-weight: 600;
+}

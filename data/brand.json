@@ -1,0 +1,159 @@
+{
+ "company": {
+  "legal_name": "CÔNG TY TNHH MTV SX TM DV PHAN NGUYỄN",
+  "brand_name": "Phan Nguyễn",
+  "tagline": "PHAN NGUYỄN – DẪN ĐẦU XU HƯỚNG HÀNG QUÀ TẶNG",
+  "motto": "Thiết kế độc đáo, chất lượng tối ưu, giá cả hợp lý, dịch vụ hoàn hảo",
+  "founded": 2013,
+  "experience": "Hơn 10 năm trong lĩnh vực quà tặng",
+  "website": "https://phannguyenbags.vn/",
+  "industry": "Thiết kế & sản xuất quà tặng doanh nghiệp, vật phẩm quảng cáo (túi xách, balo, áo thun, nón...)"
+ },
+ "contact": {
+  "address": "471/25/2 Phạm Văn Bạch, Phường 15, Quận Tân Bình, Thành Phố Hồ Chí Minh",
+  "hotline": "0972447447",
+  "zalo_phone": "0799979597",
+  "email": "Phannguyen471@gmail.com",
+  "geo": {
+   "region": "VN",
+   "placename": "Hồ Chí Minh",
+   "lat": 10.823099,
+   "lng": 106.629664
+  }
+ },
+ "social": {
+  "facebook": "https://www.facebook.com/",
+  "messenger": "https://www.messenger.com/?locale=vi_VN",
+  "zalo": "https://zalo.me/0799979597"
+ },
+ "analytics": {
+  "google_analytics": "G-TYHP831W1C"
+ },
+ "identity": {
+  "logo_header": "assets/upload/photo/phan-nguyen-4110.png",
+  "logo_footer": "assets/upload/photo/logo-footer-phan-nguyen-8328.png",
+  "hero_banner": "assets/upload/photo/phan-nguyen-anh-1579.jpg",
+  "slides": [
+   "assets/upload/photo/1-4792.jpg",
+   "assets/upload/photo/1-6168.jpg",
+   "assets/upload/photo/2-2174.jpg",
+   "assets/upload/photo/3-87670.jpg",
+   "assets/upload/photo/cca61f28d79078ce2181-2665.jpg"
+  ],
+  "page_banners": [
+   "assets/upload/photo/1-4614.jpg",
+   "assets/upload/photo/1-5613.jpg",
+   "assets/upload/photo/2-2103.jpg",
+   "assets/upload/photo/cca61f28d79078ce2181-6425.jpg"
+  ],
+  "certificate": "assets/upload/filemanager/files/giay-chung-nhan.png",
+  "about_image": "assets/upload/filemanager/files/hinh-anh-quan-ao/gioi-thieu.jpg"
+ },
+ "colors": {
+  "primary_navy": "#0B3359",
+  "accent_red": "#EC2D3F",
+  "accent_yellow": "#FFC120",
+  "hover_yellow": "#ECEB1B",
+  "green": "#3FA07E",
+  "dark_green": "#207D36",
+  "dark_red": "#C31829",
+  "black": "#212529",
+  "gray": "#6C757D",
+  "white": "#FFFFFF"
+ },
+ "typography": {
+  "primary_font": "OriflameSans2",
+  "weights": [
+   400,
+   700
+  ],
+  "files": [
+   "assets/fonts/OriflameSans2.0-Regular.otf",
+   "assets/fonts/OriflameSans2.0-Bold.otf"
+  ],
+  "fallback": "Georgia, Times, 'Times New Roman', serif",
+  "menu_style": "16px / 700 / capitalize"
+ },
+ "clients": [
+  "Tập đoàn L'Oréal Việt Nam",
+  "TPF GROUP",
+  "P&G",
+  "DAY ONE",
+  "Paula's Choice",
+  "AMOREPACIFIC Việt Nam",
+  "Kao Việt Nam",
+  "Shiseido Việt Nam",
+  "Mitsubishi",
+  "LG Vina Cosmetic VN",
+  "DKSH VN",
+  "Cô Gái Hà Lan",
+  "Vietnam Airlines"
+ ],
+ "process": [
+  {
+   "step": 1,
+   "name": "TƯ VẤN",
+   "desc": "Tiếp nhận yêu cầu - tư vấn quà tặng cho doanh nghiệp phù hợp với đối tượng khách hàng, mục tiêu và kinh phí. Gửi báo giá"
+  },
+  {
+   "step": 2,
+   "name": "THIẾT KẾ",
+   "desc": "Lên ý tưởng xây dựng hình ảnh, mẫu mã sản phẩm, thiết kế logo để khách hàng tham khảo chỉnh sửa theo ý muốn"
+  },
+  {
+   "step": 3,
+   "name": "LÀM MẪU",
+   "desc": "Tiến hành làm mẫu và chốt mẫu"
+  },
+  {
+   "step": 4,
+   "name": "HỢP ĐỒNG",
+   "desc": "Hai bên thương lượng và ký hợp đồng"
+  },
+  {
+   "step": 5,
+   "name": "SẢN XUẤT",
+   "desc": "Tiến hành sản xuất và in ấn sản phẩm theo đúng yêu cầu"
+  },
+  {
+   "step": 6,
+   "name": "GIAO HÀNG",
+   "desc": ""
+  }
+ ],
+ "usp_blocks": [
+  {
+   "title": "100% Bảo mật",
+   "desc": "(placeholder Lorem ipsum trên site gốc - cần viết lại)"
+  },
+  {
+   "title": "Trả hàng miễn phí",
+   "desc": "(placeholder Lorem ipsum trên site gốc - cần viết lại)"
+  },
+  {
+   "title": "Miễn phí vận chuyển",
+   "desc": "(placeholder Lorem ipsum trên site gốc - cần viết lại)"
+  }
+ ],
+ "services": [
+  "Sản xuất quà tặng doanh nghiệp / vật phẩm quảng cáo",
+  "Dịch thuật, dịch sách chuyên ngành tiếng Trung",
+  "Dẫn khách đi tour hội chợ Canton Fair (Quảng Châu)",
+  "Dẫn khách đi chợ sĩ, tham quan nhà máy sản xuất tại Trung Quốc"
+ ],
+ "languages": [
+  "vi",
+  "en"
+ ],
+ "homepage_sections": [
+  "Slideshow (5 slide)",
+  "2 banner danh mục CTA: Áo Nón các loại / Túi các Loại",
+  "Tab sản phẩm: Nổi bật | Khuyến mãi | Bán chạy",
+  "SẢN PHẨM TIÊU BIỂU + CTA Khám phá ngay",
+  "Quy trình xử lý đơn hàng (6 bước)",
+  "Tin tức",
+  "3 khối USP",
+  "Đăng ký nhận tin",
+  "Footer + nút nổi Messenger/Facebook/Zalo"
+ ]
+}
