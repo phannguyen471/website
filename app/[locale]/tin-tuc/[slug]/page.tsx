@@ -151,6 +151,12 @@ export default async function NewsDetailPage({ params }: Params) {
                 </Link>
                 {t.news.sidebarLeadEnd(brand.hotline)}
               </p>
+              <Link
+                href={path(locale, "lien-he")}
+                className="mt-5 block rounded-[2px] bg-brand-red px-5 py-3 text-center text-[11px] font-semibold tracking-[0.16em] text-white uppercase transition-colors hover:bg-brand-red-dark"
+              >
+                {t.nav.quote}
+              </Link>
             </div>
           </aside>
         </div>
