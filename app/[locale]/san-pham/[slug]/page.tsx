@@ -12,7 +12,7 @@ import {
 import { dict } from "@/lib/dictionary"
 import { isLocale, locales, type Locale } from "@/lib/i18n"
 import { path, productsPath } from "@/lib/routes"
-import { media } from "@/lib/utils"
+import { cn, media } from "@/lib/utils"
 import ProductGallery from "@/components/product-gallery"
 import ProductCard from "@/components/product-card"
 import QuoteForm from "@/components/quote-form"
@@ -215,14 +215,26 @@ export default async function ProductPage({ params }: Params) {
               </a>
             </div>
 
-            {/* Cam kết */}
-            <ul className="mt-8 grid gap-px border border-line bg-line sm:grid-cols-3">
+            {/* Cam kết — xếp dọc một cột thay vì 3 cột chật (chữ tiếng Việt
+                dài dễ vỡ dòng giữa từ khi ép vào cột hẹp). Mỗi icon có nền
+                navy riêng để có trọng lượng thị giác, không trôi nổi trên nền
+                trắng như bản cũ. */}
+            <ul className="mt-8 flex flex-col border border-line bg-white">
               {t.product.promises.map((promise, i) => {
                 const Icon = PROMISE_ICONS[i] ?? IconSparkle
+                const isLast = i === t.product.promises.length - 1
                 return (
-                  <li key={promise} className="flex flex-col gap-2.5 bg-white p-4">
-                    <Icon className="size-5 text-navy-500" />
-                    <span className="text-xs leading-snug text-ink-soft">{promise}</span>
+                  <li
+                    key={promise}
+                    className={cn(
+                      "flex items-center gap-4 px-5 py-4",
+                      !isLast && "border-b border-line",
+                    )}
+                  >
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-[2px] bg-navy-500">
+                      <Icon className="size-4 text-brand-gold" />
+                    </span>
+                    <span className="text-sm leading-snug text-ink">{promise}</span>
                   </li>
                 )
               })}
