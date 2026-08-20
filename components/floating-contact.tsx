@@ -6,8 +6,8 @@ import { IconFacebook, IconMessenger, IconZalo } from "@/components/brand-icons"
 
 /**
  * Cụm nút liên hệ nổi — giữ lại thói quen của site gốc
- * (Messenger / Facebook / Zalo), nhưng dựng lại theo dạng viên thuốc
- * gọn ở góc phải, không che nội dung trên mobile.
+ * (Messenger / Facebook / Zalo), đặt trần logo ở góc phải, không bọc
+ * thêm khung/nền vì mỗi logo đã có hình dạng và màu nền riêng sẵn.
  */
 export default function FloatingContact({ locale }: { locale: Locale }) {
   const t = dict(locale)
@@ -20,7 +20,7 @@ export default function FloatingContact({ locale }: { locale: Locale }) {
   ]
 
   return (
-    <div className="fixed right-4 bottom-4 z-40 flex flex-col items-end gap-2">
+    <div className="fixed right-4 bottom-4 z-40 flex flex-col items-end gap-3">
       {items.map(({ label, href, Icon }) => (
         <a
           key={label}
@@ -28,12 +28,9 @@ export default function FloatingContact({ locale }: { locale: Locale }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
-          className="group flex items-center gap-2 rounded-full border border-line bg-white/95 py-2 pr-3 pl-2 shadow-lg backdrop-blur transition-all hover:border-navy-300"
+          className="block drop-shadow-lg transition-transform hover:scale-110"
         >
-          <Icon size={32} className="shrink-0" />
-          <span className="max-w-0 overflow-hidden text-xs font-medium whitespace-nowrap text-navy-500 transition-all duration-300 group-hover:max-w-[100px]">
-            {label}
-          </span>
+          <Icon size={44} />
         </a>
       ))}
 
