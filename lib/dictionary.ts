@@ -28,7 +28,6 @@ const vi = {
     products: "Sản phẩm",
     keepInTouch: "Kết nối",
     viewAll: "Xem tất cả sản phẩm →",
-    rights: "All rights reserved.",
   },
 
   common: {
@@ -72,7 +71,7 @@ const vi = {
     categoriesEyebrow: "Danh mục",
     categoriesTitle: "Bốn dòng sản phẩm chủ lực",
     allProducts: (n: number) => `Tất cả ${n} sản phẩm`,
-    explore: "Khám phá ngay",
+    explore: "Xem ngay",
     pillarsEyebrow: "Vì sao chọn Phan Nguyễn",
     pillarsTitleTop: "Bốn cam kết làm nên",
     pillarsTitleBottom: "niềm tin hơn 10 năm",
@@ -143,8 +142,10 @@ const vi = {
     step: (n: number) => `Bước ${n}`,
     legalEyebrow: "Pháp lý",
     legalLead: (address: string) => `Doanh nghiệp đăng ký hoạt động tại ${address}.`,
+    legalCert:
+      "Phan Nguyễn tự hào là doanh nghiệp được WEConnect International công nhận đạt chuẩn Certified Women's Business Enterprise, ghi nhận quốc tế dành cho doanh nghiệp do phụ nữ làm chủ, vận hành minh bạch và chuyên nghiệp.",
     legalCta: "Liên hệ với chúng tôi",
-    certificateAlt: "Giấy chứng nhận đăng ký doanh nghiệp Phan Nguyễn",
+    certificateAlt: "Chứng nhận Certified Women's Business Enterprise từ WEConnect International",
   },
 
   products: {
@@ -313,7 +314,6 @@ const en: typeof vi = {
     products: "Products",
     keepInTouch: "Get in Touch",
     viewAll: "View all products →",
-    rights: "All rights reserved.",
   },
 
   common: {
@@ -428,8 +428,10 @@ const en: typeof vi = {
     step: (n: number) => `Step ${n}`,
     legalEyebrow: "Legal",
     legalLead: (address: string) => `The company is registered at ${address}.`,
+    legalCert:
+      "Phan Nguyen is also proud to be recognized by WEConnect International as a Certified Women's Business Enterprise, an international credential for women-owned businesses built on transparent, professional operations.",
     legalCta: "Get in touch",
-    certificateAlt: "Phan Nguyen business registration certificate",
+    certificateAlt: "Certified Women's Business Enterprise credential from WEConnect International",
   },
 
   products: {

@@ -84,10 +84,18 @@ const GROUP_SLUG: Record<string, string> = {
 
 /** Ảnh đại diện cho mỗi nhóm cấp 1 (lấy từ chính sản phẩm của nhóm) */
 const GROUP_COVER: Record<string, string> = {
-  "Túi xách": "assets/upload/product/thiet-ke-chua-co-ten-14-4840.png",
-  Áo: "assets/upload/product/0034a3edf76d57330e7c-6778.jpg",
-  Nón: "assets/upload/product/e90888149175572b0e64-3921.jpg",
-  "Phụ kiện": "assets/upload/product/c50a95ed8f9b25c57c8a-6815.jpg",
+  "Túi xách": "/clients/tuixach.jpeg",
+  Áo: "/clients/aoimage.jpeg",
+  Nón: "/clients/capimage.jpg",
+  "Phụ kiện": "/clients/phukien.png",
+}
+
+/** Mô tả ngắn gọn cho mỗi nhóm cấp 1, hiển thị ở khối "sản phẩm chủ lực" trang chủ */
+const GROUP_DESCRIPTION: Record<string, string> = {
+  "Túi xách": "Balo, túi tote, túi du lịch, nhiều kiểu dáng, và in logo riêng.",
+  Áo: "Áo thun, áo polo, đồng phục, áo khoác đồng bộ cho cả đội ngũ.",
+  Nón: "Nón kết, nón tai bèo, nón thể thao, thêu logo theo yêu cầu.",
+  "Phụ kiện": "Vật phẩm quảng cáo, hoàn thiện bộ quà tặng doanh nghiệp.",
 }
 
 export const categories: Category[] = (categoriesJson as Category[]).map((c) => ({
@@ -100,6 +108,7 @@ export type CategoryGroup = {
   name: string
   slug: string
   cover: string
+  description: string
   count: number
   children: Category[]
 }
@@ -110,6 +119,7 @@ export const categoryGroups: CategoryGroup[] = GROUPS.map((group) => {
     name: group,
     slug: GROUP_SLUG[group],
     cover: GROUP_COVER[group],
+    description: GROUP_DESCRIPTION[group],
     count: children.reduce((n, c) => n + c.products.length, 0),
     children,
   }

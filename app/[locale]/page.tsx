@@ -12,17 +12,15 @@ import {
   IconArrowRight,
   IconArrowUpRight,
   IconChat,
-  IconContract,
   IconFactory,
   IconGlobe,
-  IconPen,
-  IconSample,
+  IconMail,
+  IconPhone,
+  IconPin,
   IconSparkle,
   IconTag,
-  IconTruck,
 } from "@/components/icons"
 
-const STEP_ICONS = [IconChat, IconPen, IconSample, IconContract, IconFactory, IconTruck]
 const PILLAR_ICONS = [IconSparkle, IconFactory, IconTag, IconGlobe]
 
 type Params = { params: Promise<{ locale: string }> }
@@ -98,7 +96,7 @@ export default async function HomePage({ params }: Params) {
           {/* Ảnh hero */}
           <div className="relative min-h-[340px] lg:min-h-[640px]">
             <Image
-              src={media(brand.identity.hero_banner)}
+              src="/clients/homepage-phannguyen.png"
               alt={t.home.heroImageAlt}
               fill
               priority
@@ -160,17 +158,9 @@ export default async function HomePage({ params }: Params) {
                   {group.name}
                 </h3>
 
-                {/* Nhóm chỉ có 1 danh mục con (ví dụ "Nón") thì không lặp lại tên
-                    — heading ở trên đã đủ rõ, liệt kê lại sẽ thừa và trùng lặp. */}
-                {group.children.length > 1 && (
-                  <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
-                    {group.children.map((c) => (
-                      <li key={c.slug} className="text-sm text-white/70">
-                        {c.name}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/70">
+                  {group.description}
+                </p>
 
                 <span className="mt-6 inline-flex items-center gap-2 border-b border-brand-gold pb-1 text-[11px] font-semibold tracking-[0.16em] text-brand-gold uppercase">
                   {t.home.explore}
@@ -323,21 +313,15 @@ export default async function HomePage({ params }: Params) {
         </div>
 
         <ol className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
-          {brand.process.map((step, i) => {
-            const Icon = STEP_ICONS[i] ?? IconSparkle
-            return (
-              <li key={step.step} className="group relative bg-white p-7 lg:p-8">
-                <div className="flex items-start justify-between gap-4">
-                  <Icon className="size-7 text-navy-500" />
-                  <span className="font-display text-4xl leading-none font-bold text-line transition-colors group-hover:text-brand-gold">
-                    {String(step.step).padStart(2, "0")}
-                  </span>
-                </div>
-                <h3 className="mt-6 font-display text-lg font-bold text-navy-500">{step.name}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">{step.desc}</p>
-              </li>
-            )
-          })}
+          {brand.process.map((step) => (
+            <li key={step.step} className="group relative bg-white p-7 lg:p-8">
+              <span className="font-display text-4xl leading-none font-bold text-line transition-colors group-hover:text-brand-gold">
+                {String(step.step).padStart(2, "0")}
+              </span>
+              <h3 className="mt-6 font-display text-lg font-bold text-navy-500">{step.name}</h3>
+              <p className="mt-2.5 text-sm leading-relaxed text-ink-soft">{step.desc}</p>
+            </li>
+          ))}
         </ol>
       </section>
 
@@ -420,21 +404,54 @@ export default async function HomePage({ params }: Params) {
               </div>
             </div>
 
-            <dl className="grid gap-px bg-white/12 sm:grid-cols-2">
+            <div className="border border-white/15 bg-navy-900/40 backdrop-blur-sm">
               {[
-                { t: t.common.address, d: brand.address },
-                { t: t.common.hotline, d: brand.hotline },
-                { t: t.common.zalo, d: brand.zaloPhone },
-                { t: t.common.email, d: brand.email },
+                {
+                  label: t.common.address,
+                  value: brand.address,
+                  href: `https://www.google.com/maps?q=${brand.geo.lat},${brand.geo.lng}`,
+                  external: true,
+                  Icon: IconPin,
+                },
+                {
+                  label: t.common.hotline,
+                  value: brand.hotline,
+                  href: `tel:${brand.hotline.replace(/\s/g, "")}`,
+                  Icon: IconPhone,
+                },
+                {
+                  label: t.common.zalo,
+                  value: brand.zaloPhone,
+                  href: brand.social.zalo,
+                  external: true,
+                  Icon: IconChat,
+                },
+                {
+                  label: t.common.email,
+                  value: brand.email,
+                  href: `mailto:${brand.email}`,
+                  Icon: IconMail,
+                },
               ].map((x) => (
-                <div key={x.t} className="bg-navy-500 p-6">
-                  <dt className="eyebrow text-brand-gold">{x.t}</dt>
-                  <dd className="mt-2.5 text-sm leading-relaxed break-words text-white/75">
-                    {x.d}
-                  </dd>
-                </div>
+                <a
+                  key={x.label}
+                  href={x.href}
+                  {...(x.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="group flex items-center gap-4 border-b border-white/10 px-6 py-5 transition-colors last:border-b-0 hover:bg-white/5"
+                >
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-brand-gold/30 text-brand-gold transition-colors group-hover:border-brand-gold group-hover:bg-brand-gold group-hover:text-navy-500">
+                    <x.Icon className="size-4" />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="eyebrow block text-white/45">{x.label}</span>
+                    <span className="mt-1 block text-[15px] leading-snug font-medium break-words text-white">
+                      {x.value}
+                    </span>
+                  </span>
+                  <IconArrowUpRight className="size-4 shrink-0 text-white/25 opacity-0 transition-all group-hover:translate-x-0.5 group-hover:opacity-100 group-hover:text-brand-gold" />
+                </a>
               ))}
-            </dl>
+            </div>
           </div>
         </div>
       </section>

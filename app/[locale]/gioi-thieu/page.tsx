@@ -12,6 +12,22 @@ import { IconArrowRight, IconFactory, IconGlobe, IconSparkle, IconTag } from "@/
 
 const PILLAR_ICONS = [IconSparkle, IconFactory, IconTag, IconGlobe]
 
+/** Logo khách hàng — khớp theo đúng tên trong brand.clients. "DAY ONE" chưa có file logo, giữ hiển thị dạng chữ. */
+const CLIENT_LOGOS: Record<string, { src: string; width: number; height: number }> = {
+  "Tập đoàn L'Oréal Việt Nam": { src: "/clients/loreal.png", width: 800, height: 200 },
+  "TPF GROUP": { src: "/clients/tpf group.webp", width: 611, height: 367 },
+  "P&G": { src: "/clients/pg.png", width: 199, height: 200 },
+  "Paula's Choice": { src: "/clients/paulas-choice.png", width: 322, height: 200 },
+  "AMOREPACIFIC Việt Nam": { src: "/clients/amore pacific.jpg", width: 1080, height: 400 },
+  "Kao Việt Nam": { src: "/clients/kao.webp", width: 446, height: 255 },
+  "Shiseido Việt Nam": { src: "/clients/shiseido.png", width: 1243, height: 200 },
+  Mitsubishi: { src: "/clients/mitsubishi.png", width: 183, height: 200 },
+  "LG Vina Cosmetic VN": { src: "/clients/LG-logo.png", width: 300, height: 300 },
+  "DKSH VN": { src: "/clients/dksh_1432107662.webp", width: 700, height: 269 },
+  "Cô Gái Hà Lan": { src: "/clients/dutch lady.png", width: 1800, height: 1801 },
+  "Vietnam Airlines": { src: "/clients/vietnam-airlines.png", width: 541, height: 200 },
+}
+
 type Params = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
@@ -114,7 +130,7 @@ export default async function AboutPage({ params }: Params) {
       </section>
 
       {/* Khách hàng */}
-      <section className="border-y border-line bg-shell py-16 lg:py-20">
+      <section className="border-y border-line bg-white py-16 lg:py-20">
         <div className="container-brand">
           <div className="max-w-2xl">
             <p className="eyebrow text-brand-red">{t.about.clientsEyebrow}</p>
@@ -126,15 +142,27 @@ export default async function AboutPage({ params }: Params) {
             </p>
           </div>
 
-          <ul className="mt-10 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
-            {brand.clients.map((c) => (
-              <li
-                key={c}
-                className="flex min-h-[88px] items-center bg-white p-5 text-sm font-medium text-navy-500"
-              >
-                {c}
-              </li>
-            ))}
+          <ul className="mt-10 flex flex-wrap items-center gap-x-14 gap-y-10">
+            {brand.clients.map((c) => {
+              const logo = CLIENT_LOGOS[c]
+              return (
+                <li key={c} className="flex items-center">
+                  {logo ? (
+                    <Image
+                      src={logo.src}
+                      alt={c}
+                      width={logo.width}
+                      height={logo.height}
+                      className="h-14 w-auto max-w-[190px] object-contain"
+                    />
+                  ) : (
+                    <span className="text-sm font-semibold tracking-wide text-ink-soft transition-colors hover:text-navy-500">
+                      {c}
+                    </span>
+                  )}
+                </li>
+              )
+            })}
           </ul>
         </div>
       </section>
@@ -169,6 +197,9 @@ export default async function AboutPage({ params }: Params) {
             </h2>
             <p className="mt-5 text-[15px] leading-relaxed text-ink-soft">
               {t.about.legalLead(brand.address)}
+            </p>
+            <p className="mt-4 text-[15px] leading-relaxed text-ink-soft">
+              {t.about.legalCert}
             </p>
             <Link
               href={path(locale, "lien-he")}

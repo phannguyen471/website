@@ -34,11 +34,11 @@ export default function Footer({ locale }: { locale: Locale }) {
           <div className="flex flex-col gap-5 lg:col-span-4">
             <Link href={path(locale)} className="transition-opacity hover:opacity-80">
               <Image
-                src={media(brand.identity.logo_footer)}
+                src={media(brand.identity.logo_header)}
                 alt={brand.brandName}
-                width={170}
-                height={56}
-                className="h-12 w-auto object-contain"
+                width={150}
+                height={50}
+                className="h-12 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="max-w-[290px] text-sm leading-relaxed text-white/65">
@@ -99,18 +99,16 @@ export default function Footer({ locale }: { locale: Locale }) {
             <h3 className="eyebrow text-white">{t.footer.products}</h3>
             <span className="h-px w-8 bg-brand-gold" />
             <ul className="flex flex-col gap-2.5">
-              {groups
-                .flatMap((g) => g.children)
-                .map((c) => (
-                  <li key={c.slug}>
-                    <Link
-                      href={productsPath(locale, { category: c.slug })}
-                      className="text-sm text-white/65 transition-colors hover:text-brand-gold"
-                    >
-                      {c.name}
-                    </Link>
-                  </li>
-                ))}
+              {groups.map((g) => (
+                <li key={g.slug}>
+                  <Link
+                    href={productsPath(locale, { group: g.slug })}
+                    className="text-sm text-white/65 transition-colors hover:text-brand-gold"
+                  >
+                    {g.name}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link
                   href={path(locale, "san-pham")}
@@ -142,17 +140,6 @@ export default function Footer({ locale }: { locale: Locale }) {
               </li>
               <li>
                 <a
-                  href={brand.social.zalo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2.5 text-sm text-white/65 transition-colors hover:text-brand-gold"
-                >
-                  <IconPhone className="size-4 shrink-0 text-brand-gold" />
-                  {t.common.zalo}: {brand.zaloPhone}
-                </a>
-              </li>
-              <li>
-                <a
                   href={`mailto:${brand.email}`}
                   className="flex items-center gap-2.5 text-sm break-all text-white/65 transition-colors hover:text-brand-gold"
                 >
@@ -167,7 +154,15 @@ export default function Footer({ locale }: { locale: Locale }) {
         {/* Thanh dưới */}
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/12 pt-7 sm:flex-row sm:items-center">
           <p className="text-xs text-white/50">
-            © {year} {brand.legalName}. {t.footer.rights}
+            © {year} {brand.legalName}. Design and Development by{" "}
+            <a
+              href="https://www.growthtrait.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/70 transition-colors hover:text-brand-gold"
+            >
+              Growthtrait
+            </a>
           </p>
           <LanguageSwitcher locale={locale} tone="dark" label={t.nav.language} />
         </div>

@@ -13,6 +13,7 @@ import {
 } from "@/lib/data"
 import { dict } from "@/lib/dictionary"
 import { defaultLocale, type Locale } from "@/lib/i18n"
+import { toIntlPhone } from "@/lib/utils"
 
 /* ══════════════════════════════════════════════════════════════════
    Kiểu dữ liệu đã dịch — mọi trang chỉ làm việc với các kiểu này,
@@ -41,6 +42,7 @@ export type LGroup = {
   key: string
   name: string
   cover: string
+  description: string
   count: number
   children: LCategory[]
 }
@@ -145,6 +147,7 @@ function buildGroups(locale: Locale, categories: LCategory[]): LGroup[] {
       slug: locale === "en" && t ? t.slug : g.slug,
       name: locale === "en" && t ? t.name : g.name,
       cover: g.cover,
+      description: locale === "en" && t ? t.description : g.description,
       count: g.count,
       children,
     }
@@ -216,8 +219,8 @@ function buildBrand(locale: Locale): LBrand {
     streetAddress: isEn ? e.street_address : "471/25/2 Phạm Văn Bạch, Phường 15",
     locality: isEn ? e.locality : "Quận Tân Bình, Thành phố Hồ Chí Minh",
     placename: isEn ? e.placename : b.contact.geo.placename,
-    hotline: b.contact.hotline,
-    zaloPhone: b.contact.zalo_phone,
+    hotline: toIntlPhone(b.contact.hotline),
+    zaloPhone: toIntlPhone(b.contact.zalo_phone),
     email: b.contact.email,
     clients: b.clients.map((c) =>
       isEn ? ((e.clients as Record<string, string>)[c] ?? c) : c,

@@ -15,6 +15,13 @@ export function media(path: string | undefined | null): string {
   return "/media/" + path.replace(/^assets\//, "")
 }
 
+/** "0972447447" → "+84 972 447 447" — hiển thị mã quốc gia để khách quốc tế biết đang gọi đến Việt Nam */
+export function toIntlPhone(local: string): string {
+  const digits = local.replace(/\D/g, "").replace(/^0/, "")
+  const groups = digits.match(/.{1,3}/g) ?? [digits]
+  return `+84 ${groups.join(" ")}`
+}
+
 /** "Liên hệ" hoặc "120.000đ" → hiển thị nhất quán */
 export function formatPrice(price: string | undefined): string {
   const p = (price || "").trim()
