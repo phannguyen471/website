@@ -3,7 +3,7 @@ import { ALLOW_INDEXING } from "@/lib/seo"
 import { SITE } from "@/lib/routes"
 
 /**
- * Khi chưa cho index: chặn toàn bộ và KHÔNG khai báo sitemap, để không mời
+ * Khi chưa cho index: chặn toàn bộ và **không** khai báo sitemap, để không mời
  * bot đi thu thập 262 URL.
  *
  * Lưu ý: robots.txt chỉ ngăn *thu thập*, không ngăn *lập chỉ mục* — một URL bị

@@ -106,7 +106,7 @@ Thêm ngôn ngữ thứ ba: bổ sung mã vào `locales` trong `lib/i18n.ts`, th
 vào `SEGMENTS` / `QUERY_KEYS` trong `lib/routes.ts`, thêm dictionary và bảng
 dịch nội dung tương ứng.
 
-## Chặn Google index (đang BẬT)
+## Chặn Google index (đang bật)
 
 Website **đang chặn toàn bộ công cụ tìm kiếm**. Trạng thái mặc định là không
 cho index, và chỉ mở khi đặt biến môi trường `ALLOW_INDEXING=true`.
@@ -131,7 +131,7 @@ file ảnh và XML.
 3. Kiểm tra:
 
 ```bash
-curl -I https://phannguyenbags.vn | grep -i x-robots-tag   # phải KHÔNG có kết quả
+curl -I https://phannguyenbags.vn | grep -i x-robots-tag   # phải không có kết quả
 curl -s https://phannguyenbags.vn/robots.txt               # phải thấy "Allow: /"
 ```
 
@@ -171,4 +171,4 @@ Sinh từ thư mục cha bằng `scripts/prep.mjs`:
 4. **Tên sản phẩm tiếng Anh dịch từ tên gốc.** Một số tên gốc viết tắt hoặc sai chính tả (`non kaki in mo`, `tui phao chan bong`, `tui xach tay vải sweed`) nên bản dịch là suy đoán hợp lý nhất — nên nhờ người phụ trách sản phẩm rà lại bảng `PRODUCT_NAMES` trong `scripts/build-en.mjs`.
 5. **Hai bài tin tức chỉ có video, không có văn bản.** Bản tiếng Anh mới dịch tiêu đề; muốn đầy đủ thì cần phụ đề hoặc mô tả tiếng Anh cho video.
 6. **Ảnh sản phẩm bản gốc không có watermark** — nếu muốn giữ watermark như site cũ thì cần xử lý riêng.
-7. Bước "GIAO HÀNG" trong quy trình chưa có mô tả trên site gốc; hiện dùng câu tạm — bản tiếng Việt trong `lib/content.ts`, bản tiếng Anh trong `BRAND.process` của `scripts/build-en.mjs`.
+7. **Bước "Giao hàng" chưa có mô tả gốc.** Quy trình 6 bước trên site gốc bỏ trống bước này; hiện dùng câu tạm — bản tiếng Việt trong `lib/content.ts`, bản tiếng Anh trong `BRAND.process` của `scripts/build-en.mjs`.
