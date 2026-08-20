@@ -13,22 +13,26 @@ export default function ClientMarquee({ locale }: { locale: Locale }) {
 
   return (
     <div className="border-y border-line bg-shell py-5">
-      <div className="flex items-center gap-6 overflow-hidden">
+      <div className="flex items-center gap-6">
         <p className="eyebrow shrink-0 border-r border-line pr-6 pl-6 text-navy-500 lg:pl-8">
           {t.common.clientsEyebrow}
         </p>
-        <div
-          className="flex w-max animate-[marquee_32s_linear_infinite] items-center gap-10"
-          aria-hidden="true"
-        >
-          {loop.map((name, i) => (
-            <span
-              key={i}
-              className="text-sm font-medium tracking-wide whitespace-nowrap text-ink-soft"
-            >
-              {name}
-            </span>
-          ))}
+        {/* Biên cắt riêng cho dải chữ chạy — tách khỏi nhãn tĩnh bên trái để
+            translateX của animation không tràn đè lên chữ "Khách hàng tiêu biểu". */}
+        <div className="min-w-0 flex-1 overflow-hidden">
+          <div
+            className="flex w-max animate-[marquee_32s_linear_infinite] items-center gap-10"
+            aria-hidden="true"
+          >
+            {loop.map((name, i) => (
+              <span
+                key={i}
+                className="text-sm font-medium tracking-wide whitespace-nowrap text-ink-soft"
+              >
+                {name}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 
