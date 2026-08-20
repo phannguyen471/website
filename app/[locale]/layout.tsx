@@ -10,6 +10,7 @@ import { content } from "@/lib/content"
 import { dict } from "@/lib/dictionary"
 import { htmlLang, isLocale, locales, ogLocale, type Locale } from "@/lib/i18n"
 import { SITE, path } from "@/lib/routes"
+import { robotsMeta } from "@/lib/seo"
 import { media } from "@/lib/utils"
 
 const beVietnam = Be_Vietnam_Pro({
@@ -68,7 +69,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
         "x-default": path("vi"),
       },
     },
-    robots: { index: true, follow: true },
+    robots: robotsMeta,
   }
 }
 

@@ -108,6 +108,38 @@ Thêm ngôn ngữ thứ ba: bổ sung mã vào `locales` trong `lib/i18n.ts`, th
 vào `SEGMENTS` / `QUERY_KEYS` trong `lib/routes.ts`, thêm dictionary và bảng
 dịch nội dung tương ứng.
 
+## Chặn Google index (đang BẬT)
+
+Website **đang chặn toàn bộ công cụ tìm kiếm**. Trạng thái mặc định là không
+cho index, và chỉ mở khi đặt biến môi trường `ALLOW_INDEXING=true`.
+
+Ba tầng chặn chạy song song:
+
+| Tầng | File | Tác dụng |
+|---|---|---|
+| HTTP header | `next.config.mjs` | `X-Robots-Tag: noindex, nofollow, noimageindex, noarchive` cho **mọi** response — kể cả `sitemap.xml` và ảnh trong `/media`, nơi thẻ `<meta>` không với tới |
+| Thẻ meta | `lib/seo.ts` → `app/[locale]/layout.tsx` | `<meta name="robots" content="noindex, nofollow, nocache">` trên mọi trang, kèm `<meta name="googlebot">` riêng |
+| robots.txt | `app/robots.ts` | `Disallow: /`, và **không** khai báo sitemap để khỏi mời bot thu thập 262 URL |
+
+Cần cả ba vì mỗi tầng bịt một lỗ hổng khác nhau: `robots.txt` chỉ ngăn *thu
+thập* chứ không ngăn *lập chỉ mục* (URL bị chặn vẫn có thể lọt vào kết quả tìm
+kiếm nếu site khác trỏ link tới), còn thẻ `<meta>` thì không áp dụng được cho
+file ảnh và XML.
+
+### Khi nào muốn cho Google index
+
+1. Đặt biến môi trường trên production: `ALLOW_INDEXING=true`
+2. Build và deploy lại
+3. Kiểm tra:
+
+```bash
+curl -I https://phannguyenbags.vn | grep -i x-robots-tag   # phải KHÔNG có kết quả
+curl -s https://phannguyenbags.vn/robots.txt               # phải thấy "Allow: /"
+```
+
+Biến phải đúng bằng chuỗi `true`. Gõ sai hoặc quên đặt đều rơi về trạng thái an
+toàn là **không index**, nên không thể vô tình để Google thu thập sớm.
+
 ## Hệ thống thiết kế
 
 | Token | Giá trị | Dùng cho |
