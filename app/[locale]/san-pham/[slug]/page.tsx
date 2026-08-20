@@ -244,7 +244,7 @@ export default async function ProductPage({ params }: Params) {
             <p className="mt-5 text-[15px] leading-relaxed text-ink-soft">{t.product.quoteLead}</p>
           </div>
           <div className="border border-line bg-white p-6 lg:p-8">
-            <QuoteForm locale={locale} defaultSubject={t.product.quoteSubject(product.name)} />
+            <QuoteForm locale={locale} productName={product.name} />
           </div>
         </div>
       </section>

@@ -13,6 +13,9 @@ type QuoteRequest = {
   phone?: string
   email?: string
   company?: string
+  country?: string
+  productInterest?: string
+  quantity?: string
   subject?: string
   content?: string
   /** Ngôn ngữ người gửi đang dùng — để đội bán hàng trả lời đúng thứ tiếng */
@@ -30,9 +33,10 @@ export async function POST(request: Request) {
 
   const fullname = (body.fullname || "").trim()
   const phone = (body.phone || "").trim()
+  const company = (body.company || "").trim()
   const content = (body.content || "").trim()
 
-  if (!fullname || !phone || !content) {
+  if (!fullname || !phone || !company || !content) {
     return NextResponse.json({ ok: false, error: "missing_fields" }, { status: 422 })
   }
 
@@ -45,8 +49,11 @@ export async function POST(request: Request) {
   console.log("[bao-gia]", {
     fullname,
     phone,
+    company,
     email: (body.email || "").trim(),
-    company: (body.company || "").trim(),
+    country: (body.country || "").trim(),
+    productInterest: (body.productInterest || "").trim(),
+    quantity: (body.quantity || "").trim(),
     subject: (body.subject || "").trim(),
     content,
     locale: (body.locale || "vi").trim(),
