@@ -155,15 +155,21 @@ Available in red and grey`,
 
 /* ── Danh mục & nhóm ──────────────────────────────────────────────── */
 const CATEGORY_NAMES = {
-  "ao-thun": "T-shirts",
-  "ao-non-cac-loai": "Shirts & caps",
-  "tui-cac-loai": "Bags & backpacks",
+  balo: "Backpacks",
+  "tui-du-lich": "Travel bags",
+  "tui-tote-tui-vai": "Totes & canvas bags",
   "tui-xach-tay": "Handbags",
+  "tui-deo-vai-deo-cheo": "Shoulder & crossbody bags",
+  "tui-dung-my-pham": "Cosmetic bags",
+  "ao-thun": "T-shirts",
+  "ao-polo-dong-phuc": "Polo shirts & uniforms",
+  non: "Caps",
 }
 
 const GROUP_NAMES = {
   "tui-xach": "Bags",
-  "ao-non": "Apparel & caps",
+  ao: "Apparel",
+  non: "Caps",
 }
 
 /* ── Bài viết (tin tức + dịch vụ) ─────────────────────────────────── */

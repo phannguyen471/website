@@ -138,35 +138,39 @@ export default async function HomePage({ params }: Params) {
           </Link>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-3">
           {groups.map((group) => (
             <Link
               key={group.slug}
               href={productsPath(locale, { group: group.slug })}
-              className="group relative isolate flex min-h-[400px] flex-col justify-end overflow-hidden lg:min-h-[480px]"
+              className="group relative isolate flex min-h-[360px] flex-col justify-end overflow-hidden lg:min-h-[440px]"
             >
               <Image
                 src={media(group.cover)}
                 alt={group.name}
                 fill
-                sizes="(min-width: 768px) 50vw, 100vw"
+                sizes="(min-width: 768px) 33vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/90 via-navy-900/35 to-transparent" />
 
-              <div className="relative z-10 p-7 lg:p-9">
+              <div className="relative z-10 p-7 lg:p-8">
                 <p className="eyebrow text-brand-gold">{t.common.productCount(group.count)}</p>
                 <h3 className="mt-3 font-display text-3xl font-bold text-white lg:text-4xl">
                   {group.name}
                 </h3>
 
-                <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
-                  {group.children.map((c) => (
-                    <li key={c.slug} className="text-sm text-white/70">
-                      {c.name}
-                    </li>
-                  ))}
-                </ul>
+                {/* Nhóm chỉ có 1 danh mục con (ví dụ "Nón") thì không lặp lại tên
+                    — heading ở trên đã đủ rõ, liệt kê lại sẽ thừa và trùng lặp. */}
+                {group.children.length > 1 && (
+                  <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
+                    {group.children.map((c) => (
+                      <li key={c.slug} className="text-sm text-white/70">
+                        {c.name}
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
                 <span className="mt-6 inline-flex items-center gap-2 border-b border-brand-gold pb-1 text-[11px] font-semibold tracking-[0.16em] text-brand-gold uppercase">
                   {t.home.explore}

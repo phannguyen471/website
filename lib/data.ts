@@ -66,13 +66,24 @@ export const brand = brandJson
 export const products = productsJson as Product[]
 export const promotions = promotionsJson as Promotion[]
 
-/** Nhóm cấp 1: "Túi xách" và "Áo nón" */
-export const GROUPS = ["Túi xách", "Áo nón"] as const
+/**
+ * Nhóm cấp 1. "Áo Nón các loại" của site gốc gộp chung áo và nón — hai loại
+ * sản phẩm khác hẳn nhau — nên tách thành hai nhóm riêng: "Áo" và "Nón".
+ */
+export const GROUPS = ["Túi xách", "Áo", "Nón"] as const
+
+/** Slug URL cho mỗi nhóm cấp 1 */
+const GROUP_SLUG: Record<string, string> = {
+  "Túi xách": "tui-xach",
+  Áo: "ao",
+  Nón: "non",
+}
 
 /** Ảnh đại diện cho mỗi nhóm cấp 1 (lấy từ chính sản phẩm của nhóm) */
 const GROUP_COVER: Record<string, string> = {
   "Túi xách": "assets/upload/product/thiet-ke-chua-co-ten-14-4840.png",
-  "Áo nón": "assets/upload/product/0034a3edf76d57330e7c-6778.jpg",
+  Áo: "assets/upload/product/0034a3edf76d57330e7c-6778.jpg",
+  Nón: "assets/upload/product/e90888149175572b0e64-3921.jpg",
 }
 
 export const categories: Category[] = (categoriesJson as Category[]).map((c) => ({
@@ -93,7 +104,7 @@ export const categoryGroups: CategoryGroup[] = GROUPS.map((group) => {
   const children = categories.filter((c) => c.path[1]?.trim() === group)
   return {
     name: group,
-    slug: group === "Túi xách" ? "tui-xach" : "ao-non",
+    slug: GROUP_SLUG[group],
     cover: GROUP_COVER[group],
     count: children.reduce((n, c) => n + c.products.length, 0),
     children,

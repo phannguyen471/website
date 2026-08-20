@@ -159,7 +159,7 @@ Sinh từ thư mục cha bằng `scripts/prep.mjs`:
 |---|---|
 | `data/brand.json` | Thông tin công ty, liên hệ, màu, font, logo, khách hàng, quy trình 6 bước |
 | `data/products.json` | 112 sản phẩm |
-| `data/categories.json` | 4 danh mục (Túi các Loại 52, Áo Nón các loại 30, áo thun 15, Túi xách tay 15) |
+| `data/categories.json` | 9 danh mục trong 3 nhóm — **Túi xách** (69): Balo, Túi du lịch, Túi tote & túi vải, Túi xách tay, Túi đeo vai & đeo chéo, Túi đựng mỹ phẩm · **Áo** (26): Áo thun, Áo Polo & Đồng phục · **Nón** (17). Phân loại lại từ 4 danh mục gốc của site cũ (xem `Việc cần làm tiếp`) |
 | `data/news.json` | 12 bài từ site gốc — 2 bài hiển thị làm Tin tức, 10 bài có breadcrumb "Dịch vụ" bị lọc bỏ (mục Dịch vụ đã gỡ khỏi toàn site) |
 | `data/promotions.json` | 5 sản phẩm giảm giá, parse giá cũ/mới/% từ `raw/uu-dai.html` |
 
@@ -172,3 +172,4 @@ Sinh từ thư mục cha bằng `scripts/prep.mjs`:
 5. **Hai bài tin tức chỉ có video, không có văn bản.** Bản tiếng Anh mới dịch tiêu đề; muốn đầy đủ thì cần phụ đề hoặc mô tả tiếng Anh cho video.
 6. **Ảnh sản phẩm bản gốc không có watermark** — nếu muốn giữ watermark như site cũ thì cần xử lý riêng.
 7. **Bước "Giao hàng" chưa có mô tả gốc.** Quy trình 6 bước trên site gốc bỏ trống bước này; hiện dùng câu tạm — bản tiếng Việt trong `lib/content.ts`, bản tiếng Anh trong `BRAND.process` của `scripts/build-en.mjs`.
+8. **2 sản phẩm xếp tạm vào "Túi du lịch".** "Giá đỡ điện thoại" và "Gối cổ cao su du lịch" vốn nằm lạc trong danh mục "Áo Nón các loại" gốc — không phải áo cũng không phải nón. Khi phân loại lại (xem mục "Danh mục sản phẩm" trong README này), 2 sản phẩm này được xếp vào "Túi du lịch" vì gần nghĩa "phụ kiện đồng hành du lịch" nhất, nhưng đây là lựa chọn tạm — nên cân nhắc tạo danh mục "Phụ kiện" riêng nếu về sau có thêm sản phẩm tương tự.

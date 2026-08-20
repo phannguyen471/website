@@ -50,27 +50,51 @@
    "slug": "bags",
    "name": "Bags"
   },
-  "ao-non": {
-   "slug": "apparel-and-caps",
-   "name": "Apparel & caps"
+  "ao": {
+   "slug": "apparel",
+   "name": "Apparel"
+  },
+  "non": {
+   "slug": "caps",
+   "name": "Caps"
   }
  },
  "categories": {
-  "ao-thun": {
-   "slug": "t-shirts",
-   "name": "T-shirts"
+  "balo": {
+   "slug": "backpacks",
+   "name": "Backpacks"
   },
-  "ao-non-cac-loai": {
-   "slug": "shirts-and-caps",
-   "name": "Shirts & caps"
+  "tui-du-lich": {
+   "slug": "travel-bags",
+   "name": "Travel bags"
   },
-  "tui-cac-loai": {
-   "slug": "bags-and-backpacks",
-   "name": "Bags & backpacks"
+  "tui-tote-tui-vai": {
+   "slug": "totes-and-canvas-bags",
+   "name": "Totes & canvas bags"
   },
   "tui-xach-tay": {
    "slug": "handbags",
    "name": "Handbags"
+  },
+  "tui-deo-vai-deo-cheo": {
+   "slug": "shoulder-and-crossbody-bags",
+   "name": "Shoulder & crossbody bags"
+  },
+  "tui-dung-my-pham": {
+   "slug": "cosmetic-bags",
+   "name": "Cosmetic bags"
+  },
+  "ao-thun": {
+   "slug": "t-shirts",
+   "name": "T-shirts"
+  },
+  "ao-polo-dong-phuc": {
+   "slug": "polo-shirts-and-uniforms",
+   "name": "Polo shirts & uniforms"
+  },
+  "non": {
+   "slug": "caps",
+   "name": "Caps"
   }
  },
  "products": {

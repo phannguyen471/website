@@ -139,8 +139,8 @@ export default function NavClient({ locale, brand, groups }: Props) {
 
                 {/* Mega menu danh mục */}
                 {link.menu && (
-                  <div className="invisible absolute top-full left-1/2 w-[560px] -translate-x-1/2 pt-0 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                    <div className="grid grid-cols-2 gap-x-8 gap-y-6 border border-line bg-white p-7 shadow-xl">
+                  <div className="invisible absolute top-full left-1/2 w-[760px] -translate-x-1/2 pt-0 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                    <div className="grid grid-cols-3 gap-x-8 gap-y-6 border border-line bg-white p-7 shadow-xl">
                       {groups.map((group) => (
                         <div key={group.slug}>
                           <Link
@@ -148,23 +148,30 @@ export default function NavClient({ locale, brand, groups }: Props) {
                             className="eyebrow text-navy-500 hover:text-brand-red"
                           >
                             {group.name}
+                            <span className="ml-1.5 font-normal text-ink-soft/60">
+                              ({group.count})
+                            </span>
                           </Link>
                           <span className="mt-3 block h-px w-8 bg-brand-gold" />
-                          <ul className="mt-3 flex flex-col gap-2">
-                            {group.children.map((child) => (
-                              <li key={child.slug}>
-                                <Link
-                                  href={productsPath(locale, { category: child.slug })}
-                                  className="flex items-baseline justify-between gap-3 text-sm text-ink-soft transition-colors hover:text-brand-red"
-                                >
-                                  <span>{child.name}</span>
-                                  <span className="text-[11px] text-ink-soft/60">
-                                    {child.count}
-                                  </span>
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
+                          {/* Nhóm chỉ có 1 danh mục con (ví dụ "Nón") thì không lặp lại
+                              tên — link ở trên đã đủ, liệt kê lại sẽ thừa. */}
+                          {group.children.length > 1 && (
+                            <ul className="mt-3 flex flex-col gap-2">
+                              {group.children.map((child) => (
+                                <li key={child.slug}>
+                                  <Link
+                                    href={productsPath(locale, { category: child.slug })}
+                                    className="flex items-baseline justify-between gap-3 text-sm text-ink-soft transition-colors hover:text-brand-red"
+                                  >
+                                    <span>{child.name}</span>
+                                    <span className="text-[11px] text-ink-soft/60">
+                                      {child.count}
+                                    </span>
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -281,20 +288,32 @@ export default function NavClient({ locale, brand, groups }: Props) {
                 <div className="pb-4">
                   {groups.map((group) => (
                     <div key={group.slug} className="mb-4">
-                      <p className="eyebrow mb-2 text-navy-500">{group.name}</p>
-                      <ul className="flex flex-col gap-2 border-l border-line pl-3">
-                        {group.children.map((child) => (
-                          <li key={child.slug}>
-                            <Link
-                              href={productsPath(locale, { category: child.slug })}
-                              className="flex justify-between text-sm text-ink-soft"
-                            >
-                              <span>{child.name}</span>
-                              <span className="text-[11px] opacity-60">{child.count}</span>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
+                      <Link
+                        href={productsPath(locale, { group: group.slug })}
+                        className="eyebrow mb-2 block text-navy-500"
+                      >
+                        {group.name}
+                        <span className="ml-1.5 font-normal text-ink-soft/60">
+                          ({group.count})
+                        </span>
+                      </Link>
+                      {/* Nhóm chỉ có 1 danh mục con (ví dụ "Nón") thì không lặp lại
+                          tên — link ở trên đã đủ, liệt kê lại sẽ thừa. */}
+                      {group.children.length > 1 && (
+                        <ul className="flex flex-col gap-2 border-l border-line pl-3">
+                          {group.children.map((child) => (
+                            <li key={child.slug}>
+                              <Link
+                                href={productsPath(locale, { category: child.slug })}
+                                className="flex justify-between text-sm text-ink-soft"
+                              >
+                                <span>{child.name}</span>
+                                <span className="text-[11px] opacity-60">{child.count}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
                     </div>
                   ))}
                 </div>
