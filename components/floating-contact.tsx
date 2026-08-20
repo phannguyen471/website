@@ -30,7 +30,7 @@ export default function FloatingContact({ locale }: { locale: Locale }) {
           aria-label={label}
           className="group flex items-center gap-2 rounded-full border border-line bg-white/95 py-2 pr-3 pl-2 shadow-lg backdrop-blur transition-all hover:border-navy-300"
         >
-          <Icon className="size-8 shrink-0" idSuffix="-floating" />
+          <Icon size={32} className="shrink-0" />
           <span className="max-w-0 overflow-hidden text-xs font-medium whitespace-nowrap text-navy-500 transition-all duration-300 group-hover:max-w-[100px]">
             {label}
           </span>

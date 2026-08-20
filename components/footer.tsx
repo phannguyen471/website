@@ -50,7 +50,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 className="transition-opacity hover:opacity-75"
                 aria-label="Facebook"
               >
-                <IconFacebook className="size-9" />
+                <IconFacebook size={36} />
               </a>
               <a
                 href={brand.social.zalo}
@@ -59,7 +59,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 className="transition-opacity hover:opacity-75"
                 aria-label="Zalo"
               >
-                <IconZalo className="size-9" />
+                <IconZalo size={36} />
               </a>
               <a
                 href={brand.social.messenger}
@@ -68,7 +68,7 @@ export default function Footer({ locale }: { locale: Locale }) {
                 className="transition-opacity hover:opacity-75"
                 aria-label="Messenger"
               >
-                <IconMessenger className="size-9" idSuffix="-footer" />
+                <IconMessenger size={36} />
               </a>
             </div>
           </div>

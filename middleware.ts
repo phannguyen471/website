@@ -55,5 +55,5 @@ function rewrite(request: NextRequest, url: URL, locale: string) {
 
 export const config = {
   // Bỏ qua tài nguyên tĩnh, API và file có phần mở rộng
-  matcher: ["/((?!api|_next/static|_next/image|media|favicon.ico|robots.txt|sitemap.xml).*)"],
+  matcher: ["/((?!api|_next/static|_next/image|media|logo|favicon.ico|robots.txt|sitemap.xml).*)"],
 }
