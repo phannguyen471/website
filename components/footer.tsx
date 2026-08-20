@@ -6,6 +6,7 @@ import type { Locale } from "@/lib/i18n"
 import { path, productsPath } from "@/lib/routes"
 import { media } from "@/lib/utils"
 import { IconMail, IconPhone, IconPin } from "@/components/icons"
+import { IconFacebook, IconMessenger, IconZalo } from "@/components/brand-icons"
 import LanguageSwitcher from "@/components/language-switcher"
 
 export default function Footer({ locale }: { locale: Locale }) {
@@ -46,28 +47,28 @@ export default function Footer({ locale }: { locale: Locale }) {
                 href={brand.social.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex size-9 items-center justify-center border border-white/20 text-xs tracking-wider transition-colors hover:border-brand-gold hover:text-brand-gold"
+                className="transition-opacity hover:opacity-75"
                 aria-label="Facebook"
               >
-                Fb
+                <IconFacebook className="size-9" />
               </a>
               <a
                 href={brand.social.zalo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex size-9 items-center justify-center border border-white/20 text-xs tracking-wider transition-colors hover:border-brand-gold hover:text-brand-gold"
+                className="transition-opacity hover:opacity-75"
                 aria-label="Zalo"
               >
-                Za
+                <IconZalo className="size-9" />
               </a>
               <a
                 href={brand.social.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex size-9 items-center justify-center border border-white/20 text-xs tracking-wider transition-colors hover:border-brand-gold hover:text-brand-gold"
+                className="transition-opacity hover:opacity-75"
                 aria-label="Messenger"
               >
-                Ms
+                <IconMessenger className="size-9" idSuffix="-footer" />
               </a>
             </div>
           </div>
