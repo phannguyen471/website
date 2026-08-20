@@ -54,6 +54,12 @@ function rewrite(request: NextRequest, url: URL, locale: string) {
 }
 
 export const config = {
-  // Bỏ qua tài nguyên tĩnh, API và file có phần mở rộng
-  matcher: ["/((?!api|_next/static|_next/image|media|logo|favicon.ico|robots.txt|sitemap.xml).*)"],
+  /**
+   * Bỏ qua API, asset nội bộ Next.js, và MỌI đường dẫn có phần mở rộng file
+   * (đoạn cuối chứa dấu chấm — ảnh, font, .txt, .xml...). Dùng quy tắc theo
+   * đuôi file thay vì liệt kê từng thư mục tĩnh (`media`, `logo`, `clients`)
+   * để không lặp lại lỗi 404 mỗi khi thêm thư mục ảnh mới mà quên cập nhật
+   * matcher — đã xảy ra 2 lần trước khi đổi sang quy tắc này.
+   */
+  matcher: ["/((?!api|_next/static|_next/image)(?!.*\\.).*)"],
 }
