@@ -159,7 +159,7 @@ Sinh từ thư mục cha bằng `scripts/prep.mjs`:
 |---|---|
 | `data/brand.json` | Thông tin công ty, liên hệ, màu, font, logo, khách hàng, quy trình 6 bước |
 | `data/products.json` | 112 sản phẩm |
-| `data/categories.json` | 15 danh mục trong 4 nhóm — **Túi xách** (67): Balo, Túi du lịch, Túi tote & túi vải, Túi xách tay, Túi đeo vai & đeo chéo, Túi đựng mỹ phẩm · **Áo** (26): Áo thun, Áo polo, Đồng phục, Áo khoác, Áo thể thao · **Nón** (17): Nón kết, Nón tai bèo, Nón thể thao · **Phụ kiện** (2). Phân loại lại từ 4 danh mục gốc của site cũ, dựa theo hình dáng/công năng thật xác nhận qua ảnh sản phẩm (xem `Việc cần làm tiếp`) |
+| `data/categories.json` | 18 danh mục trong 4 nhóm — **Túi xách** (67): Balo, Túi du lịch, Túi tote, Túi rút, Túi phao chần bông, Túi đeo vai, Túi đeo chéo, Túi xách tay, Túi đựng mỹ phẩm · **Áo** (26): Áo thun, Áo polo, Đồng phục, Áo khoác, Áo thể thao · **Nón** (17): Nón kết, Nón tai bèo, Nón thể thao · **Phụ kiện** (2). Phân loại lại từ 4 danh mục gốc của site cũ, dựa theo hình dáng/công năng thật xác nhận qua ảnh sản phẩm — không dùng tên gộp kiểu "X & Y" (xem `Việc cần làm tiếp`) |
 | `data/news.json` | 12 bài từ site gốc — 2 bài hiển thị làm Tin tức, 10 bài có breadcrumb "Dịch vụ" bị lọc bỏ (mục Dịch vụ đã gỡ khỏi toàn site) |
 | `data/promotions.json` | 5 sản phẩm giảm giá, parse giá cũ/mới/% từ `raw/uu-dai.html` |
 
@@ -175,3 +175,5 @@ Sinh từ thư mục cha bằng `scripts/prep.mjs`:
 8. **Nhóm "Phụ kiện" hiện chỉ có 2 sản phẩm.** "Giá đỡ điện thoại" và "Gối cổ cao su du lịch" vốn nằm lạc trong danh mục "Áo Nón các loại" gốc, được tách thành nhóm riêng thay vì gán tạm vào danh mục túi. Nếu catalogue có thêm sản phẩm quà tặng/phụ kiện tương tự (bút, sạc dự phòng, ô dù...), bổ sung trực tiếp vào nhóm này.
 9. **Mã sản phẩm (SKU) là số tự sinh, không phải mã kho thật.** "Mã sản phẩm" gốc trên site cũ chỉ có ở 13/112 sản phẩm và phần lớn (9/13) là văn bản không khớp tên sản phẩm — không phải hệ thống mã chuẩn. Đã sinh lại `PN-001`–`PN-112` cho toàn bộ 112 sản phẩm, đánh số theo thứ tự nhóm → danh mục (xem `attributes["Mã sản phẩm"]` trong `data/products.json`). Nếu công ty có hệ thống mã kho nội bộ riêng, cần thay thế bằng mã thật.
 10. **Danh mục "Áo khoác" hiện chỉ có 1 sản phẩm** ("Áo khoác đủ loại") — tách riêng vì ảnh xác nhận đây là jacket zip, khác hẳn áo polo/đồng phục, không phải vì đủ số lượng để làm danh mục riêng. Tương tự mục 8, nếu catalogue có thêm áo khoác thì danh mục này sẽ đầy đặn hơn tự nhiên.
+11. **Danh mục "Túi rút" hiện chỉ có 1 sản phẩm** (túi rút dây xích, ảnh xác nhận hoàn toàn khác dáng tote) — cùng lý do với mục 8 và 10, tách đúng bản chất chứ chưa đủ số lượng.
+12. **"Combo các sản phẩm"** (`combo-cac-san-pham`) xếp tạm vào "Túi tote" — ảnh cho thấy đây là bộ set nhiều loại túi/balo/khăn khác nhau, không phải một loại túi cụ thể nào. Đây là trường hợp không có danh mục nào thực sự đúng.

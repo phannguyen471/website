@@ -159,23 +159,17 @@
   "path": [
    "Sản phẩm",
    "Túi xách",
-   "Túi tote & túi vải"
+   "Túi tote"
   ],
-  "name": "Túi tote & túi vải",
-  "slug": "tui-tote-tui-vai",
-  "url": "https://phannguyenbags.vn/tui-tote-tui-vai",
+  "name": "Túi tote",
+  "slug": "tui-tote",
+  "url": "https://phannguyenbags.vn/tui-tote",
   "products": [
    {
     "slug": "combo-cac-san-pham",
     "name": "Combo các sản phẩm",
     "price": "Liên hệ",
     "image": "assets/upload/product/e0ca9da2e06b4135187a-9570.jpg"
-   },
-   {
-    "slug": "tui-canvas-co-day-rut",
-    "name": "Túi canvas có dây rút",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/thiet-ke-chua-co-ten-10-2459.png"
    },
    {
     "slug": "tui-canvas-cotton-phoi-coi",
@@ -238,34 +232,10 @@
     "image": "assets/upload/product/213c3bf749a095feccb1-1139.jpg"
    },
    {
-    "slug": "tui-dung-laptop-vai-canvas",
-    "name": "Túi đựng laptop vải canvas",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/laptop-1899.jpg"
-   },
-   {
     "slug": "tui-in-chuyen-vai-poly",
     "name": "Túi in chuyển nhiệt vải poly",
     "price": "Liên hệ",
     "image": "assets/upload/product/ebe2b22928f789a9d0e6-3988.jpg"
-   },
-   {
-    "slug": "tui-phao-chan-bong-2-lop",
-    "name": "Túi phao chần bông 2 lớp",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/ea143961af8d0ed3579c-3206.jpg"
-   },
-   {
-    "slug": "tui-phao-chan-bong-size-lon",
-    "name": "Túi phao chần bông size lớn",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/89a07685e76946371f78-6852.jpg"
-   },
-   {
-    "slug": "tui-phao-chan-bong",
-    "name": "Túi phao chần bông",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/24a3ed85515bf005a94a-9927.jpg"
    },
    {
     "slug": "tui-tote-size-lon-in-chuyen",
@@ -278,6 +248,132 @@
     "name": "Túi tote size lớn",
     "price": "Liên hệ",
     "image": "assets/upload/product/c521169bb87719294066-4283.jpg"
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Túi xách",
+   "Túi rút"
+  ],
+  "name": "Túi rút",
+  "slug": "tui-rut",
+  "url": "https://phannguyenbags.vn/tui-rut",
+  "products": [
+   {
+    "slug": "tui-canvas-co-day-rut",
+    "name": "Túi canvas có dây rút",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/thiet-ke-chua-co-ten-10-2459.png"
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Túi xách",
+   "Túi phao chần bông"
+  ],
+  "name": "Túi phao chần bông",
+  "slug": "tui-phao-chan-bong",
+  "url": "https://phannguyenbags.vn/tui-phao-chan-bong",
+  "products": [
+   {
+    "slug": "tui-chan-bong-deo-cheo",
+    "name": "Túi chần bông đeo chéo",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/tui-chan-bong-we-skincare-3217.jpg"
+   },
+   {
+    "slug": "tui-phao-chan-bong-2-lop",
+    "name": "Túi phao chần bông 2 lớp",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/ea143961af8d0ed3579c-3206.jpg"
+   },
+   {
+    "slug": "tui-phao-chan-bong-deo-cheo",
+    "name": "Túi phao chần bông đeo chéo",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/6e2c95af5b71fa2fa360-9740.jpg"
+   },
+   {
+    "slug": "tui-phao-chan-bong-size-lon",
+    "name": "Túi phao chần bông size lớn",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/89a07685e76946371f78-6852.jpg"
+   },
+   {
+    "slug": "tui-phao-chan-bong",
+    "name": "Túi phao chần bông",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/24a3ed85515bf005a94a-9927.jpg"
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Túi xách",
+   "Túi đeo vai"
+  ],
+  "name": "Túi đeo vai",
+  "slug": "tui-deo-vai",
+  "url": "https://phannguyenbags.vn/tui-deo-vai",
+  "products": [
+   {
+    "slug": "tui-canvas-poly-deo-vai-in-chuyen",
+    "name": "Túi canvas poly đeo vai in chuyển nhiệt",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/bae20c3e7c63df3d8672-4364.jpg"
+   },
+   {
+    "slug": "tui-deo-vai-cao-cap",
+    "name": "Túi đeo vai cao cấp",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/d6f580766db8cce695a9-6169.jpg"
+   },
+   {
+    "slug": "tui-deo-vai-gia-da",
+    "name": "Túi đeo vai giả da",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/63e72b948f4a2e14775b-9066.jpg"
+   },
+   {
+    "slug": "tui-deo-vai-hinh-ban-nguyet",
+    "name": "Túi đeo vai hình bán nguyệt",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/b3db439af8c1279f7ed0-4717.jpg"
+   },
+   {
+    "slug": "tui-deo-vai",
+    "name": "Túi đeo vai",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/f8fa11991c19bd47e408-4297.jpg"
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Túi xách",
+   "Túi đeo chéo"
+  ],
+  "name": "Túi đeo chéo",
+  "slug": "tui-deo-cheo",
+  "url": "https://phannguyenbags.vn/tui-deo-cheo",
+  "products": [
+   {
+    "slug": "tui-deo-cheo",
+    "name": "Túi đeo chéo",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/ab80c3b86a54cb0a9245-3602.jpg"
+   },
+   {
+    "slug": "tui-simili-deo-cheo",
+    "name": "Túi simili đeo chéo",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/411a7342ca8a7bd4229b-8875.jpg"
    }
   ]
  },
@@ -316,6 +412,12 @@
     "image": "assets/upload/product/annotation-2024-04-06-094643-7454.jpg"
    },
    {
+    "slug": "tui-dung-laptop-vai-canvas",
+    "name": "Túi đựng laptop vải canvas",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/laptop-1899.jpg"
+   },
+   {
     "slug": "tui-xach-cac-loai",
     "name": "Túi xách các loại",
     "price": "Liên hệ",
@@ -338,72 +440,6 @@
     "name": "Túi xách tay vải sweed",
     "price": "Liên hệ",
     "image": "assets/upload/product/a9712cb9bf671e394776-9072.jpg"
-   }
-  ]
- },
- {
-  "path": [
-   "Sản phẩm",
-   "Túi xách",
-   "Túi đeo vai & đeo chéo"
-  ],
-  "name": "Túi đeo vai & đeo chéo",
-  "slug": "tui-deo-vai-deo-cheo",
-  "url": "https://phannguyenbags.vn/tui-deo-vai-deo-cheo",
-  "products": [
-   {
-    "slug": "tui-canvas-poly-deo-vai-in-chuyen",
-    "name": "Túi canvas poly đeo vai in chuyển nhiệt",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/bae20c3e7c63df3d8672-4364.jpg"
-   },
-   {
-    "slug": "tui-chan-bong-deo-cheo",
-    "name": "Túi chần bông đeo chéo",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/tui-chan-bong-we-skincare-3217.jpg"
-   },
-   {
-    "slug": "tui-deo-cheo",
-    "name": "Túi đeo chéo",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/ab80c3b86a54cb0a9245-3602.jpg"
-   },
-   {
-    "slug": "tui-deo-vai-cao-cap",
-    "name": "Túi đeo vai cao cấp",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/d6f580766db8cce695a9-6169.jpg"
-   },
-   {
-    "slug": "tui-deo-vai-gia-da",
-    "name": "Túi đeo vai giả da",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/63e72b948f4a2e14775b-9066.jpg"
-   },
-   {
-    "slug": "tui-deo-vai-hinh-ban-nguyet",
-    "name": "Túi đeo vai hình bán nguyệt",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/b3db439af8c1279f7ed0-4717.jpg"
-   },
-   {
-    "slug": "tui-deo-vai",
-    "name": "Túi đeo vai",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/f8fa11991c19bd47e408-4297.jpg"
-   },
-   {
-    "slug": "tui-phao-chan-bong-deo-cheo",
-    "name": "Túi phao chần bông đeo chéo",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/6e2c95af5b71fa2fa360-9740.jpg"
-   },
-   {
-    "slug": "tui-simili-deo-cheo",
-    "name": "Túi simili đeo chéo",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/411a7342ca8a7bd4229b-8875.jpg"
    }
   ]
  },

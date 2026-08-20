@@ -72,17 +72,29 @@
    "slug": "travel-bags",
    "name": "Travel bags"
   },
-  "tui-tote-tui-vai": {
-   "slug": "totes-and-canvas-bags",
-   "name": "Totes & canvas bags"
+  "tui-tote": {
+   "slug": "tote-bags",
+   "name": "Tote bags"
+  },
+  "tui-rut": {
+   "slug": "drawstring-bags",
+   "name": "Drawstring bags"
+  },
+  "tui-phao-chan-bong": {
+   "slug": "quilted-puffer-bags",
+   "name": "Quilted puffer bags"
+  },
+  "tui-deo-vai": {
+   "slug": "shoulder-bags",
+   "name": "Shoulder bags"
+  },
+  "tui-deo-cheo": {
+   "slug": "crossbody-bags",
+   "name": "Crossbody bags"
   },
   "tui-xach-tay": {
    "slug": "handbags",
    "name": "Handbags"
-  },
-  "tui-deo-vai-deo-cheo": {
-   "slug": "shoulder-and-crossbody-bags",
-   "name": "Shoulder & crossbody bags"
   },
   "tui-dung-my-pham": {
    "slug": "cosmetic-bags",
