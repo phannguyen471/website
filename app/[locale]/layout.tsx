@@ -57,9 +57,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       images: [media(brand.identity.hero_banner)],
     },
     icons: {
-      icon: media(brand.identity.logo_header),
-      shortcut: media(brand.identity.logo_header),
-      apple: media(brand.identity.logo_header),
+      icon: [
+        { url: "/favicon/pn-16.png", sizes: "16x16", type: "image/png" },
+        { url: "/favicon/pn-32.png", sizes: "32x32", type: "image/png" },
+        { url: "/favicon/pn-192.png", sizes: "192x192", type: "image/png" },
+      ],
+      shortcut: "/favicon/pn-32.png",
+      apple: "/favicon/pn-180.png",
     },
     alternates: {
       canonical: path(locale),
