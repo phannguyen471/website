@@ -92,13 +92,33 @@
    "slug": "t-shirts",
    "name": "T-shirts"
   },
-  "ao-polo-dong-phuc": {
-   "slug": "polo-shirts-and-uniforms",
-   "name": "Polo shirts & uniforms"
+  "ao-polo": {
+   "slug": "polo-shirts",
+   "name": "Polo shirts"
   },
-  "non": {
-   "slug": "caps",
-   "name": "Caps"
+  "dong-phuc": {
+   "slug": "uniforms",
+   "name": "Uniforms"
+  },
+  "ao-khoac": {
+   "slug": "jackets",
+   "name": "Jackets"
+  },
+  "ao-the-thao": {
+   "slug": "sports-jerseys",
+   "name": "Sports jerseys"
+  },
+  "non-ket": {
+   "slug": "structured-caps",
+   "name": "Structured caps"
+  },
+  "non-tai-beo": {
+   "slug": "bucket-hats",
+   "name": "Bucket hats"
+  },
+  "non-the-thao": {
+   "slug": "sports-caps",
+   "name": "Sports caps"
   },
   "phu-kien": {
    "slug": "accessories",

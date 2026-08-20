@@ -496,6 +496,12 @@
     "image": "assets/upload/product/ao-boi-7898.jpg"
    },
    {
+    "slug": "ao-cotton-in-decal",
+    "name": "Áo cotton in decal",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/fdc9ef56a9df098150ce-5851.jpg"
+   },
+   {
     "slug": "ao-luoi-1-lop",
     "name": "Áo lưới 1 lớp",
     "price": "Liên hệ",
@@ -579,41 +585,17 @@
   "path": [
    "Sản phẩm",
    "Áo",
-   "Áo Polo & Đồng phục"
+   "Áo polo"
   ],
-  "name": "Áo Polo & Đồng phục",
-  "slug": "ao-polo-dong-phuc",
-  "url": "https://phannguyenbags.vn/ao-polo-dong-phuc",
+  "name": "Áo polo",
+  "slug": "ao-polo",
+  "url": "https://phannguyenbags.vn/ao-polo",
   "products": [
    {
     "slug": "ao-ca-sau-poly",
     "name": "Áo cá sấu poly",
     "price": "Liên hệ",
     "image": "assets/upload/product/36ecc5d59255320b6b44-1160.jpg"
-   },
-   {
-    "slug": "ao-cotton-in-decal",
-    "name": "Áo cotton in decal",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/fdc9ef56a9df098150ce-5851.jpg"
-   },
-   {
-    "slug": "ao-dong-phuc",
-    "name": "Áo đồng phục",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/57df301c649cc4c29d8d-3878.jpg"
-   },
-   {
-    "slug": "ao-khoac-du-loai",
-    "name": "Áo khoác đủ loại",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/f53adb0b8c8b2cd5759a-1200.jpg"
-   },
-   {
-    "slug": "ao-luoi-in-chuyen-nhiet",
-    "name": "Áo lưới in chuyển nhiệt",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/220f0116e74f44111d5e-1423.jpg"
    },
    {
     "slug": "ao-polo-du-loai",
@@ -632,18 +614,24 @@
     "name": "Áo polo",
     "price": "Liên hệ",
     "image": "assets/upload/product/75a4bf69ebe94bb712f8-7877.jpg"
-   },
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Áo",
+   "Đồng phục"
+  ],
+  "name": "Đồng phục",
+  "slug": "dong-phuc",
+  "url": "https://phannguyenbags.vn/dong-phuc",
+  "products": [
    {
-    "slug": "ao-youth-in-chuyen",
-    "name": "Áo youth in chuyển nhiệt",
+    "slug": "ao-dong-phuc",
+    "name": "Áo đồng phục",
     "price": "Liên hệ",
-    "image": "assets/upload/product/e29c9378d5f175af2ce0-8989.jpg"
-   },
-   {
-    "slug": "ao-youth",
-    "name": "Áo youth",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/9970e8ecae650e3b5774-1087.jpg"
+    "image": "assets/upload/product/57df301c649cc4c29d8d-3878.jpg"
    },
    {
     "slug": "dong-phuc-mam-non",
@@ -656,12 +644,60 @@
  {
   "path": [
    "Sản phẩm",
-   "Nón",
-   "Nón"
+   "Áo",
+   "Áo khoác"
   ],
-  "name": "Nón",
-  "slug": "non",
-  "url": "https://phannguyenbags.vn/non",
+  "name": "Áo khoác",
+  "slug": "ao-khoac",
+  "url": "https://phannguyenbags.vn/ao-khoac",
+  "products": [
+   {
+    "slug": "ao-khoac-du-loai",
+    "name": "Áo khoác đủ loại",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/f53adb0b8c8b2cd5759a-1200.jpg"
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Áo",
+   "Áo thể thao"
+  ],
+  "name": "Áo thể thao",
+  "slug": "ao-the-thao",
+  "url": "https://phannguyenbags.vn/ao-the-thao",
+  "products": [
+   {
+    "slug": "ao-luoi-in-chuyen-nhiet",
+    "name": "Áo lưới in chuyển nhiệt",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/220f0116e74f44111d5e-1423.jpg"
+   },
+   {
+    "slug": "ao-youth-in-chuyen",
+    "name": "Áo youth in chuyển nhiệt",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/e29c9378d5f175af2ce0-8989.jpg"
+   },
+   {
+    "slug": "ao-youth",
+    "name": "Áo youth",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/9970e8ecae650e3b5774-1087.jpg"
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Nón",
+   "Nón kết"
+  ],
+  "name": "Nón kết",
+  "slug": "non-ket",
+  "url": "https://phannguyenbags.vn/non-ket",
   "products": [
    {
     "slug": "non-in-lua",
@@ -724,6 +760,24 @@
     "image": "assets/upload/product/e36244b6966f37316e7e-6950.jpg"
    },
    {
+    "slug": "non-vai-jean-xanh-nhat",
+    "name": "Nón vải jean xanh nhạt",
+    "price": "Liên hệ",
+    "image": "assets/upload/product/5085b3bc7c65dd3b8474-1218.jpg"
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Nón",
+   "Nón tai bèo"
+  ],
+  "name": "Nón tai bèo",
+  "slug": "non-tai-beo",
+  "url": "https://phannguyenbags.vn/non-tai-beo",
+  "products": [
+   {
     "slug": "non-nu-vai-du-chong-nuoc",
     "name": "Nón nữ vải dù chống nước",
     "price": "Liên hệ",
@@ -740,7 +794,19 @@
     "name": "Nón tai bèo jean",
     "price": "Liên hệ",
     "image": "assets/upload/product/83dabce16038c1669829-5815.jpg"
-   },
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Nón",
+   "Nón thể thao"
+  ],
+  "name": "Nón thể thao",
+  "slug": "non-the-thao",
+  "url": "https://phannguyenbags.vn/non-the-thao",
+  "products": [
    {
     "slug": "non-the-thao-nua-dau",
     "name": "Nón thể thao nửa đầu",
@@ -752,12 +818,6 @@
     "name": "Nón thể thao trắng",
     "price": "Liên hệ",
     "image": "assets/upload/product/cb8d0f0699df388161ce-2229.jpg"
-   },
-   {
-    "slug": "non-vai-jean-xanh-nhat",
-    "name": "Nón vải jean xanh nhạt",
-    "price": "Liên hệ",
-    "image": "assets/upload/product/5085b3bc7c65dd3b8474-1218.jpg"
    },
    {
     "slug": "non-vanh-to-the-thao",

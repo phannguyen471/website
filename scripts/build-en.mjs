@@ -162,8 +162,13 @@ const CATEGORY_NAMES = {
   "tui-deo-vai-deo-cheo": "Shoulder & crossbody bags",
   "tui-dung-my-pham": "Cosmetic bags",
   "ao-thun": "T-shirts",
-  "ao-polo-dong-phuc": "Polo shirts & uniforms",
-  non: "Caps",
+  "ao-polo": "Polo shirts",
+  "dong-phuc": "Uniforms",
+  "ao-khoac": "Jackets",
+  "ao-the-thao": "Sports jerseys",
+  "non-ket": "Structured caps",
+  "non-tai-beo": "Bucket hats",
+  "non-the-thao": "Sports caps",
   "phu-kien": "Accessories",
 }
 
