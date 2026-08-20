@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const t = dict(locale)
   const { brand } = content(locale)
 
-  const article = findArticle(locale, slug, "news")
+  const article = findArticle(locale, slug)
   if (!article) return { title: t.news.notFound }
 
   const description =
@@ -58,7 +58,7 @@ export default async function NewsDetailPage({ params }: Params) {
   const t = dict(locale)
   const { brand, news } = content(locale)
 
-  const article = findArticle(locale, slug, "news")
+  const article = findArticle(locale, slug)
   if (!article) notFound()
 
   const others = news.filter((a) => a.key !== article.key).slice(0, 4)

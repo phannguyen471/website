@@ -6,7 +6,6 @@ import {
   newsArticles as rawNews,
   products as rawProducts,
   promotions as rawPromotions,
-  serviceArticles as rawServices,
   articleDate,
   articleViews,
   type Article,
@@ -253,7 +252,6 @@ export type Content = {
   products: LProduct[]
   promotions: LPromotion[]
   news: LArticle[]
-  services: LArticle[]
 }
 
 const cache = new Map<Locale, Content>()
@@ -285,7 +283,6 @@ export function content(locale: Locale): Content {
       }
     }),
     news: rawNews.map((a) => buildArticle(a, locale)),
-    services: rawServices.map((a) => buildArticle(a, locale)),
   }
 
   cache.set(locale, built)
@@ -313,12 +310,8 @@ export function findGroup(locale: Locale, slug: string): LGroup | undefined {
   return list.find((g) => g.slug === slug) ?? list.find((g) => g.key === slug)
 }
 
-export function findArticle(
-  locale: Locale,
-  slug: string,
-  kind: "news" | "services",
-): LArticle | undefined {
-  const list = content(locale)[kind]
+export function findArticle(locale: Locale, slug: string): LArticle | undefined {
+  const list = content(locale).news
   return list.find((a) => a.slug === slug) ?? list.find((a) => a.key === slug)
 }
 
@@ -348,7 +341,7 @@ export function featuredProducts(locale: Locale, limit = 8): LProduct[] {
 export function slugInLocale(
   key: string,
   target: Locale,
-  kind: "product" | "news" | "services" | "category" | "group",
+  kind: "product" | "news" | "category" | "group",
 ): string {
   if (kind === "product") return content(target).products.find((p) => p.key === key)?.slug ?? key
   if (kind === "category") return content(target).categories.find((c) => c.key === key)?.slug ?? key

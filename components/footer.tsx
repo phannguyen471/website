@@ -11,8 +11,8 @@ import LanguageSwitcher from "@/components/language-switcher"
 
 /**
  * Bố cục 4 cột kiểu macv.com.vn: thương hiệu, Company (trang tĩnh),
- * Products (danh mục), Get in Touch (liên hệ) — không còn cột Dịch vụ
- * riêng; trang /dich-vu vẫn tồn tại, chỉ không liệt kê ở footer nữa.
+ * Products (danh mục), Get in Touch (liên hệ). Mục Dịch vụ đã gỡ khỏi
+ * toàn site — không còn route, nav, hay dữ liệu nào được render ra.
  */
 export default function Footer({ locale }: { locale: Locale }) {
   const t = dict(locale)

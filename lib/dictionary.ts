@@ -12,7 +12,6 @@ const vi = {
       about: "Giới thiệu",
       products: "Sản phẩm",
       promotions: "Ưu đãi",
-      services: "Dịch vụ",
       news: "Tin tức",
       contact: "Liên hệ",
     },
@@ -106,11 +105,6 @@ const vi = {
     promoAll: "Tất cả ưu đãi",
     processEyebrow: "Cách chúng tôi làm việc",
     processTitle: "Quy trình xử lý đơn hàng",
-    servicesEyebrow: "Dịch vụ",
-    servicesTitle: "Không chỉ là quà tặng",
-    servicesLead:
-      "Bên cạnh sản xuất, Phan Nguyễn nhận dịch thuật và dịch sách chuyên ngành tiếng Trung, dẫn khách đi tham quan hoặc tour hội chợ Canton Fair tổ chức hàng năm tại Quảng Châu, dẫn khách đi các chợ sĩ và tham quan nhà máy sản xuất tại Trung Quốc.",
-    servicesCta: "Xem tất cả dịch vụ",
     newsEyebrow: "Tin tức",
     newsTitle: "Bản tin thị trường",
     newsAll: "Tất cả tin tức",
@@ -191,32 +185,6 @@ const vi = {
     relatedEyebrow: "Cùng danh mục",
     relatedTitle: "Sản phẩm liên quan",
     relatedCta: (category: string) => `Xem ${category}`,
-  },
-
-  services: {
-    metaTitle: "Dịch vụ",
-    metaDescription:
-      "Dịch thuật và dịch sách chuyên ngành tiếng Trung, dịch cabin, dẫn khách đi hội chợ Canton Fair, chợ sĩ và tham quan nhà máy sản xuất tại Trung Quốc.",
-    eyebrow: (n: number) => `${n} dịch vụ`,
-    title: "Dịch vụ",
-    lead: "Bên cạnh sản xuất quà tặng, Phan Nguyễn cung cấp dịch thuật tiếng Trung và dẫn đoàn thương mại tại Trung Quốc.",
-    listEyebrow: "Danh mục dịch vụ",
-    listTitle: "Hỗ trợ doanh nghiệp làm việc với thị trường Trung Quốc",
-    listLead:
-      "Dịch thuật, dịch sách chuyên ngành, dịch cabin trực tiếp, dẫn khách đi tour hội chợ Canton Fair tổ chức hàng năm ở Quảng Châu, dẫn khách đi các chợ sĩ và tham quan nhà máy sản xuất.",
-    ctaTitle: "Cần tư vấn dịch vụ phù hợp?",
-    ctaLead: (phone: string) => `Gọi ${phone} hoặc gửi yêu cầu, chúng tôi phản hồi trong 24 giờ.`,
-    ctaButton: "Liên hệ ngay",
-    notFound: "Không tìm thấy dịch vụ",
-    detailMetaDescription: (title: string, phone: string) =>
-      `${title} — dịch vụ do Phan Nguyễn cung cấp. Liên hệ ${phone} để được tư vấn chi tiết.`,
-    detailQuoteLead: "Cần báo giá cho dịch vụ này? Gọi ",
-    detailQuoteOr: " hoặc ",
-    detailQuoteLink: "gửi yêu cầu trực tuyến",
-    otherServices: "Dịch vụ khác",
-    sidebarEyebrow: "Tư vấn nhanh",
-    sidebarLead: "Đội ngũ Phan Nguyễn phản hồi trong 24 giờ làm việc.",
-    sidebarCta: "Gửi yêu cầu",
   },
 
   news: {
@@ -316,7 +284,6 @@ const en: typeof vi = {
       about: "About",
       products: "Products",
       promotions: "Promotions",
-      services: "Services",
       news: "News",
       contact: "Contact",
     },
@@ -410,11 +377,6 @@ const en: typeof vi = {
     promoAll: "All promotions",
     processEyebrow: "How we work",
     processTitle: "Our order process",
-    servicesEyebrow: "Services",
-    servicesTitle: "More than gifts",
-    servicesLead:
-      "Alongside manufacturing, Phan Nguyen offers Chinese translation and specialist book translation, escorts clients on visits and Canton Fair tours held each year in Guangzhou, and guides clients through wholesale markets and factory visits in China.",
-    servicesCta: "View all services",
     newsEyebrow: "News",
     newsTitle: "Market bulletin",
     newsAll: "All news",
@@ -495,33 +457,6 @@ const en: typeof vi = {
     relatedEyebrow: "Same category",
     relatedTitle: "Related products",
     relatedCta: (category: string) => `View ${category}`,
-  },
-
-  services: {
-    metaTitle: "Services",
-    metaDescription:
-      "Chinese translation and specialist book translation, booth interpreting, and escorted visits to the Canton Fair, wholesale markets and manufacturing factories in China.",
-    eyebrow: (n: number) => `${n} services`,
-    title: "Services",
-    lead: "Alongside gift manufacturing, Phan Nguyen provides Chinese translation and trade delegation services in China.",
-    listEyebrow: "Service catalogue",
-    listTitle: "Helping businesses work with the Chinese market",
-    listLead:
-      "Translation, specialist book translation, live booth interpreting, escorted Canton Fair tours held each year in Guangzhou, and guided visits to wholesale markets and manufacturing factories.",
-    ctaTitle: "Need advice on the right service?",
-    ctaLead: (phone: string) =>
-      `Call ${phone} or send us your request — we reply within 24 hours.`,
-    ctaButton: "Contact us",
-    notFound: "Service not found",
-    detailMetaDescription: (title: string, phone: string) =>
-      `${title} — a service provided by Phan Nguyen. Call ${phone} for detailed advice.`,
-    detailQuoteLead: "Need a quote for this service? Call ",
-    detailQuoteOr: " or ",
-    detailQuoteLink: "send a request online",
-    otherServices: "Other services",
-    sidebarEyebrow: "Quick advice",
-    sidebarLead: "The Phan Nguyen team replies within 24 working hours.",
-    sidebarCta: "Send a request",
   },
 
   news: {

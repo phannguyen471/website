@@ -36,7 +36,6 @@ export default async function HomePage({ params }: Params) {
 
   const featured = featuredProducts(locale, 8)
   const latestNews = news.slice(0, 3)
-  const services = content(locale).services
 
   return (
     <>
@@ -336,44 +335,6 @@ export default async function HomePage({ params }: Params) {
             )
           })}
         </ol>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          DỊCH VỤ ĐI KÈM
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="border-y border-line bg-shell py-20 lg:py-24">
-        <div className="container-brand grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16">
-          <div>
-            <p className="eyebrow text-brand-red">{t.home.servicesEyebrow}</p>
-            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-navy-500 md:text-4xl">
-              {t.home.servicesTitle}
-            </h2>
-            <p className="mt-6 text-[15px] leading-[1.85] text-ink-soft">{t.home.servicesLead}</p>
-            <Link
-              href={path(locale, "dich-vu")}
-              className="group mt-8 inline-flex items-center gap-2 text-[11px] font-semibold tracking-[0.16em] text-navy-500 uppercase transition-colors hover:text-brand-red"
-            >
-              {t.home.servicesCta}
-              <IconArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-
-          <ul className="grid gap-px self-start bg-line sm:grid-cols-2">
-            {services.slice(0, 6).map((s) => (
-              <li key={s.slug}>
-                <Link
-                  href={path(locale, "dich-vu", s.slug)}
-                  className="group flex h-full items-start justify-between gap-3 bg-white p-6 transition-colors hover:bg-navy-500"
-                >
-                  <span className="text-[15px] leading-snug font-medium text-ink transition-colors group-hover:text-white">
-                    {s.title}
-                  </span>
-                  <IconArrowUpRight className="mt-0.5 size-4 shrink-0 text-ink-soft transition-colors group-hover:text-brand-gold" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════

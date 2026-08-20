@@ -100,12 +100,12 @@ export const categoryGroups: CategoryGroup[] = GROUPS.map((group) => {
   }
 })
 
-/* ── Tin tức vs Dịch vụ: tách theo breadcrumb của site gốc ── */
+/**
+ * Tin tức: loại các bài "Dịch vụ" của site gốc (dịch thuật, dẫn khách hội
+ * chợ...) — mục Dịch vụ không còn tồn tại trên site mới nên các bài này
+ * vẫn nằm trong data/news.json nhưng không render ở đâu cả.
+ */
 const allArticles = articlesJson as Article[]
-
-export const serviceArticles: Article[] = allArticles.filter((a) =>
-  a.breadcrumb.some((b) => b.trim() === "Dịch vụ"),
-)
 
 export const newsArticles: Article[] = allArticles.filter(
   (a) => !a.breadcrumb.some((b) => b.trim() === "Dịch vụ"),
@@ -172,13 +172,3 @@ export function articleViews(a: Article): string {
   const m = a.meta.match(/([\d.,]+)\s*Lượt xem/i)
   return m ? m[1] : ""
 }
-
-/* ── Điều hướng chính ── */
-export const navLinks = [
-  { href: "/gioi-thieu", label: "Giới thiệu" },
-  { href: "/san-pham", label: "Sản phẩm" },
-  { href: "/uu-dai", label: "Ưu đãi" },
-  { href: "/dich-vu", label: "Dịch vụ" },
-  { href: "/tin-tuc", label: "Tin tức" },
-  { href: "/lien-he", label: "Liên hệ" },
-]

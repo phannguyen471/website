@@ -10,7 +10,6 @@ import { defaultLocale, type Locale } from "@/lib/i18n"
 export const SEGMENTS = {
   "san-pham": { vi: "san-pham", en: "products" },
   "gioi-thieu": { vi: "gioi-thieu", en: "about" },
-  "dich-vu": { vi: "dich-vu", en: "services" },
   "tin-tuc": { vi: "tin-tuc", en: "news" },
   "uu-dai": { vi: "uu-dai", en: "promotions" },
   "lien-he": { vi: "lien-he", en: "contact" },

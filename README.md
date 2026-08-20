@@ -36,7 +36,6 @@ app/
     page.tsx            Trang chủ
     san-pham/           Danh sách (SSR + lọc) và chi tiết sản phẩm
     gioi-thieu/         Giới thiệu, khách hàng, quy trình, giấy chứng nhận
-    dich-vu/            Danh sách + chi tiết 10 dịch vụ
     tin-tuc/            Danh sách + chi tiết bài viết
     uu-dai/             5 sản phẩm đang giảm giá
     lien-he/            Thông tin + bản đồ + form báo giá
@@ -76,7 +75,6 @@ tìm kiếm. Tiếng Anh nằm dưới `/en` với slug tiếng Anh:
 | `/san-pham` | `/en/products` |
 | `/san-pham/tui-tote-size-lon` | `/en/products/large-tote-bag` |
 | `/gioi-thieu` | `/en/about` |
-| `/dich-vu` | `/en/services` |
 | `/tin-tuc` | `/en/news` |
 | `/uu-dai` | `/en/promotions` |
 | `/lien-he` | `/en/contact` |
@@ -162,7 +160,7 @@ Sinh từ thư mục cha bằng `scripts/prep.mjs`:
 | `data/brand.json` | Thông tin công ty, liên hệ, màu, font, logo, khách hàng, quy trình 6 bước |
 | `data/products.json` | 112 sản phẩm |
 | `data/categories.json` | 4 danh mục (Túi các Loại 52, Áo Nón các loại 30, áo thun 15, Túi xách tay 15) |
-| `data/news.json` | 12 bài — tách tự động thành 2 tin tức + 10 dịch vụ theo breadcrumb gốc |
+| `data/news.json` | 12 bài từ site gốc — 2 bài hiển thị làm Tin tức, 10 bài có breadcrumb "Dịch vụ" bị lọc bỏ (mục Dịch vụ đã gỡ khỏi toàn site) |
 | `data/promotions.json` | 5 sản phẩm giảm giá, parse giá cũ/mới/% từ `raw/uu-dai.html` |
 
 ## Việc cần làm tiếp

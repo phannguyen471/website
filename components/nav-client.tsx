@@ -29,7 +29,6 @@ export default function NavClient({ locale, brand, groups }: Props) {
     { href: path(locale, "gioi-thieu"), label: t.nav.links.about },
     { href: path(locale, "san-pham"), label: t.nav.links.products, menu: true },
     { href: path(locale, "uu-dai"), label: t.nav.links.promotions },
-    { href: path(locale, "dich-vu"), label: t.nav.links.services },
     { href: path(locale, "tin-tuc"), label: t.nav.links.news },
     { href: path(locale, "lien-he"), label: t.nav.links.contact },
   ]

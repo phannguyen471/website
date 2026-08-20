@@ -11,7 +11,6 @@ const STATIC_SECTIONS: {
   { changeFrequency: "weekly", priority: 1 },
   { section: "san-pham", changeFrequency: "weekly", priority: 0.9 },
   { section: "gioi-thieu", changeFrequency: "monthly", priority: 0.7 },
-  { section: "dich-vu", changeFrequency: "monthly", priority: 0.7 },
   { section: "uu-dai", changeFrequency: "weekly", priority: 0.7 },
   { section: "tin-tuc", changeFrequency: "weekly", priority: 0.6 },
   { section: "lien-he", changeFrequency: "yearly", priority: 0.6 },
@@ -31,7 +30,6 @@ function alternates(section: Section | undefined, key?: string) {
 function slugFor(locale: Locale, section: Section, key: string): string {
   const c = content(locale)
   if (section === "san-pham") return c.products.find((p) => p.key === key)?.slug ?? key
-  if (section === "dich-vu") return c.services.find((a) => a.key === key)?.slug ?? key
   if (section === "tin-tuc") return c.news.find((a) => a.key === key)?.slug ?? key
   return key
 }
@@ -60,16 +58,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.8,
         alternates: alternates("san-pham", p.key),
-      })
-    }
-
-    for (const s of c.services) {
-      entries.push({
-        url: absolute(locale, "dich-vu", s.slug),
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.5,
-        alternates: alternates("dich-vu", s.key),
       })
     }
 
