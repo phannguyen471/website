@@ -25,10 +25,10 @@ const vi = {
   },
 
   footer: {
+    company: "Công ty",
     products: "Sản phẩm",
-    services: "Dịch vụ",
-    contact: "Liên hệ",
-    viewAll: "Xem tất cả →",
+    keepInTouch: "Kết nối",
+    viewAll: "Xem tất cả sản phẩm →",
     rights: "All rights reserved.",
   },
 
@@ -329,10 +329,10 @@ const en: typeof vi = {
   },
 
   footer: {
+    company: "Company",
     products: "Products",
-    services: "Services",
-    contact: "Contact",
-    viewAll: "View all →",
+    keepInTouch: "Get in Touch",
+    viewAll: "View all products →",
     rights: "All rights reserved.",
   },
 

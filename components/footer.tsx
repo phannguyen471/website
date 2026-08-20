@@ -9,16 +9,19 @@ import { IconMail, IconPhone, IconPin } from "@/components/icons"
 import { IconFacebook, IconMessenger, IconZalo } from "@/components/brand-icons"
 import LanguageSwitcher from "@/components/language-switcher"
 
+/**
+ * Bố cục 4 cột kiểu macv.com.vn: thương hiệu, Company (trang tĩnh),
+ * Products (danh mục), Get in Touch (liên hệ) — không còn cột Dịch vụ
+ * riêng; trang /dich-vu vẫn tồn tại, chỉ không liệt kê ở footer nữa.
+ */
 export default function Footer({ locale }: { locale: Locale }) {
   const t = dict(locale)
-  const { brand, groups, services } = content(locale)
+  const { brand, groups } = content(locale)
   const year = new Date().getFullYear()
 
-  const navLinks = [
+  const companyLinks = [
     { href: path(locale, "gioi-thieu"), label: t.nav.links.about },
-    { href: path(locale, "san-pham"), label: t.nav.links.products },
     { href: path(locale, "uu-dai"), label: t.nav.links.promotions },
-    { href: path(locale, "dich-vu"), label: t.nav.links.services },
     { href: path(locale, "tin-tuc"), label: t.nav.links.news },
     { href: path(locale, "lien-he"), label: t.nav.links.contact },
   ]
@@ -73,7 +76,25 @@ export default function Footer({ locale }: { locale: Locale }) {
             </div>
           </div>
 
-          {/* Danh mục sản phẩm */}
+          {/* Company */}
+          <div className="flex flex-col gap-4 lg:col-span-2">
+            <h3 className="eyebrow text-white">{t.footer.company}</h3>
+            <span className="h-px w-8 bg-brand-gold" />
+            <ul className="flex flex-col gap-2.5">
+              {companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/65 transition-colors hover:text-brand-gold"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Products */}
           <div className="flex flex-col gap-4 lg:col-span-3">
             <h3 className="eyebrow text-white">{t.footer.products}</h3>
             <span className="h-px w-8 bg-brand-gold" />
@@ -90,27 +111,9 @@ export default function Footer({ locale }: { locale: Locale }) {
                     </Link>
                   </li>
                 ))}
-            </ul>
-          </div>
-
-          {/* Dịch vụ + liên kết */}
-          <div className="flex flex-col gap-4 lg:col-span-2">
-            <h3 className="eyebrow text-white">{t.footer.services}</h3>
-            <span className="h-px w-8 bg-brand-gold" />
-            <ul className="flex flex-col gap-2.5">
-              {services.slice(0, 5).map((s) => (
-                <li key={s.slug}>
-                  <Link
-                    href={path(locale, "dich-vu", s.slug)}
-                    className="text-sm text-white/65 transition-colors hover:text-brand-gold"
-                  >
-                    {s.title}
-                  </Link>
-                </li>
-              ))}
               <li>
                 <Link
-                  href={path(locale, "dich-vu")}
+                  href={path(locale, "san-pham")}
                   className="text-sm text-brand-gold/90 transition-colors hover:text-brand-gold"
                 >
                   {t.footer.viewAll}
@@ -119,9 +122,9 @@ export default function Footer({ locale }: { locale: Locale }) {
             </ul>
           </div>
 
-          {/* Liên hệ */}
+          {/* Get in Touch */}
           <div className="flex flex-col gap-4 lg:col-span-3">
-            <h3 className="eyebrow text-white">{t.footer.contact}</h3>
+            <h3 className="eyebrow text-white">{t.footer.keepInTouch}</h3>
             <span className="h-px w-8 bg-brand-gold" />
             <ul className="flex flex-col gap-3.5">
               <li className="flex gap-2.5 text-sm leading-relaxed text-white/65">
@@ -166,20 +169,7 @@ export default function Footer({ locale }: { locale: Locale }) {
           <p className="text-xs text-white/50">
             © {year} {brand.legalName}. {t.footer.rights}
           </p>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
-              {navLinks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="text-xs text-white/50 transition-colors hover:text-brand-gold"
-                >
-                  {l.label}
-                </Link>
-              ))}
-            </nav>
-            <LanguageSwitcher locale={locale} tone="dark" label={t.nav.language} />
-          </div>
+          <LanguageSwitcher locale={locale} tone="dark" label={t.nav.language} />
         </div>
       </div>
     </footer>
