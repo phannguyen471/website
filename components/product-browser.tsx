@@ -49,7 +49,13 @@ export default function ProductBrowser({
     }
 
     const q = deaccent(query.trim())
-    if (q) list = list.filter((p) => deaccent(p.name).includes(q))
+    if (q) {
+      const codeLabel = t.product.attributes["Mã sản phẩm"]
+      list = list.filter((p) => {
+        const code = p.attributes[codeLabel] ?? ""
+        return deaccent(p.name).includes(q) || deaccent(code).includes(q)
+      })
+    }
 
     return list
   }, [products, category, group, query])

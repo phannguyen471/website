@@ -30,7 +30,7 @@ export default function ProductGallery({ images, alt, locale }: Props) {
           fill
           priority
           sizes="(min-width: 1024px) 55vw, 100vw"
-          className="object-cover"
+          className="object-contain"
         />
       </div>
 

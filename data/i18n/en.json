@@ -48,19 +48,23 @@
  "groups": {
   "tui-xach": {
    "slug": "bags",
-   "name": "Bags"
+   "name": "Bags",
+   "description": "Backpacks, totes, travel bags, more — ready for your logo."
   },
   "ao": {
    "slug": "apparel",
-   "name": "Apparel"
+   "name": "Apparel",
+   "description": "T-shirts, polos, uniforms, jackets for the whole team."
   },
   "non": {
    "slug": "caps",
-   "name": "Caps"
+   "name": "Caps",
+   "description": "Caps, bucket hats, sport caps, embroidered to order."
   },
   "phu-kien": {
    "slug": "accessories",
-   "name": "Accessories"
+   "name": "Accessories",
+   "description": "Small extras round out your gift set."
   }
  },
  "categories": {
@@ -593,10 +597,6 @@
   }
  },
  "articles": {
-  "canton-fair-2023": {
-   "slug": "canton-fair-2023",
-   "title": "Canton Fair 2023"
-  },
   "dan-khach-di-hc": {
    "slug": "escorting-clients-to-trade-fairs",
    "title": "Escorting clients to trade fairs"
@@ -637,9 +637,21 @@
    "slug": "translation-services",
    "title": "Translation services"
   },
-  "thanh-toan-qua-long-ban-tay": {
-   "slug": "palm-payment-and-facial-recognition",
-   "title": "Palm payment and facial recognition"
+  "cach-chon-tui-vai-qua-tang-doanh-nghiep": {
+   "slug": "how-to-choose-corporate-gift-tote-bags-for-every-event",
+   "title": "How to choose corporate gift tote bags for every event"
+  },
+  "dong-phuc-cong-ty-in-logo": {
+   "slug": "branded-company-uniforms-a-guide-to-fabric-and-bulk-ordering",
+   "title": "Branded company uniforms: a guide to fabric and bulk ordering"
+  },
+  "non-in-logo-thuong-hieu-chon-loai-nao": {
+   "slug": "branded-caps-structured-cap-bucket-hat-or-sports-cap",
+   "title": "Branded caps: structured cap, bucket hat, or sports cap?"
+  },
+  "luu-y-khi-in-logo-len-qua-tang-doanh-nghiep": {
+   "slug": "5-tips-for-printing-your-logo-on-corporate-gifts-without-fading-or-smudging",
+   "title": "5 tips for printing your logo on corporate gifts without fading or smudging"
   }
  }
 }

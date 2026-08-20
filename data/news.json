@@ -1,239 +1,276 @@
 [
- {
-  "slug": "canton-fair-2023",
-  "url": "https://phannguyenbags.vn/canton-fair-2023",
-  "title": "Canton Fair 2023",
-  "title_tag": "Canton Fair 2023",
-  "meta": "29/05/2024 01:57 PM 391 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Tin tức"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-4614.jpg",
-  "banner_local": "assets/upload/photo/1-4614.jpg",
-  "content_html": "<div class=\"content-main content-text w-clear content-text\" id=\"toc-content\"><p>\n<video controls=\"controls\" height=\"720\" preload=\"metadata\" src=\"https://phannguyenbags.vn/upload/filemanager/files/H%C3%ACnh%20%E1%BA%A3nh%20qu%E1%BA%A7n%20%C3%A1o/1371234088471330267.mp4\" width=\"1226\"> </video>\n</p>\n</div>",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [
-   "https://phannguyenbags.vn/upload/filemanager/files/H%C3%ACnh%20%E1%BA%A3nh%20qu%E1%BA%A7n%20%C3%A1o/1371234088471330267.mp4"
-  ],
-  "videos_local": [
-   "assets/videos/1371234088471330267.mp4"
-  ]
- },
- {
-  "slug": "dan-khach-di-hc",
-  "url": "https://phannguyenbags.vn/dan-khach-di-hc",
-  "title": "Dẫn khách đi HC",
-  "title_tag": "Dẫn khách đi HC",
-  "meta": "29/05/2024 09:39 AM 137 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "dan-khach-di-hoi-cho-tq",
-  "url": "https://phannguyenbags.vn/dan-khach-di-hoi-cho-tq",
-  "title": "Dẫn khách đi hội chợ TQ",
-  "title_tag": "Dẫn khách đi hội chợ TQ",
-  "meta": "29/05/2024 09:36 AM 145 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "dan-khach-di-nha-may-san-xuat",
-  "url": "https://phannguyenbags.vn/dan-khach-di-nha-may-san-xuat",
-  "title": "Dẫn khách đi nhà máy sản xuất",
-  "title_tag": "Dẫn khách đi nhà máy sản xuất",
-  "meta": "29/05/2024 09:38 AM 132 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "dich-cac-loai-sach",
-  "url": "https://phannguyenbags.vn/dich-cac-loai-sach",
-  "title": "Dịch các loại sách",
-  "title_tag": "Dịch các loại sách",
-  "meta": "29/05/2024 09:41 AM 153 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "dich-sach",
-  "url": "https://phannguyenbags.vn/dich-sach",
-  "title": "Dịch sách",
-  "title_tag": "Dịch sách",
-  "meta": "29/05/2024 09:40 AM 123 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "dich-sach-tu-viet-sang-trung",
-  "url": "https://phannguyenbags.vn/dich-sach-tu-viet-sang-trung",
-  "title": "Dịch sách từ Việt sang Trung",
-  "title_tag": "Dịch sách từ Việt sang Trung",
-  "meta": "29/05/2024 02:50 PM 138 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "dich-truc-tiep",
-  "url": "https://phannguyenbags.vn/dich-truc-tiep",
-  "title": "Dịch trực tiếp",
-  "title_tag": "Dịch trực tiếp",
-  "meta": "29/05/2024 09:36 AM 127 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "dich-truyen",
-  "url": "https://phannguyenbags.vn/dich-truyen",
-  "title": "Dịch truyện",
-  "title_tag": "Dịch truyện",
-  "meta": "29/05/2024 09:41 AM 132 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "dich-vu-dich-cabin",
-  "url": "https://phannguyenbags.vn/dich-vu-dich-cabin",
-  "title": "Dịch vụ dịch cabin",
-  "title_tag": "Dịch vụ dịch cabin",
-  "meta": "29/05/2024 09:37 AM 138 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "dich-vu-dich-thuat",
-  "url": "https://phannguyenbags.vn/dich-vu-dich-thuat",
-  "title": "Dịch vụ dịch thuật",
-  "title_tag": "Dịch vụ dịch thuật",
-  "meta": "29/05/2024 09:35 AM 128 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Dịch vụ"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
-  "banner_local": "assets/upload/photo/1-5613.jpg",
-  "content_html": "",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [],
-  "videos_local": []
- },
- {
-  "slug": "thanh-toan-qua-long-ban-tay",
-  "url": "https://phannguyenbags.vn/thanh-toan-qua-long-ban-tay",
-  "title": "Thanh toán \"qua lòng bàn tay\" và nhận diện khuôn mặt",
-  "title_tag": "Thanh toán \"qua lòng bàn tay\" và nhận diện khuôn mặt",
-  "meta": "01/06/2024 10:12 AM 378 Lượt xem",
-  "breadcrumb": [
-   "Trang chủ",
-   "Tin tức",
-   "Tin tức nổi bật"
-  ],
-  "banner": "https://phannguyenbags.vn/upload/photo/1-4614.jpg",
-  "banner_local": "assets/upload/photo/1-4614.jpg",
-  "content_html": "<div class=\"content-main content-text w-clear content-text\" id=\"toc-content\"><p>\n<video controls=\"controls\" height=\"576\" preload=\"metadata\" src=\"https://phannguyenbags.vn/upload/filemanager/files/H%C3%ACnh%20%E1%BA%A3nh%20qu%E1%BA%A7n%20%C3%A1o/202f7173c177e06335ece6e5cbc85432.mp4\" width=\"1024\"> </video>\n</p>\n</div>",
-  "content_text": "",
-  "images": [],
-  "images_local": [],
-  "videos": [
-   "https://phannguyenbags.vn/upload/filemanager/files/H%C3%ACnh%20%E1%BA%A3nh%20qu%E1%BA%A7n%20%C3%A1o/202f7173c177e06335ece6e5cbc85432.mp4"
-  ],
-  "videos_local": [
-   "assets/videos/202f7173c177e06335ece6e5cbc85432.mp4"
-  ]
- }
+  {
+    "slug": "dan-khach-di-hc",
+    "url": "https://phannguyenbags.vn/dan-khach-di-hc",
+    "title": "Dẫn khách đi HC",
+    "title_tag": "Dẫn khách đi HC",
+    "meta": "29/05/2024 09:39 AM 137 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dan-khach-di-hoi-cho-tq",
+    "url": "https://phannguyenbags.vn/dan-khach-di-hoi-cho-tq",
+    "title": "Dẫn khách đi hội chợ TQ",
+    "title_tag": "Dẫn khách đi hội chợ TQ",
+    "meta": "29/05/2024 09:36 AM 145 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dan-khach-di-nha-may-san-xuat",
+    "url": "https://phannguyenbags.vn/dan-khach-di-nha-may-san-xuat",
+    "title": "Dẫn khách đi nhà máy sản xuất",
+    "title_tag": "Dẫn khách đi nhà máy sản xuất",
+    "meta": "29/05/2024 09:38 AM 132 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dich-cac-loai-sach",
+    "url": "https://phannguyenbags.vn/dich-cac-loai-sach",
+    "title": "Dịch các loại sách",
+    "title_tag": "Dịch các loại sách",
+    "meta": "29/05/2024 09:41 AM 153 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dich-sach",
+    "url": "https://phannguyenbags.vn/dich-sach",
+    "title": "Dịch sách",
+    "title_tag": "Dịch sách",
+    "meta": "29/05/2024 09:40 AM 123 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dich-sach-tu-viet-sang-trung",
+    "url": "https://phannguyenbags.vn/dich-sach-tu-viet-sang-trung",
+    "title": "Dịch sách từ Việt sang Trung",
+    "title_tag": "Dịch sách từ Việt sang Trung",
+    "meta": "29/05/2024 02:50 PM 138 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dich-truc-tiep",
+    "url": "https://phannguyenbags.vn/dich-truc-tiep",
+    "title": "Dịch trực tiếp",
+    "title_tag": "Dịch trực tiếp",
+    "meta": "29/05/2024 09:36 AM 127 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dich-truyen",
+    "url": "https://phannguyenbags.vn/dich-truyen",
+    "title": "Dịch truyện",
+    "title_tag": "Dịch truyện",
+    "meta": "29/05/2024 09:41 AM 132 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dich-vu-dich-cabin",
+    "url": "https://phannguyenbags.vn/dich-vu-dich-cabin",
+    "title": "Dịch vụ dịch cabin",
+    "title_tag": "Dịch vụ dịch cabin",
+    "meta": "29/05/2024 09:37 AM 138 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dich-vu-dich-thuat",
+    "url": "https://phannguyenbags.vn/dich-vu-dich-thuat",
+    "title": "Dịch vụ dịch thuật",
+    "title_tag": "Dịch vụ dịch thuật",
+    "meta": "29/05/2024 09:35 AM 128 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Dịch vụ"
+    ],
+    "banner": "https://phannguyenbags.vn/upload/photo/1-5613.jpg",
+    "banner_local": "assets/upload/photo/1-5613.jpg",
+    "content_html": "",
+    "content_text": "",
+    "images": [],
+    "images_local": [],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "cach-chon-tui-vai-qua-tang-doanh-nghiep",
+    "url": "/tin-tuc/cach-chon-tui-vai-qua-tang-doanh-nghiep",
+    "title": "Cách chọn túi vải quà tặng doanh nghiệp phù hợp cho từng sự kiện",
+    "title_tag": "Cách chọn túi vải quà tặng doanh nghiệp phù hợp cho từng sự kiện",
+    "meta": "21/08/2026 09:00 AM 186 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Tin tức"
+    ],
+    "banner": "",
+    "banner_local": "assets/upload/product/annotation-2024-04-06-094713-5356.jpg",
+    "content_html": "<p>Túi vải là một trong những món quà tặng doanh nghiệp được ưa chuộng nhất hiện nay nhờ chi phí hợp lý, dễ in logo và có thể tái sử dụng lâu dài — mỗi lần khách hàng mang túi ra đường cũng là một lần thương hiệu được nhắc đến. Tuy nhiên, không phải loại túi vải nào cũng phù hợp với mọi sự kiện. Bài viết dưới đây giúp bạn chọn đúng loại túi cho từng mục đích sử dụng.</p>\n\n<h2>Túi tote — lựa chọn an toàn cho hầu hết sự kiện</h2>\n<p>Túi tote dáng đứng, quai xách chắc chắn, diện tích in logo rộng nên gần như phù hợp với mọi loại sự kiện: hội nghị khách hàng, khai trương, hội chợ triển lãm hay quà tặng cuối năm. Đây cũng là dòng túi có nhiều lựa chọn về kích thước và chất liệu vải nhất tại Phan Nguyễn, từ canvas dày dặn đến vải cotton mềm nhẹ. Xem các mẫu <a href=\"/san-pham?danh-muc=tui-tote\">túi tote</a> đang có.</p>\n\n<h2>Túi rút — gọn nhẹ, hợp quà tặng số lượng lớn</h2>\n<p>Với các chương trình phát quà số lượng lớn như hội thảo, sự kiện thể thao hay quà tặng học sinh — sinh viên, túi rút là lựa chọn tối ưu vì gọn, nhẹ, chi phí sản xuất thấp hơn túi tote mà vẫn in logo rõ nét. Tham khảo thêm <a href=\"/san-pham?danh-muc=tui-rut\">túi rút</a>.</p>\n\n<h2>Túi phao chần bông — quà tặng cao cấp, mùa lạnh</h2>\n<p>Nếu doanh nghiệp muốn tặng những món quà có giá trị cảm nhận cao hơn, đặc biệt vào dịp cuối năm hoặc cho thị trường phía Bắc, túi phao chần bông là lựa chọn nổi bật nhờ form dáng phồng, bắt mắt và cảm giác ấm áp, sang trọng. Xem mẫu <a href=\"/san-pham?danh-muc=tui-phao-chan-bong\">túi phao chần bông</a>.</p>\n\n<h2>Túi đeo vai và túi đeo chéo — tiện dụng cho quà tặng cá nhân hoá</h2>\n<p>Với các chương trình khách hàng thân thiết hoặc quà tặng nhân viên, <a href=\"/san-pham?danh-muc=tui-deo-vai\">túi đeo vai</a> và <a href=\"/san-pham?danh-muc=tui-deo-cheo\">túi đeo chéo</a> mang lại cảm giác cá nhân hoá cao hơn, phù hợp sử dụng hàng ngày nên tuổi thọ nhắc nhớ thương hiệu cũng dài hơn.</p>\n\n<h2>Lưu ý khi đặt in logo lên túi vải</h2>\n<p>Mỗi chất liệu vải phù hợp với một kỹ thuật in khác nhau — vải canvas dày hợp in lụa hoặc thêu, vải cotton mỏng hợp in chuyển nhiệt. Trước khi sản xuất số lượng lớn, nên yêu cầu làm mẫu để kiểm tra độ bám màu và vị trí logo cho chuẩn.</p>\n\n<p>Phan Nguyễn nhận thiết kế, làm mẫu và sản xuất túi vải quà tặng doanh nghiệp theo yêu cầu, cam kết giao hàng đúng hạn cho các đơn số lượng lớn. Xem toàn bộ <a href=\"/san-pham\">sản phẩm túi xách</a> hoặc <a href=\"/lien-he\">liên hệ để được báo giá nhanh</a>.</p>",
+    "content_text": "Túi tote, túi rút hay túi phao chần bông — mỗi loại túi vải quà tặng doanh nghiệp phù hợp một mục đích khác nhau. Hướng dẫn chọn túi từ Phan Nguyễn.",
+    "images": [],
+    "images_local": [
+      "assets/upload/product/annotation-2024-04-06-094713-5356.jpg"
+    ],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "dong-phuc-cong-ty-in-logo",
+    "url": "/tin-tuc/dong-phuc-cong-ty-in-logo",
+    "title": "Đồng phục công ty in logo: hướng dẫn chọn chất liệu và đặt may số lượng lớn",
+    "title_tag": "Đồng phục công ty in logo: hướng dẫn chọn chất liệu và đặt may số lượng lớn",
+    "meta": "21/08/2026 09:15 AM 142 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Tin tức"
+    ],
+    "banner": "",
+    "banner_local": "assets/upload/product/57df301c649cc4c29d8d-3878.jpg",
+    "content_html": "<p>Đồng phục không chỉ giúp nhân viên trông chuyên nghiệp mà còn là kênh nhận diện thương hiệu âm thầm nhưng hiệu quả — đặc biệt với các công ty có đội ngũ tiếp xúc trực tiếp khách hàng. Để đặt may đồng phục công ty in logo đúng nhu cầu, có vài điều nên cân nhắc trước khi chọn mẫu.</p>\n\n<h2>Xác định đúng loại trang phục cho từng bộ phận</h2>\n<p>Không phải phòng ban nào cũng cần cùng một kiểu đồng phục. Nhân viên văn phòng, lễ tân thường hợp với <a href=\"/san-pham?danh-muc=ao-polo\">áo polo</a> lịch sự; đội ngũ sản xuất, kỹ thuật cần <a href=\"/san-pham?danh-muc=dong-phuc\">đồng phục</a> bền, thoải mái khi vận động; sự kiện ngoài trời, mùa lạnh có thể cần thêm <a href=\"/san-pham?danh-muc=ao-khoac\">áo khoác</a> đồng bộ.</p>\n\n<h2>Chọn chất liệu vải phù hợp môi trường làm việc</h2>\n<p>Vải cotton thấm hút mồ hôi tốt, phù hợp môi trường văn phòng máy lạnh hoặc làm việc trong nhà. Với đội ngũ vận động nhiều, nên ưu tiên vải thun lạnh hoặc các dòng <a href=\"/san-pham?danh-muc=ao-the-thao\">áo thể thao</a> co giãn, khô nhanh.</p>\n\n<h2>Vị trí in/thêu logo ảnh hưởng đến cảm nhận thương hiệu</h2>\n<p>Logo in ở ngực trái tạo cảm giác chuyên nghiệp, kín đáo; logo lớn ở lưng phù hợp đồng phục sự kiện, cần độ nhận diện xa. Kỹ thuật thêu bền hơn theo thời gian, trong khi in decal hoặc in chuyển nhiệt phù hợp logo nhiều màu, chi tiết nhỏ.</p>\n\n<h2>Quy trình đặt may số lượng lớn tại Phan Nguyễn</h2>\n<p>Với đơn hàng đồng phục số lượng lớn, Phan Nguyễn luôn làm mẫu trước khi vào chuyền sản xuất để khách hàng duyệt form dáng, màu vải và vị trí in trước khi sản xuất đại trà, tránh sai sót phải sửa lại toàn bộ đơn hàng.</p>\n\n<p>Xem các mẫu <a href=\"/san-pham?danh-muc=dong-phuc\">đồng phục</a>, <a href=\"/san-pham?danh-muc=ao-polo\">áo polo</a> đang có hoặc <a href=\"/lien-he\">liên hệ để được tư vấn chất liệu và báo giá theo số lượng</a>.</p>",
+    "content_text": "Chọn đồng phục công ty in logo cần cân nhắc chất liệu vải, vị trí in và kỹ thuật in phù hợp từng bộ phận. Hướng dẫn đặt may số lượng lớn từ Phan Nguyễn.",
+    "images": [],
+    "images_local": [
+      "assets/upload/product/57df301c649cc4c29d8d-3878.jpg"
+    ],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "non-in-logo-thuong-hieu-chon-loai-nao",
+    "url": "/tin-tuc/non-in-logo-thuong-hieu-chon-loai-nao",
+    "title": "Nón in logo thương hiệu: nón kết, nón tai bèo hay nón thể thao?",
+    "title_tag": "Nón in logo thương hiệu: nón kết, nón tai bèo hay nón thể thao?",
+    "meta": "21/08/2026 09:30 AM 121 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Tin tức"
+    ],
+    "banner": "",
+    "banner_local": "assets/upload/product/a5291280c15960073948-1321.jpg",
+    "content_html": "<p>Nón là món quà tặng doanh nghiệp nhỏ gọn nhưng hiệu quả nhận diện cao, vì diện tích in logo ở phía trước luôn dễ nhìn thấy khi sử dụng ngoài trời. Ba dòng nón phổ biến nhất hiện nay là nón kết, nón tai bèo và nón thể thao — mỗi loại phù hợp một đối tượng và mục đích khác nhau.</p>\n\n<h2>Nón kết — lựa chọn phổ biến nhất</h2>\n<p><a href=\"/san-pham?danh-muc=non-ket\">Nón kết</a> có form cứng cáp, phần trước rộng rãi để in logo hoặc thêu, phù hợp làm quà tặng sự kiện, hội chợ, khai trương hoặc đồng phục nhân viên bán hàng, PG/PB.</p>\n\n<h2>Nón tai bèo — phù hợp sự kiện ngoài trời, du lịch</h2>\n<p><a href=\"/san-pham?danh-muc=non-tai-beo\">Nón tai bèo</a> che nắng toàn bộ vùng đầu và cổ, thường được chọn làm quà tặng cho các chương trình team building, tour du lịch doanh nghiệp hoặc sự kiện ngoài trời kéo dài cả ngày.</p>\n\n<h2>Nón thể thao — cho các giải chạy, sự kiện vận động</h2>\n<p><a href=\"/san-pham?danh-muc=non-the-thao\">Nón thể thao</a> thường dùng chất liệu nhẹ, thoáng khí, thấm hút mồ hôi tốt — phù hợp làm quà tặng cho giải chạy, sự kiện thể thao doanh nghiệp hoặc đồng phục đội ngũ vận động viên phong trào.</p>\n\n<h2>Chọn kỹ thuật in phù hợp với từng loại nón</h2>\n<p>Logo đơn giản, ít màu nên chọn thêu để giữ độ bền lâu dài qua nhiều lần giặt. Logo nhiều màu, chi tiết phức tạp phù hợp hơn với in lụa hoặc in decal chuyển nhiệt.</p>\n\n<p>Phan Nguyễn nhận làm mẫu nón in logo theo yêu cầu trước khi sản xuất số lượng lớn, đảm bảo đúng màu, đúng form trước khi giao hàng. Xem thêm <a href=\"/san-pham?danh-muc=non-ket\">các mẫu nón</a> hoặc <a href=\"/lien-he\">liên hệ báo giá</a>.</p>",
+    "content_text": "Nón kết, nón tai bèo hay nón thể thao — mỗi loại nón in logo thương hiệu phù hợp một mục đích khác nhau. Hướng dẫn chọn nón quà tặng từ Phan Nguyễn.",
+    "images": [],
+    "images_local": [
+      "assets/upload/product/a5291280c15960073948-1321.jpg"
+    ],
+    "videos": [],
+    "videos_local": []
+  },
+  {
+    "slug": "luu-y-khi-in-logo-len-qua-tang-doanh-nghiep",
+    "url": "/tin-tuc/luu-y-khi-in-logo-len-qua-tang-doanh-nghiep",
+    "title": "5 lưu ý khi in logo lên quà tặng doanh nghiệp để không phai màu, không lem",
+    "title_tag": "5 lưu ý khi in logo lên quà tặng doanh nghiệp để không phai màu, không lem",
+    "meta": "21/08/2026 09:45 AM 97 Lượt xem",
+    "breadcrumb": [
+      "Trang chủ",
+      "Tin tức"
+    ],
+    "banner": "",
+    "banner_local": "assets/upload/product/fdc9ef56a9df098150ce-5851.jpg",
+    "content_html": "<p>In logo là bước quan trọng nhất khi làm quà tặng doanh nghiệp — logo in đẹp, bền màu giúp thương hiệu trông chuyên nghiệp; ngược lại, logo lem, bong tróc sau vài lần giặt hoặc sử dụng sẽ gây phản tác dụng. Dưới đây là 5 lưu ý giúp hạn chế rủi ro này.</p>\n\n<h2>1. Chọn kỹ thuật in phù hợp với chất liệu sản phẩm</h2>\n<p>Vải cotton, canvas hợp với in lụa hoặc in chuyển nhiệt; vải dù, vải poly hợp hơn với in decal hoặc ép nhiệt. Chọn sai kỹ thuật cho chất liệu là nguyên nhân phổ biến nhất khiến logo nhanh bong, phai màu.</p>\n\n<h2>2. Luôn yêu cầu làm mẫu trước khi sản xuất đại trà</h2>\n<p>Một mẫu thử giúp kiểm tra được độ bám màu, độ nét của logo và vị trí in trên thực tế, tránh trường hợp cả lô hàng lớn bị lỗi giống nhau mà không thể sửa kịp trước ngày giao.</p>\n\n<h2>3. Cân nhắc số lượng màu trong logo</h2>\n<p>Logo càng nhiều màu, chi tiết càng nhỏ thì kỹ thuật in càng phức tạp và chi phí càng cao. Với đơn hàng số lượng lớn, nên cân nhắc phiên bản logo đơn giản hơn để vừa tiết kiệm chi phí vừa đảm bảo độ bền khi in.</p>\n\n<h2>4. Chú ý vị trí in trên từng loại sản phẩm</h2>\n<p>Vị trí in cần tránh các đường may, khoá kéo hoặc nếp gấp — những khu vực này khiến logo dễ bị nứt, lệch hình khi sử dụng lâu dài. Vị trí in đẹp còn giúp logo hiển thị rõ ràng dù sản phẩm được gấp gọn khi trưng bày.</p>\n\n<h2>5. Hướng dẫn khách hàng cách bảo quản sau khi nhận hàng</h2>\n<p>Với các sản phẩm có in logo, nên giặt bằng tay hoặc chế độ nhẹ, tránh giặt chung với vật dụng có khoá kéo, tránh phơi trực tiếp dưới nắng gắt để giữ màu in bền lâu.</p>\n\n<p>Tại Phan Nguyễn, mọi đơn hàng in logo đều được làm mẫu duyệt trước khi vào sản xuất số lượng lớn, giúp hạn chế tối đa rủi ro lem màu hay sai lệch thiết kế. Xem <a href=\"/san-pham\">sản phẩm có thể in logo</a> hoặc <a href=\"/lien-he\">liên hệ để được tư vấn kỹ thuật in phù hợp</a>.</p>",
+    "content_text": "In logo lên quà tặng doanh nghiệp dễ bị phai màu, bong tróc nếu chọn sai kỹ thuật in. 5 lưu ý giúp logo bền đẹp lâu dài từ Phan Nguyễn.",
+    "images": [],
+    "images_local": [
+      "assets/upload/product/fdc9ef56a9df098150ce-5851.jpg"
+    ],
+    "videos": [],
+    "videos_local": []
+  }
 ]

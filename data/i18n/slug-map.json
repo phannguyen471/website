@@ -128,7 +128,6 @@
   "tui-xach": "bags",
   "ao": "apparel",
   "non": "caps",
-  "canton-fair-2023": "canton-fair-2023",
   "dan-khach-di-hc": "escorting-clients-to-trade-fairs",
   "dan-khach-di-hoi-cho-tq": "escorting-clients-to-trade-fairs-in-china",
   "dan-khach-di-nha-may-san-xuat": "factory-visit-escort-service",
@@ -139,7 +138,10 @@
   "dich-truyen": "fiction-and-comic-translation",
   "dich-vu-dich-cabin": "simultaneous-booth-interpreting",
   "dich-vu-dich-thuat": "translation-services",
-  "thanh-toan-qua-long-ban-tay": "palm-payment-and-facial-recognition"
+  "cach-chon-tui-vai-qua-tang-doanh-nghiep": "how-to-choose-corporate-gift-tote-bags-for-every-event",
+  "dong-phuc-cong-ty-in-logo": "branded-company-uniforms-a-guide-to-fabric-and-bulk-ordering",
+  "non-in-logo-thuong-hieu-chon-loai-nao": "branded-caps-structured-cap-bucket-hat-or-sports-cap",
+  "luu-y-khi-in-logo-len-qua-tang-doanh-nghiep": "5-tips-for-printing-your-logo-on-corporate-gifts-without-fading-or-smudging"
  },
  "en->vi": {
   "tank-top": "ao-3-lo",
@@ -275,7 +277,6 @@
   "bags": "tui-xach",
   "apparel": "ao",
   "caps": "non",
-  "canton-fair-2023": "canton-fair-2023",
   "escorting-clients-to-trade-fairs": "dan-khach-di-hc",
   "escorting-clients-to-trade-fairs-in-china": "dan-khach-di-hoi-cho-tq",
   "factory-visit-escort-service": "dan-khach-di-nha-may-san-xuat",
@@ -286,6 +287,9 @@
   "fiction-and-comic-translation": "dich-truyen",
   "simultaneous-booth-interpreting": "dich-vu-dich-cabin",
   "translation-services": "dich-vu-dich-thuat",
-  "palm-payment-and-facial-recognition": "thanh-toan-qua-long-ban-tay"
+  "how-to-choose-corporate-gift-tote-bags-for-every-event": "cach-chon-tui-vai-qua-tang-doanh-nghiep",
+  "branded-company-uniforms-a-guide-to-fabric-and-bulk-ordering": "dong-phuc-cong-ty-in-logo",
+  "branded-caps-structured-cap-bucket-hat-or-sports-cap": "non-in-logo-thuong-hieu-chon-loai-nao",
+  "5-tips-for-printing-your-logo-on-corporate-gifts-without-fading-or-smudging": "luu-y-khi-in-logo-len-qua-tang-doanh-nghiep"
  }
 }

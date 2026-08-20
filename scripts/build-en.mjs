@@ -182,6 +182,13 @@ const GROUP_NAMES = {
   "phu-kien": "Accessories",
 }
 
+const GROUP_DESCRIPTIONS = {
+  "tui-xach": "Backpacks, totes, travel bags, more — ready for your logo.",
+  ao: "T-shirts, polos, uniforms, jackets for the whole team.",
+  non: "Caps, bucket hats, sport caps, embroidered to order.",
+  "phu-kien": "Small extras round out your gift set.",
+}
+
 /* ── Bài viết (tin tức + dịch vụ) ─────────────────────────────────── */
 const ARTICLE_TITLES = {
   "canton-fair-2023": "Canton Fair 2023",
@@ -195,7 +202,10 @@ const ARTICLE_TITLES = {
   "dich-truyen": "Fiction and comic translation",
   "dich-vu-dich-cabin": "Simultaneous booth interpreting",
   "dich-vu-dich-thuat": "Translation services",
-  "thanh-toan-qua-long-ban-tay": "Palm payment and facial recognition",
+  "cach-chon-tui-vai-qua-tang-doanh-nghiep": "How to choose corporate gift tote bags for every event",
+  "dong-phuc-cong-ty-in-logo": "Branded company uniforms: a guide to fabric and bulk ordering",
+  "non-in-logo-thuong-hieu-chon-loai-nao": "Branded caps: structured cap, bucket hat, or sports cap?",
+  "luu-y-khi-in-logo-len-qua-tang-doanh-nghiep": "5 tips for printing your logo on corporate gifts without fading or smudging",
 }
 
 /* ── Thương hiệu ──────────────────────────────────────────────────── */
@@ -290,7 +300,11 @@ for (const c of categories) {
 
 const outGroups = {}
 for (const [viSlug, name] of Object.entries(GROUP_NAMES)) {
-  outGroups[viSlug] = { slug: slugify(name), name }
+  outGroups[viSlug] = {
+    slug: slugify(name),
+    name,
+    ...(GROUP_DESCRIPTIONS[viSlug] ? { description: GROUP_DESCRIPTIONS[viSlug] } : {}),
+  }
 }
 
 const outArticles = {}
