@@ -286,17 +286,20 @@ export default async function ProductPage({ params }: Params) {
             </h2>
           </div>
 
-          <ol className="relative grid grid-cols-2 gap-x-4 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-2">
+          <ol className="relative grid grid-cols-2 gap-x-8 gap-y-20 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-4">
             <div
               aria-hidden="true"
-              className="absolute inset-x-0 top-[23px] hidden h-px bg-line lg:block"
+              className="absolute inset-x-0 top-[35px] hidden h-px bg-line lg:block"
             />
             {brand.process.map((step, i) => {
               const Icon = STEP_ICONS[i] ?? IconSparkle
               return (
-                <li key={step.step} className="relative flex flex-col items-center text-center">
-                  <span className="relative z-10 flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-navy-500 bg-shell lg:bg-white">
-                    <Icon className="size-[18px] text-navy-500" />
+                <li
+                  key={step.step}
+                  className="group relative flex flex-col items-center rounded-[2px] p-3 text-center transition-colors duration-200 hover:bg-white hover:shadow-md"
+                >
+                  <span className="relative z-10 flex size-11 shrink-0 items-center justify-center rounded-full border-2 border-navy-500 bg-shell transition-colors duration-200 group-hover:bg-navy-500 lg:bg-white">
+                    <Icon className="size-[18px] text-navy-500 transition-colors duration-200 group-hover:text-white" />
                   </span>
                   <span className="mt-3 font-display text-[11px] font-bold tracking-[0.1em] text-brand-gold">
                     {String(step.step).padStart(2, "0")}
