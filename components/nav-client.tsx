@@ -139,8 +139,8 @@ export default function NavClient({ locale, brand, groups }: Props) {
 
                 {/* Mega menu danh mục */}
                 {link.menu && (
-                  <div className="invisible absolute top-full left-1/2 w-[760px] -translate-x-1/2 pt-0 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-                    <div className="grid grid-cols-3 gap-x-8 gap-y-6 border border-line bg-white p-7 shadow-xl">
+                  <div className="invisible absolute top-full left-1/2 w-[880px] -translate-x-1/2 pt-0 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                    <div className="grid grid-cols-4 gap-x-8 gap-y-6 border border-line bg-white p-7 shadow-xl">
                       {groups.map((group) => (
                         <div key={group.slug}>
                           <Link

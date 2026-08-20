@@ -164,12 +164,14 @@ const CATEGORY_NAMES = {
   "ao-thun": "T-shirts",
   "ao-polo-dong-phuc": "Polo shirts & uniforms",
   non: "Caps",
+  "phu-kien": "Accessories",
 }
 
 const GROUP_NAMES = {
   "tui-xach": "Bags",
   ao: "Apparel",
   non: "Caps",
+  "phu-kien": "Accessories",
 }
 
 /* ── Bài viết (tin tức + dịch vụ) ─────────────────────────────────── */

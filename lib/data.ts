@@ -69,14 +69,17 @@ export const promotions = promotionsJson as Promotion[]
 /**
  * Nhóm cấp 1. "Áo Nón các loại" của site gốc gộp chung áo và nón — hai loại
  * sản phẩm khác hẳn nhau — nên tách thành hai nhóm riêng: "Áo" và "Nón".
+ * "Phụ kiện" tách ra từ 2 sản phẩm lạc chỗ (giá đỡ điện thoại, gối cổ du
+ * lịch) không phải áo cũng không phải nón trong danh mục gốc.
  */
-export const GROUPS = ["Túi xách", "Áo", "Nón"] as const
+export const GROUPS = ["Túi xách", "Áo", "Nón", "Phụ kiện"] as const
 
 /** Slug URL cho mỗi nhóm cấp 1 */
 const GROUP_SLUG: Record<string, string> = {
   "Túi xách": "tui-xach",
   Áo: "ao",
   Nón: "non",
+  "Phụ kiện": "phu-kien",
 }
 
 /** Ảnh đại diện cho mỗi nhóm cấp 1 (lấy từ chính sản phẩm của nhóm) */
@@ -84,6 +87,7 @@ const GROUP_COVER: Record<string, string> = {
   "Túi xách": "assets/upload/product/thiet-ke-chua-co-ten-14-4840.png",
   Áo: "assets/upload/product/0034a3edf76d57330e7c-6778.jpg",
   Nón: "assets/upload/product/e90888149175572b0e64-3921.jpg",
+  "Phụ kiện": "assets/upload/product/c50a95ed8f9b25c57c8a-6815.jpg",
 }
 
 export const categories: Category[] = (categoriesJson as Category[]).map((c) => ({

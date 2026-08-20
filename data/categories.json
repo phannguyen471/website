@@ -82,18 +82,6 @@
   "url": "https://phannguyenbags.vn/tui-du-lich",
   "products": [
    {
-    "slug": "gia-do-dien-thoai",
-    "name": "Giá đỡ điện thoại",
-    "price": "20.000đ",
-    "image": "assets/upload/product/eeb998d6da117a4f2300-8897.jpg"
-   },
-   {
-    "slug": "goi-co-cao-su-du-lich",
-    "name": "Gối cổ cao su du lịch",
-    "price": "80.000đ",
-    "image": "assets/upload/product/c50a95ed8f9b25c57c8a-6815.jpg"
-   },
-   {
     "slug": "hop-com-giu-nhiet",
     "name": "Hộp cơm giữ nhiệt",
     "price": "Liên hệ",
@@ -776,6 +764,30 @@
     "name": "non vanh to the thao",
     "price": "Liên hệ",
     "image": "assets/upload/product/52a5038ead570c095546-2460.jpg"
+   }
+  ]
+ },
+ {
+  "path": [
+   "Sản phẩm",
+   "Phụ kiện",
+   "Phụ kiện"
+  ],
+  "name": "Phụ kiện",
+  "slug": "phu-kien",
+  "url": "https://phannguyenbags.vn/phu-kien",
+  "products": [
+   {
+    "slug": "gia-do-dien-thoai",
+    "name": "Giá đỡ điện thoại",
+    "price": "20.000đ",
+    "image": "assets/upload/product/eeb998d6da117a4f2300-8897.jpg"
+   },
+   {
+    "slug": "goi-co-cao-su-du-lich",
+    "name": "Gối cổ cao su du lịch",
+    "price": "80.000đ",
+    "image": "assets/upload/product/c50a95ed8f9b25c57c8a-6815.jpg"
    }
   ]
  }

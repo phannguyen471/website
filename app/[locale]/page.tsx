@@ -138,18 +138,18 @@ export default async function HomePage({ params }: Params) {
           </Link>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {groups.map((group) => (
             <Link
               key={group.slug}
               href={productsPath(locale, { group: group.slug })}
-              className="group relative isolate flex min-h-[360px] flex-col justify-end overflow-hidden lg:min-h-[440px]"
+              className="group relative isolate flex min-h-[340px] flex-col justify-end overflow-hidden lg:min-h-[420px]"
             >
               <Image
                 src={media(group.cover)}
                 alt={group.name}
                 fill
-                sizes="(min-width: 768px) 33vw, 100vw"
+                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/90 via-navy-900/35 to-transparent" />
