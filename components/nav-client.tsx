@@ -108,9 +108,9 @@ export default function NavClient({ locale, brand }: Props) {
             <Image
               src={media(brand.identity.logo_header)}
               alt={brand.brandName}
-              width={150}
+              width={338}
               height={50}
-              className="h-11 w-auto object-contain"
+              className="h-8 w-auto object-contain lg:h-11"
               priority
             />
           </Link>
@@ -201,9 +201,9 @@ export default function NavClient({ locale, brand }: Props) {
           <Image
             src={media(brand.identity.logo_header)}
             alt={brand.brandName}
-            width={120}
-            height={40}
-            className="h-9 w-auto object-contain"
+            width={338}
+            height={50}
+            className="h-8 w-auto object-contain"
           />
           <button
             type="button"
