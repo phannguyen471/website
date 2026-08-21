@@ -7,7 +7,6 @@ import { path, productsPath } from "@/lib/routes"
 import { media } from "@/lib/utils"
 import { IconMail, IconPhone, IconPin } from "@/components/icons"
 import { IconFacebook, IconMessenger, IconZalo } from "@/components/brand-icons"
-import LanguageSwitcher from "@/components/language-switcher"
 
 /**
  * Bố cục 4 cột kiểu macv.com.vn: thương hiệu, Company (trang tĩnh),
@@ -152,7 +151,7 @@ export default function Footer({ locale }: { locale: Locale }) {
         </div>
 
         {/* Thanh dưới */}
-        <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/12 pt-7 sm:flex-row sm:items-center">
+        <div className="mt-14 border-t border-white/12 pt-7">
           <p className="text-xs text-white/50">
             © {year} {brand.legalName}. Design and Development by{" "}
             <a
@@ -164,7 +163,6 @@ export default function Footer({ locale }: { locale: Locale }) {
               Growthtrait
             </a>
           </p>
-          <LanguageSwitcher locale={locale} tone="dark" label={t.nav.language} />
         </div>
       </div>
     </footer>
