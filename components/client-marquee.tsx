@@ -29,8 +29,8 @@ export default function ClientMarquee({ locale }: { locale: Locale }) {
 
   return (
     <div className="border-y border-line bg-shell py-5">
-      <div className="flex items-center gap-6">
-        <p className="eyebrow shrink-0 border-r border-line pr-6 pl-6 text-navy-500 lg:pl-8">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6">
+        <p className="eyebrow shrink-0 pl-6 text-navy-500 sm:border-r sm:border-line sm:pr-6 lg:pl-8">
           {t.common.clientsEyebrow}
         </p>
         {/* Biên cắt riêng cho dải logo chạy — tách khỏi nhãn tĩnh bên trái để
