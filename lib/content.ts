@@ -189,7 +189,8 @@ function buildProduct(
 }
 
 function buildArticle(a: Article, locale: Locale): LArticle {
-  const t = EN.articles[a.slug as keyof typeof EN.articles]
+  const t: { slug: string; title: string; content_html?: string; content_text?: string } | undefined =
+    EN.articles[a.slug as keyof typeof EN.articles]
   return {
     key: a.slug,
     slug: locale === "en" && t ? t.slug : a.slug,
@@ -197,8 +198,8 @@ function buildArticle(a: Article, locale: Locale): LArticle {
     date: articleDate(a),
     views: articleViews(a),
     banner: a.banner_local,
-    contentHtml: a.content_html,
-    contentText: a.content_text,
+    contentHtml: locale === "en" && t?.content_html ? t.content_html : a.content_html,
+    contentText: locale === "en" && t?.content_text ? t.content_text : a.content_text,
     images: a.images_local,
     videos: a.videos_local,
   }
