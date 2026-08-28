@@ -7,26 +7,11 @@ import { dict } from "@/lib/dictionary"
 import { isLocale, type Locale } from "@/lib/i18n"
 import { path } from "@/lib/routes"
 import { media } from "@/lib/utils"
+import { CLIENT_LOGOS } from "@/lib/client-logos"
 import PageHeader from "@/components/page-header"
 import { IconArrowRight, IconFactory, IconGlobe, IconSparkle, IconTag } from "@/components/icons"
 
 const PILLAR_ICONS = [IconSparkle, IconFactory, IconTag, IconGlobe]
-
-/** Logo khách hàng — khớp theo đúng tên trong brand.clients. "DAY ONE" chưa có file logo, giữ hiển thị dạng chữ. */
-const CLIENT_LOGOS: Record<string, { src: string; width: number; height: number }> = {
-  "Tập đoàn L'Oréal Việt Nam": { src: "/clients/loreal.png", width: 800, height: 200 },
-  "TPF GROUP": { src: "/clients/tpf group.webp", width: 611, height: 367 },
-  "P&G": { src: "/clients/pg.png", width: 199, height: 200 },
-  "Paula's Choice": { src: "/clients/paulas-choice.png", width: 322, height: 200 },
-  "AMOREPACIFIC Việt Nam": { src: "/clients/amore pacific.jpg", width: 1080, height: 400 },
-  "Kao Việt Nam": { src: "/clients/kao.webp", width: 446, height: 255 },
-  "Shiseido Việt Nam": { src: "/clients/shiseido.png", width: 1243, height: 200 },
-  Mitsubishi: { src: "/clients/mitsubishi.png", width: 183, height: 200 },
-  "LG Vina Cosmetic VN": { src: "/clients/LG-logo.png", width: 300, height: 300 },
-  "DKSH VN": { src: "/clients/dksh_1432107662.webp", width: 700, height: 269 },
-  "Cô Gái Hà Lan": { src: "/clients/dutch lady.png", width: 1800, height: 1801 },
-  "Vietnam Airlines": { src: "/clients/vietnam-airlines.png", width: 541, height: 200 },
-}
 
 type Params = { params: Promise<{ locale: string }> }
 
