@@ -1,11 +1,17 @@
 import { NextResponse } from "next/server"
+import nodemailer from "nodemailer"
+import { brand } from "@/lib/data"
 
 /**
- * Nhận yêu cầu báo giá từ form.
+ * Nhận yêu cầu báo giá từ form (trang Liên hệ và form trên trang chi tiết
+ * sản phẩm dùng chung route này) và gửi email tới hộp thư kinh doanh qua
+ * Gmail SMTP.
  *
- * Bản này chỉ kiểm tra dữ liệu và ghi log ra server — chưa gửi email.
- * Để bật gửi mail thật, cắm SMTP (nodemailer / Resend / SendGrid) vào
- * đúng chỗ đánh dấu TODO bên dưới và đặt biến môi trường tương ứng.
+ * Cần 2 biến môi trường:
+ *   GMAIL_USER         — địa chỉ Gmail dùng để gửi (thường là contact.email)
+ *   GMAIL_APP_PASSWORD — App Password 16 ký tự, tạo tại
+ *                        https://myaccount.google.com/apppasswords
+ *                        (yêu cầu tài khoản đã bật xác minh 2 bước)
  */
 
 type QuoteRequest = {
@@ -22,6 +28,14 @@ type QuoteRequest = {
   locale?: string
 }
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+}
+
 export async function POST(request: Request) {
   let body: QuoteRequest
 
@@ -35,6 +49,12 @@ export async function POST(request: Request) {
   const phone = (body.phone || "").trim()
   const company = (body.company || "").trim()
   const content = (body.content || "").trim()
+  const email = (body.email || "").trim()
+  const country = (body.country || "").trim()
+  const productInterest = (body.productInterest || "").trim()
+  const quantity = (body.quantity || "").trim()
+  const subject = (body.subject || "").trim()
+  const locale = (body.locale || "vi").trim()
 
   if (!fullname || !phone || !company || !content) {
     return NextResponse.json({ ok: false, error: "missing_fields" }, { status: 422 })
@@ -45,20 +65,79 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "invalid_phone" }, { status: 422 })
   }
 
-  // TODO: gửi email tới Phannguyen471@gmail.com hoặc đẩy vào CRM tại đây.
+  const receivedAt = new Date().toISOString()
+
   console.log("[bao-gia]", {
     fullname,
     phone,
     company,
-    email: (body.email || "").trim(),
-    country: (body.country || "").trim(),
-    productInterest: (body.productInterest || "").trim(),
-    quantity: (body.quantity || "").trim(),
-    subject: (body.subject || "").trim(),
+    email,
+    country,
+    productInterest,
+    quantity,
+    subject,
     content,
-    locale: (body.locale || "vi").trim(),
-    receivedAt: new Date().toISOString(),
+    locale,
+    receivedAt,
   })
+
+  const gmailUser = process.env.GMAIL_USER
+  const gmailAppPassword = process.env.GMAIL_APP_PASSWORD
+
+  if (!gmailUser || !gmailAppPassword) {
+    console.error("[bao-gia] Thiếu GMAIL_USER hoặc GMAIL_APP_PASSWORD — email không được gửi.")
+    return NextResponse.json({ ok: false, error: "email_not_configured" }, { status: 500 })
+  }
+
+  const rows: [string, string][] = [
+    ["Họ tên", fullname],
+    ["Công ty", company],
+    ["Điện thoại", phone],
+    ...(email ? ([["Email", email]] as [string, string][]) : []),
+    ...(country ? ([["Quốc gia", country]] as [string, string][]) : []),
+    ...(productInterest ? ([["Sản phẩm quan tâm", productInterest]] as [string, string][]) : []),
+    ...(quantity ? ([["Số lượng", quantity]] as [string, string][]) : []),
+    ["Ngôn ngữ", locale === "en" ? "Tiếng Anh" : "Tiếng Việt"],
+  ]
+
+  const html = `
+    <div style="font-family: -apple-system, Arial, sans-serif; max-width: 560px; margin: 0 auto;">
+      <h2 style="color: #0B3359; margin-bottom: 4px;">Yêu cầu báo giá mới</h2>
+      <p style="color: #6C757D; margin-top: 0;">${subject || "Từ website Phan Nguyễn"}</p>
+      <table style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+        ${rows
+          .map(
+            ([label, value]) => `
+          <tr>
+            <td style="padding: 8px 12px; border: 1px solid #e3e7ec; background: #f6f7f9; font-weight: 600; width: 160px;">${escapeHtml(label)}</td>
+            <td style="padding: 8px 12px; border: 1px solid #e3e7ec;">${escapeHtml(value)}</td>
+          </tr>`,
+          )
+          .join("")}
+      </table>
+      <p style="font-weight: 600; margin-bottom: 4px;">Nội dung yêu cầu</p>
+      <p style="white-space: pre-wrap; padding: 12px; background: #f6f7f9; border: 1px solid #e3e7ec;">${escapeHtml(content)}</p>
+      <p style="color: #6C757D; font-size: 12px; margin-top: 24px;">Gửi lúc ${new Date(receivedAt).toLocaleString("vi-VN")}</p>
+    </div>
+  `
+
+  try {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: { user: gmailUser, pass: gmailAppPassword },
+    })
+
+    await transporter.sendMail({
+      from: `"Website Phan Nguyễn" <${gmailUser}>`,
+      to: brand.contact.email,
+      replyTo: email || undefined,
+      subject: `[Yêu cầu báo giá] ${subject || fullname}`,
+      html,
+    })
+  } catch (err) {
+    console.error("[bao-gia] Gửi email thất bại:", err)
+    return NextResponse.json({ ok: false, error: "send_failed" }, { status: 502 })
+  }
 
   return NextResponse.json({ ok: true })
 }

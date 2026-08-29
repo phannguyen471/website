@@ -54,7 +54,7 @@ export default async function ProductsPage({ params, searchParams }: Props) {
         eyebrow={t.products.eyebrow(products.length)}
         title={t.products.title}
         lead={t.products.lead}
-        image="/clients/phannguyen-product.png"
+        image="/clients/banner-trangsanpham.webp"
         crumbs={[{ label: t.products.title }]}
       />
 

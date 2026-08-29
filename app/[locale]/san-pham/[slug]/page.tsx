@@ -12,7 +12,7 @@ import {
 import { dict } from "@/lib/dictionary"
 import { isLocale, locales, type Locale } from "@/lib/i18n"
 import { path, productsPath } from "@/lib/routes"
-import { cn, media } from "@/lib/utils"
+import { cn, media, truncateAtWord } from "@/lib/utils"
 import ProductGallery from "@/components/product-gallery"
 import ProductCard from "@/components/product-card"
 import QuoteForm from "@/components/quote-form"
@@ -50,10 +50,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const product = findProduct(locale, slug)
   if (!product) return { title: t.product.notFound }
 
-  const description = t.product.metaDescription(product.name, product.category, brand.hotline)
+  const description = truncateAtWord(
+    t.product.metaDescription(product.name, product.category, brand.hotline),
+    160,
+  )
 
   return {
-    title: product.name,
+    title: truncateAtWord(product.name, 60),
     description,
     alternates: {
       canonical: path(locale, "san-pham", product.slug),

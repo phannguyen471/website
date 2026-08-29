@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 
   return {
     title: t.contact.metaTitle,
-    description: t.contact.metaDescription(brand.address, brand.hotline, brand.email),
+    description: t.contact.metaDescription(brand.locality, brand.hotline),
     alternates: {
       canonical: path(locale, "lien-he"),
       languages: {
@@ -47,7 +47,7 @@ export default async function ContactPage({ params }: Params) {
         eyebrow={t.contact.eyebrow}
         title={t.contact.title}
         lead={t.contact.lead}
-        image={brand.identity.page_banners[2]}
+        image="/clients/lienhe.webp"
         crumbs={[{ label: t.contact.metaTitle }]}
       />
 

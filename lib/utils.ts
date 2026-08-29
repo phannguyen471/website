@@ -10,7 +10,7 @@ export function cn(...inputs: ClassValue[]) {
  * Toàn bộ media được copy sang `public/media/`, nên chỉ cần đổi tiền tố.
  */
 export function media(path: string | undefined | null): string {
-  if (!path) return "/media/upload/photo/phan-nguyen-4110.png"
+  if (!path) return "/media/upload/photo/phan-nguyen-4110.webp"
   if (path.startsWith("http") || path.startsWith("/")) return path
   return "/media/" + path.replace(/^assets\//, "")
 }
@@ -30,6 +30,14 @@ export function formatPrice(price: string | undefined): string {
 
 export function isQuotePrice(price: string | undefined): boolean {
   return !/\d/.test(price || "")
+}
+
+/** Cắt chuỗi ở ranh giới từ gần nhất, thêm "…" — dùng cho meta title/description tự sinh từ dữ liệu (tên sản phẩm, bài viết) để không vượt quá độ dài khuyến nghị cho SEO. */
+export function truncateAtWord(s: string, max: number): string {
+  if (s.length <= max) return s
+  const cut = s.slice(0, max)
+  const lastSpace = cut.lastIndexOf(" ")
+  return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).trimEnd() + "…"
 }
 
 /** Bỏ dấu tiếng Việt để so sánh/tìm kiếm không phân biệt dấu */

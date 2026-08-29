@@ -30,24 +30,24 @@
   "google_analytics": "G-TYHP831W1C"
  },
  "identity": {
-  "logo_header": "assets/upload/photo/phan-nguyen-4110.png",
-  "logo_footer": "assets/upload/photo/logo-footer-phan-nguyen-8328.png",
+  "logo_header": "assets/upload/photo/phan-nguyen-4110.webp",
+  "logo_footer": "assets/upload/photo/logo-footer-phan-nguyen-8328.webp",
   "hero_banner": "assets/upload/photo/phan-nguyen-anh-1579.jpg",
   "slides": [
-   "assets/upload/photo/1-4792.jpg",
-   "assets/upload/photo/1-6168.jpg",
-   "assets/upload/photo/2-2174.jpg",
-   "assets/upload/photo/3-87670.jpg",
-   "assets/upload/photo/cca61f28d79078ce2181-2665.jpg"
+   "assets/upload/photo/1-4792.webp",
+   "assets/upload/photo/1-6168.webp",
+   "assets/upload/photo/2-2174.webp",
+   "assets/upload/photo/3-87670.webp",
+   "assets/upload/photo/cca61f28d79078ce2181-2665.webp"
   ],
   "page_banners": [
-   "assets/upload/photo/1-4614.jpg",
-   "assets/upload/photo/1-5613.jpg",
-   "assets/upload/photo/2-2103.jpg",
-   "assets/upload/photo/cca61f28d79078ce2181-6425.jpg"
+   "assets/upload/photo/1-4614.webp",
+   "assets/upload/photo/1-5613.webp",
+   "assets/upload/photo/2-2103.webp",
+   "assets/upload/photo/cca61f28d79078ce2181-6425.webp"
   ],
-  "certificate": "assets/upload/filemanager/files/giay-chung-nhan.png",
-  "about_image": "assets/upload/filemanager/files/hinh-anh-quan-ao/gioi-thieu.jpg"
+  "certificate": "assets/upload/filemanager/files/giay-chung-nhan.webp",
+  "about_image": "assets/upload/filemanager/files/hinh-anh-quan-ao/gioi-thieu.webp"
  },
  "colors": {
   "primary_navy": "#0B3359",

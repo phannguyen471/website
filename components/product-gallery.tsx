@@ -50,7 +50,7 @@ export default function ProductGallery({ images, alt, locale }: Props) {
             >
               <Image
                 src={media(img)}
-                alt=""
+                alt={t.common.image(i + 1)}
                 fill
                 sizes="20vw"
                 className="object-cover"

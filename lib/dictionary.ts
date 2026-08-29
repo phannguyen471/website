@@ -115,9 +115,9 @@ const vi = {
   },
 
   about: {
-    metaTitle: "Giới thiệu",
+    metaTitle: "Giới Thiệu Phan Nguyễn - 10+ Năm Kinh Nghiệm",
     metaDescription:
-      "Công ty TNHH MTV SX TM DV Phan Nguyễn thành lập năm 2013, tiên phong thiết kế và sản xuất vật phẩm quảng cáo, quà tặng doanh nghiệp tại TP.HCM.",
+      "Phan Nguyễn thành lập năm 2013 tại TP.HCM, sản xuất túi xách, balo, quà tặng doanh nghiệp. Đạt chứng nhận Certified Women's Business Enterprise quốc tế.",
     eyebrow: "Về chúng tôi",
     title: "Phan Nguyễn — dẫn đầu xu hướng hàng quà tặng",
     storyEyebrow: "Câu chuyện",
@@ -146,10 +146,20 @@ const vi = {
       "Phan Nguyễn tự hào là doanh nghiệp được WEConnect International công nhận đạt chuẩn Certified Women's Business Enterprise, ghi nhận quốc tế dành cho doanh nghiệp do phụ nữ làm chủ, vận hành minh bạch và chuyên nghiệp.",
     legalCta: "Liên hệ với chúng tôi",
     certificateAlt: "Chứng nhận Certified Women's Business Enterprise từ WEConnect International",
+    showroomEyebrow: "Kho mẫu thực tế",
+    showroomTitle: "Mẫu có sẵn tại xưởng",
+    showroomLead:
+      "Mỗi mẫu túi, balo, đồng phục và quà tặng trên website đều có sản phẩm thật lưu tại xưởng Phan Nguyễn, sẵn sàng để khách hàng xem và kiểm tra trước khi đặt số lượng lớn.",
+    showroomPhotos: [
+      "Góc trưng bày mẫu tại xưởng",
+      "Hàng trăm mẫu túi có sẵn",
+      "Tủ mẫu balo & túi xách",
+      "Đồng phục, nón & phụ kiện sự kiện",
+    ],
   },
 
   products: {
-    metaTitle: "Sản phẩm",
+    metaTitle: "Sản Phẩm Túi Xách, Balo, Quà Tặng Phan Nguyễn",
     metaDescription:
       "Toàn bộ mẫu túi xách, balo, túi canvas, áo thun, nón kaki và quà tặng doanh nghiệp do Phan Nguyễn thiết kế và sản xuất. Nhận in logo theo yêu cầu.",
     eyebrow: (n: number) => `${n} mẫu sản phẩm`,
@@ -189,7 +199,7 @@ const vi = {
   },
 
   news: {
-    metaTitle: "Tin tức",
+    metaTitle: "Tin Tức Quà Tặng Doanh Nghiệp - Phan Nguyễn",
     metaDescription:
       "Tin tức và cập nhật từ Phan Nguyễn: hoạt động hội chợ Canton Fair, xu hướng quà tặng doanh nghiệp và công nghệ mới trong ngành.",
     eyebrow: "Blogs",
@@ -207,7 +217,7 @@ const vi = {
   },
 
   promotions: {
-    metaTitle: "Ưu đãi",
+    metaTitle: "Ưu Đãi Quà Tặng Doanh Nghiệp - Phan Nguyễn",
     metaDescription:
       "Các sản phẩm quà tặng đang giảm giá tại Phan Nguyễn: gối cổ cao su du lịch, túi du lịch, túi đựng mỹ phẩm, giá đỡ điện thoại.",
     eyebrow: (n: number) => `${n} sản phẩm giảm giá`,
@@ -220,9 +230,9 @@ const vi = {
   },
 
   contact: {
-    metaTitle: "Liên hệ",
-    metaDescription: (address: string, phone: string, email: string) =>
-      `Liên hệ Công ty Phan Nguyễn — ${address}. Hotline ${phone}, email ${email}.`,
+    metaTitle: "Liên Hệ Phan Nguyễn - Nhận Báo Giá Nhanh",
+    metaDescription: (locality: string, phone: string) =>
+      `Liên hệ Phan Nguyễn tại ${locality} — nhận báo giá túi xách, balo, quà tặng doanh nghiệp trong 24h. Hotline ${phone}.`,
     eyebrow: "Liên hệ",
     title: "Gửi yêu cầu báo giá",
     lead: "Cho chúng tôi biết sản phẩm, số lượng và thời gian cần hàng — Phan Nguyễn phản hồi trong 24 giờ làm việc.",
@@ -271,7 +281,7 @@ const vi = {
   },
 
   meta: {
-    titleDefault: "Phan Nguyễn | Sản xuất túi xách, balo, áo thun & quà tặng doanh nghiệp",
+    titleDefault: "Phan Nguyễn - Sản Xuất Túi Xách, Balo, Quà Tặng Doanh Nghiệp",
     titleTemplate: "%s | Phan Nguyễn",
     description:
       "Công ty Phan Nguyễn — 10+ năm thiết kế và sản xuất túi xách, balo, áo thun, nón và quà tặng doanh nghiệp tại TP.HCM. Nhận in logo theo yêu cầu, giao hàng đúng hạn.",
@@ -401,9 +411,9 @@ const en: typeof vi = {
   },
 
   about: {
-    metaTitle: "About us",
+    metaTitle: "About Phan Nguyen - 10+ Years of Experience",
     metaDescription:
-      "Phan Nguyen Production Trading & Service Co., Ltd was founded in 2013 and is a pioneer in designing and manufacturing promotional items and corporate gifts in Ho Chi Minh City.",
+      "Phan Nguyen was founded in 2013 in Ho Chi Minh City, manufacturing bags, backpacks and corporate gifts. An internationally Certified Women's Business Enterprise.",
     eyebrow: "About us",
     title: "Phan Nguyen — leading the corporate gift trend",
     storyEyebrow: "Our story",
@@ -432,10 +442,20 @@ const en: typeof vi = {
       "Phan Nguyen is also proud to be recognized by WEConnect International as a Certified Women's Business Enterprise, an international credential for women-owned businesses built on transparent, professional operations.",
     legalCta: "Get in touch",
     certificateAlt: "Certified Women's Business Enterprise credential from WEConnect International",
+    showroomEyebrow: "Real sample stock",
+    showroomTitle: "Not just a catalogue — thousands of samples on our shelves",
+    showroomLead:
+      "Every bag, backpack, uniform and gift shown on this site has a physical sample kept at the Phan Nguyen workshop, ready for customers to see and check before placing a bulk order.",
+    showroomPhotos: [
+      "Sample display corner at the workshop",
+      "Hundreds of ready totes",
+      "Backpack & bag sample cabinet",
+      "Uniforms, caps & event accessories",
+    ],
   },
 
   products: {
-    metaTitle: "Products",
+    metaTitle: "Bags, Backpacks & Corporate Gift Products",
     metaDescription:
       "Every bag, backpack, canvas tote, t-shirt, khaki cap and corporate gift designed and manufactured by Phan Nguyen. Custom logo printing available.",
     eyebrow: (n: number) => `${n} product designs`,
@@ -475,9 +495,9 @@ const en: typeof vi = {
   },
 
   news: {
-    metaTitle: "News",
+    metaTitle: "Corporate Gift News & Updates - Phan Nguyen",
     metaDescription:
-      "News and updates from Phan Nguyen: Canton Fair activity, corporate gift trends and new technology in the industry.",
+      "News and tips on choosing corporate gifts, logo-printed uniforms, manufacturing trends and Canton Fair activities from Phan Nguyen.",
     eyebrow: "Blogs",
     title: "News",
     lead: "What Phan Nguyen is doing, and the updates worth knowing from the corporate gift market.",
@@ -493,7 +513,7 @@ const en: typeof vi = {
   },
 
   promotions: {
-    metaTitle: "Promotions",
+    metaTitle: "Corporate Gift Promotions - Phan Nguyen",
     metaDescription:
       "Corporate gift products currently discounted at Phan Nguyen: latex travel neck pillows, travel bags, cosmetic bags and phone stands.",
     eyebrow: (n: number) => `${n} discounted products`,
@@ -506,9 +526,9 @@ const en: typeof vi = {
   },
 
   contact: {
-    metaTitle: "Contact",
-    metaDescription: (address: string, phone: string, email: string) =>
-      `Contact Phan Nguyen — ${address}. Hotline ${phone}, email ${email}.`,
+    metaTitle: "Contact Phan Nguyen - Get a Fast Quote",
+    metaDescription: (locality: string, phone: string) =>
+      `Contact Phan Nguyen in ${locality} for a bag, backpack and corporate gift quote within 24 hours. Call ${phone}.`,
     eyebrow: "Contact",
     title: "Request a quotation",
     lead: "Tell us the product, the quantity and when you need it — Phan Nguyen replies within 24 working hours.",
@@ -557,7 +577,7 @@ const en: typeof vi = {
   },
 
   meta: {
-    titleDefault: "Phan Nguyen | Bags, backpacks, t-shirts & corporate gift manufacturing",
+    titleDefault: "Phan Nguyen - Bags, Backpacks & Corporate Gift Manufacturer",
     titleTemplate: "%s | Phan Nguyen",
     description:
       "Phan Nguyen — 10+ years designing and manufacturing bags, backpacks, t-shirts, caps and corporate gifts in Ho Chi Minh City. Custom logo printing, delivered on schedule.",

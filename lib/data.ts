@@ -84,10 +84,10 @@ const GROUP_SLUG: Record<string, string> = {
 
 /** Ảnh đại diện cho mỗi nhóm cấp 1 (lấy từ chính sản phẩm của nhóm) */
 const GROUP_COVER: Record<string, string> = {
-  "Túi xách": "/clients/tuixach.jpeg",
-  Áo: "/clients/aoimage.jpeg",
-  Nón: "/clients/capimage.jpg",
-  "Phụ kiện": "/clients/phukien.png",
+  "Túi xách": "/clients/tuixach.webp",
+  Áo: "/clients/aoimage.webp",
+  Nón: "/clients/capimage.webp",
+  "Phụ kiện": "/clients/phukien.webp",
 }
 
 /** Mô tả ngắn gọn cho mỗi nhóm cấp 1, hiển thị ở khối "sản phẩm chủ lực" trang chủ */

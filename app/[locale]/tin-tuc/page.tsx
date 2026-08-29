@@ -47,7 +47,7 @@ export default async function NewsPage({ params }: Params) {
         eyebrow={t.news.eyebrow}
         title={t.news.title}
         lead={t.news.lead}
-        image="/clients/phannguyen-new.png"
+        image="/clients/tintuc.webp"
         crumbs={[{ label: t.news.title }]}
       />
 

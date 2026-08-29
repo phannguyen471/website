@@ -13,6 +13,13 @@ import { IconArrowRight, IconFactory, IconGlobe, IconSparkle, IconTag } from "@/
 
 const PILLAR_ICONS = [IconSparkle, IconFactory, IconTag, IconGlobe]
 
+const SHOWROOM_PHOTOS = [
+  "xuong-mau-tong-quan.webp",
+  "xuong-mau-tui-tote-can.webp",
+  "xuong-mau-balo-tui.webp",
+  "xuong-mau-dong-phuc-non.webp",
+]
+
 type Params = { params: Promise<{ locale: string }> }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
@@ -49,7 +56,7 @@ export default async function AboutPage({ params }: Params) {
         eyebrow={t.about.eyebrow}
         title={t.about.title}
         lead={brand.motto}
-        image={brand.identity.page_banners[0]}
+        image="/clients/banner-aboutus.webp"
         crumbs={[{ label: t.about.metaTitle }]}
       />
 
@@ -86,13 +93,14 @@ export default async function AboutPage({ params }: Params) {
 
           <aside className="flex flex-col gap-6">
             <div className="relative aspect-[4/5] overflow-hidden border border-line bg-shell">
-              <Image
-                src={media(brand.identity.about_image)}
-                alt={t.about.workshopAlt}
-                fill
-                sizes="(min-width: 1024px) 40vw, 100vw"
-                className="object-cover"
-              />
+              <video
+                controls
+                preload="metadata"
+                className="absolute inset-0 size-full object-cover"
+              >
+                <source src="/media/videos/video-phannguyen.mp4" type="video/mp4" />
+                {t.common.videoUnsupported}
+              </video>
             </div>
 
             <dl className="grid grid-cols-2 gap-px bg-line">
@@ -203,6 +211,44 @@ export default async function AboutPage({ params }: Params) {
               sizes="(min-width: 1024px) 50vw, 100vw"
               className="object-contain p-4"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Kho mẫu thực tế — ảnh chụp thật tại xưởng, nối tiếp phần Pháp lý để
+          củng cố niềm tin: đây là nhà sản xuất có hàng thật, không chỉ catalogue. */}
+      <section className="border-t border-line bg-white py-16 lg:py-24">
+        <div className="container-brand">
+          <div className="max-w-2xl">
+            <p className="eyebrow text-brand-red">{t.about.showroomEyebrow}</p>
+            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-navy-500 lg:text-4xl">
+              {t.about.showroomTitle}
+            </h2>
+            <p className="mt-5 text-[15px] leading-relaxed text-ink-soft">
+              {t.about.showroomLead}
+            </p>
+          </div>
+
+          <div className="no-scrollbar -mx-6 mt-10 flex snap-x snap-mandatory gap-px overflow-x-auto border-y border-line bg-line px-6 pb-px sm:mx-0 sm:grid sm:grid-cols-4 sm:snap-none sm:px-0">
+            {SHOWROOM_PHOTOS.map((file, i) => (
+              <figure
+                key={file}
+                className="group relative aspect-[3/4] w-[74%] shrink-0 snap-center overflow-hidden bg-shell sm:w-auto sm:shrink"
+              >
+                <Image
+                  src={`/gioi-thieu/${file}`}
+                  alt={t.about.showroomPhotos[i]}
+                  fill
+                  sizes="(min-width: 640px) 25vw, 74vw"
+                  className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-900/85 to-transparent px-4 pt-12 pb-4">
+                  <span className="text-[11px] leading-snug font-semibold tracking-[0.1em] text-white uppercase">
+                    {t.about.showroomPhotos[i]}
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>

@@ -10,3 +10,7 @@ out
 # Log
 *.log
 npm-debug.log*
+
+# Biến môi trường (chứa mật khẩu/API key, không commit)
+.env
+.env*.local

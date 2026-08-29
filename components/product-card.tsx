@@ -46,7 +46,7 @@ export default function ProductCard({ product, locale, priority, className }: Pr
         {second && (
           <Image
             src={second}
-            alt=""
+            alt={product.name}
             fill
             sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
             className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"

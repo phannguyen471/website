@@ -96,7 +96,7 @@ export default async function HomePage({ params }: Params) {
           {/* Ảnh hero */}
           <div className="relative min-h-[340px] lg:min-h-[640px]">
             <Image
-              src="/clients/homepage-phannguyen.png"
+              src="/clients/homepage-phannguyen.webp"
               alt={t.home.heroImageAlt}
               fill
               priority

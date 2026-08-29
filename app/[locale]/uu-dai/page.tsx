@@ -46,7 +46,7 @@ export default async function PromotionsPage({ params }: Params) {
         eyebrow={t.promotions.eyebrow(promotions.length)}
         title={t.promotions.title}
         lead={t.promotions.lead}
-        image={brand.identity.page_banners[0]}
+        image="/clients/uudai.webp"
         crumbs={[{ label: t.promotions.title }]}
       />
 

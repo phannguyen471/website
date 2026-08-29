@@ -13,6 +13,7 @@ type Props = {
   title: string
   lead?: string
   image?: string
+  imagePosition?: "center" | "top"
   crumbs?: Crumb[]
 }
 
@@ -20,14 +21,36 @@ type Props = {
  * Header trang trong: banner ảnh phủ tối, nhãn nhỏ + tiêu đề lớn,
  * breadcrumb ngay dưới. Dùng chung cho mọi trang không phải trang chủ.
  */
-export default function PageHeader({ locale, eyebrow, title, lead, image, crumbs }: Props) {
+export default function PageHeader({
+  locale,
+  eyebrow,
+  title,
+  lead,
+  image,
+  imagePosition = "center",
+  crumbs,
+}: Props) {
   const t = dict(locale)
-  const bg = media(image || "assets/upload/photo/1-4614.jpg")
+  const bg = media(image || "assets/upload/photo/1-4614.webp")
 
   return (
-    <section className="relative isolate flex min-h-[300px] items-end overflow-hidden bg-navy-500 pt-[68px] md:min-h-[380px]">
-      <Image src={bg} alt="" fill priority sizes="100vw" className="object-cover opacity-45" />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/70 to-navy-500/30" />
+    <section className="relative isolate flex min-h-[450px] items-end overflow-hidden bg-navy-500 pt-[68px] md:min-h-[570px] md:pt-[108px]">
+      {/* Ảnh chỉ chiếm phần bên dưới header cố định (68px mobile, 108px
+          desktop lúc chưa cuộn = 40px thanh tiện ích + 68px thanh nav) —
+          không để ảnh tràn ra sau header vì header nền đặc, che mất phần
+          trên của ảnh (ví dụ đầu người trong ảnh) mà object-position không
+          thể bù lại được. */}
+      <div className="absolute inset-x-0 top-[68px] bottom-0 md:top-[108px]">
+        <Image
+          src={bg}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className={`object-cover opacity-45 ${imagePosition === "top" ? "object-top" : "object-center"}`}
+        />
+      </div>
+      <div className="absolute inset-x-0 top-[68px] bottom-0 bg-gradient-to-r from-navy-900/90 via-navy-800/70 to-navy-500/30 md:top-[108px]" />
 
       <div className="container-brand relative z-10 pt-12 pb-10 md:pt-16 md:pb-12">
         {eyebrow && <p className="eyebrow mb-4 text-brand-gold">{eyebrow}</p>}

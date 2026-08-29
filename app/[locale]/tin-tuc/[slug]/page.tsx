@@ -6,7 +6,7 @@ import { content, findArticle, slugInLocale } from "@/lib/content"
 import { dict } from "@/lib/dictionary"
 import { isLocale, locales, type Locale } from "@/lib/i18n"
 import { path } from "@/lib/routes"
-import { media } from "@/lib/utils"
+import { media, truncateAtWord } from "@/lib/utils"
 import PageHeader from "@/components/page-header"
 import ArticleBody from "@/components/article-body"
 import { IconClock, IconEye } from "@/components/icons"
@@ -27,12 +27,14 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const article = findArticle(locale, slug)
   if (!article) return { title: t.news.notFound }
 
-  const description =
-    article.contentText.replace(/\s+/g, " ").trim().slice(0, 160) ||
-    t.news.fallbackDescription(article.title, brand.brandName)
+  const description = truncateAtWord(
+    article.contentText.replace(/\s+/g, " ").trim() ||
+      t.news.fallbackDescription(article.title, brand.brandName),
+    155,
+  )
 
   return {
-    title: article.title,
+    title: truncateAtWord(article.title, 60),
     description,
     alternates: {
       canonical: path(locale, "tin-tuc", article.slug),
@@ -123,7 +125,7 @@ export default async function NewsDetailPage({ params }: Params) {
                     <div className="relative size-20 shrink-0 overflow-hidden bg-shell">
                       <Image
                         src={media(a.images[0] || a.banner)}
-                        alt=""
+                        alt={a.title}
                         fill
                         sizes="80px"
                         className="object-cover"
