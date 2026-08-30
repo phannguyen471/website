@@ -96,6 +96,7 @@ export default async function AboutPage({ params }: Params) {
               <video
                 controls
                 preload="metadata"
+                poster="/media/videos/video-phannguyen-poster.webp"
                 className="absolute inset-0 size-full object-cover"
               >
                 <source src="/media/videos/video-phannguyen.mp4" type="video/mp4" />
