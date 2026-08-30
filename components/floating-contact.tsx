@@ -2,22 +2,17 @@ import { content } from "@/lib/content"
 import { dict } from "@/lib/dictionary"
 import type { Locale } from "@/lib/i18n"
 import { IconPhone } from "@/components/icons"
-import { IconFacebook, IconMessenger, IconZalo } from "@/components/brand-icons"
+import { IconZalo } from "@/components/brand-icons"
 
 /**
- * Cụm nút liên hệ nổi — giữ lại thói quen của site gốc
- * (Messenger / Facebook / Zalo), đặt trần logo ở góc phải, không bọc
- * thêm khung/nền vì mỗi logo đã có hình dạng và màu nền riêng sẵn.
+ * Cụm nút liên hệ nổi — đặt trần logo ở góc phải, không bọc thêm khung/nền
+ * vì mỗi logo đã có hình dạng và màu nền riêng sẵn.
  */
 export default function FloatingContact({ locale }: { locale: Locale }) {
   const t = dict(locale)
   const { brand } = content(locale)
 
-  const items = [
-    { label: t.common.zalo, href: brand.social.zalo, Icon: IconZalo },
-    { label: "Messenger", href: brand.social.messenger, Icon: IconMessenger },
-    { label: "Facebook", href: brand.social.facebook, Icon: IconFacebook },
-  ]
+  const items = [{ label: t.common.zalo, href: brand.social.zalo, Icon: IconZalo }]
 
   return (
     <div className="fixed right-4 bottom-4 z-40 flex flex-col items-end gap-3">

@@ -36,8 +36,8 @@ const inputClass =
 
 /**
  * Form yêu cầu báo giá. Site gốc gửi qua backend PHP; ở bản mới form
- * gọi API route `/api/bao-gia` — hiện chỉ ghi log để đội kỹ thuật cắm
- * SMTP hoặc CRM vào sau.
+ * gọi API route `/api/bao-gia`, route này gửi email thông báo qua Gmail SMTP
+ * (xem app/api/bao-gia/route.ts).
  */
 export default function QuoteForm({ locale, productName }: Props) {
   const t = dict(locale)

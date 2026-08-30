@@ -6,7 +6,6 @@ import type { Locale } from "@/lib/i18n"
 import { path, productsPath } from "@/lib/routes"
 import { media } from "@/lib/utils"
 import { IconMail, IconPhone, IconPin } from "@/components/icons"
-import { IconFacebook, IconMessenger, IconZalo } from "@/components/brand-icons"
 
 /**
  * Bố cục 4 cột kiểu macv.com.vn: thương hiệu, Company (trang tĩnh),
@@ -44,35 +43,6 @@ export default function Footer({ locale }: { locale: Locale }) {
               {brand.legalName}
             </p>
             <p className="eyebrow max-w-[290px] leading-relaxed text-brand-gold">{brand.motto}</p>
-            <div className="mt-1 flex items-center gap-3">
-              <a
-                href={brand.social.facebook}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-75"
-                aria-label="Facebook"
-              >
-                <IconFacebook size={36} />
-              </a>
-              <a
-                href={brand.social.zalo}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-75"
-                aria-label="Zalo"
-              >
-                <IconZalo size={36} />
-              </a>
-              <a
-                href={brand.social.messenger}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-opacity hover:opacity-75"
-                aria-label="Messenger"
-              >
-                <IconMessenger size={36} />
-              </a>
-            </div>
           </div>
 
           {/* Company */}
@@ -135,6 +105,15 @@ export default function Footer({ locale }: { locale: Locale }) {
                 >
                   <IconPhone className="size-4 shrink-0 text-brand-gold" />
                   {brand.hotline}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${brand.zaloPhone}`}
+                  className="flex items-center gap-2.5 text-sm text-white/65 transition-colors hover:text-brand-gold"
+                >
+                  <IconPhone className="size-4 shrink-0 text-brand-gold" />
+                  {brand.zaloPhone}
                 </a>
               </li>
               <li>
