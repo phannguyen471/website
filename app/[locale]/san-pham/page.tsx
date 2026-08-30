@@ -29,6 +29,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         "x-default": path("vi", "san-pham"),
       },
     },
+    openGraph: {
+      title: t.products.metaTitle,
+      description: t.products.metaDescription,
+      images: ["/clients/banner-trangsanpham.webp"],
+    },
   }
 }
 

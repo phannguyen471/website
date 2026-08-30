@@ -29,6 +29,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
         "x-default": path("vi", "uu-dai"),
       },
     },
+    openGraph: {
+      title: t.promotions.metaTitle,
+      description: t.promotions.metaDescription,
+      images: ["/clients/uudai.webp"],
+    },
   }
 }
 

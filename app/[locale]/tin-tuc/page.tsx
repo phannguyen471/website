@@ -29,6 +29,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
         "x-default": path("vi", "tin-tuc"),
       },
     },
+    openGraph: {
+      title: t.news.metaTitle,
+      description: t.news.metaDescription,
+      images: ["/clients/tintuc.webp"],
+    },
   }
 }
 

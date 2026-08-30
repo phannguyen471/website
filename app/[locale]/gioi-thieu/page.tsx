@@ -39,6 +39,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
         "x-default": path("vi", "gioi-thieu"),
       },
     },
+    openGraph: {
+      title: t.about.metaTitle,
+      description: t.about.metaDescription,
+      images: ["/clients/banner-aboutus.webp"],
+    },
   }
 }
 

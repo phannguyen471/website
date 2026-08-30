@@ -17,9 +17,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const t = dict(locale)
   const { brand } = content(locale)
 
+  const description = t.contact.metaDescription(brand.locality, brand.hotline)
+
   return {
     title: t.contact.metaTitle,
-    description: t.contact.metaDescription(brand.locality, brand.hotline),
+    description,
     alternates: {
       canonical: path(locale, "lien-he"),
       languages: {
@@ -27,6 +29,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
         en: path("en", "lien-he"),
         "x-default": path("vi", "lien-he"),
       },
+    },
+    openGraph: {
+      title: t.contact.metaTitle,
+      description,
+      images: ["/clients/lienhe.webp"],
     },
   }
 }
