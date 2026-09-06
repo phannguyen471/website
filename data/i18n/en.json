@@ -594,6 +594,182 @@
   "tui-xach-tay-vai-sweed": {
    "slug": "suede-handbag",
    "name": "Suede handbag"
+  },
+  "pouch-canvas-chu-nhat-in-logo": {
+   "slug": "rectangular-printed-canvas-pouch",
+   "name": "Rectangular printed canvas pouch"
+  },
+  "tui-du-lich-nhieu-ngan": {
+   "slug": "multi-compartment-travel-bag",
+   "name": "Multi-compartment travel bag"
+  },
+  "tui-laptop-chan-bong-2-ngan": {
+   "slug": "quilted-two-compartment-laptop-bag",
+   "name": "Quilted two-compartment laptop bag"
+  },
+  "tui-my-pham-chan-bong-3-soc": {
+   "slug": "three-stripe-quilted-cosmetic-bag",
+   "name": "Three-stripe quilted cosmetic bag"
+  },
+  "tui-my-pham-tpu-7-mau-chan-bong": {
+   "slug": "iridescent-quilted-tpu-cosmetic-bag",
+   "name": "Iridescent quilted TPU cosmetic bag"
+  },
+  "tui-tote-chan-bong-da-nang": {
+   "slug": "multipurpose-quilted-tote-bag",
+   "name": "Multipurpose quilted tote bag"
+  },
+  "tui-tote-deo-vai-dung-laptop": {
+   "slug": "shoulder-tote-laptop-bag",
+   "name": "Shoulder tote laptop bag"
+  },
+  "tui-xach-tay-deo-vai-hinh-tru": {
+   "slug": "cylinder-handbag-shoulder-bag",
+   "name": "Cylinder handbag and shoulder bag"
+  },
+  "tui-deo-vai-cao-cap-chan-bong": {
+   "slug": "premium-quilted-shoulder-bag",
+   "name": "Premium quilted shoulder bag"
+  },
+  "bo-the-hanh-ly-va-passport": {
+   "slug": "luggage-tag-passport-holder-set",
+   "name": "Luggage tag and passport holder set"
+  },
+  "charm-chai-nuoc-hoa": {
+   "slug": "perfume-bottle-bag-charm",
+   "name": "Perfume bottle bag charm"
+  },
+  "charm-moc-khoa-hinh-tui": {
+   "slug": "mini-bag-keychain-charm",
+   "name": "Mini bag keychain charm"
+  },
+  "charm-ong-mat-troi": {
+   "slug": "sun-face-bag-charm",
+   "name": "Sun face bag charm"
+  },
+  "cop-dung-my-pham-gia-da": {
+   "slug": "faux-leather-vanity-case",
+   "name": "Faux-leather vanity case"
+  },
+  "pouch-pu-tron-chan-bong": {
+   "slug": "round-quilted-pu-pouch",
+   "name": "Round quilted PU pouch"
+  },
+  "pouch-pu-dung-my-pham": {
+   "slug": "pu-cosmetic-pouch",
+   "name": "PU cosmetic pouch"
+  },
+  "pouch-canvas-in-hoa-tiet": {
+   "slug": "patterned-printed-canvas-pouch",
+   "name": "Patterned printed canvas pouch"
+  },
+  "pouch-canvas-tron": {
+   "slug": "plain-canvas-pouch",
+   "name": "Plain canvas pouch"
+  },
+  "pouch-cao-cap": {
+   "slug": "premium-pouch",
+   "name": "Premium pouch"
+  },
+  "pouch-pu-bong-kieng-tron": {
+   "slug": "glossy-round-pu-pouch",
+   "name": "Glossy round PU pouch"
+  },
+  "pouch-pu-chan-bong": {
+   "slug": "quilted-pu-pouch",
+   "name": "Quilted PU pouch"
+  },
+  "pouch-vuong-cao-cap-dung-my-pham": {
+   "slug": "premium-square-cosmetic-pouch",
+   "name": "Premium square cosmetic pouch"
+  },
+  "pouch-canvas-dang-tru-xanh": {
+   "slug": "navy-cylinder-canvas-pouch",
+   "name": "Navy cylinder canvas pouch"
+  },
+  "pouch-canvas-dang-tru-do": {
+   "slug": "red-cylinder-canvas-pouch",
+   "name": "Red cylinder canvas pouch"
+  },
+  "pouch-dung-my-pham-canvas": {
+   "slug": "canvas-cosmetic-pouch",
+   "name": "Canvas cosmetic pouch"
+  },
+  "pouch-luoi-dung-my-pham": {
+   "slug": "mesh-cosmetic-pouch",
+   "name": "Mesh cosmetic pouch"
+  },
+  "tote-laptop-da-nang-gap-gon": {
+   "slug": "foldable-multipurpose-laptop-tote",
+   "name": "Foldable multipurpose laptop tote"
+  },
+  "tui-tote-jean": {
+   "slug": "denim-tote-bag",
+   "name": "Denim tote bag"
+  },
+  "tui-cam-tay-kieu-nhat": {
+   "slug": "japanese-style-pouch-bag",
+   "name": "Japanese-style pouch bag"
+  },
+  "tui-du-lich-lon": {
+   "slug": "large-travel-bag",
+   "name": "Large travel bag"
+  },
+  "tui-laptop-chan-bong": {
+   "slug": "quilted-laptop-bag",
+   "name": "Quilted laptop bag"
+  },
+  "tui-luoi-dung-my-pham": {
+   "slug": "mesh-cosmetic-bag",
+   "name": "Mesh cosmetic bag"
+  },
+  "tui-tote-pu-2-lop": {
+   "slug": "double-layer-pu-tote-bag",
+   "name": "Double-layer PU tote bag"
+  },
+  "tui-tote-du-lanh-dung-laptop": {
+   "slug": "nylon-tote-laptop-bag",
+   "name": "Nylon tote laptop bag"
+  },
+  "tui-tote-dung-laptop-canvas": {
+   "slug": "canvas-tote-laptop-bag",
+   "name": "Canvas tote laptop bag"
+  },
+  "tui-xach-cam-tay-pu": {
+   "slug": "pu-handheld-bag",
+   "name": "PU handheld bag"
+  },
+  "tui-xach-tay-7-mau-pu": {
+   "slug": "iridescent-pu-handbag",
+   "name": "Iridescent PU handbag"
+  },
+  "tui-xach-tay-co-ban": {
+   "slug": "basic-handbag",
+   "name": "Basic handbag"
+  },
+  "tui-deo-vai-7-mau-pu": {
+   "slug": "iridescent-pu-shoulder-bag",
+   "name": "Iridescent PU shoulder bag"
+  },
+  "tui-deo-vai-day-rut": {
+   "slug": "drawstring-shoulder-bag",
+   "name": "Drawstring shoulder bag"
+  },
+  "tui-di-cho-gap-gon": {
+   "slug": "foldable-printed-shopping-bag",
+   "name": "Foldable printed shopping bag"
+  },
+  "tui-dung-my-pham-canvas": {
+   "slug": "canvas-cosmetic-bag",
+   "name": "Canvas cosmetic bag"
+  },
+  "pouch-pu-cam-tay-dap-noi-hoa": {
+   "slug": "rose-embossed-pu-wristlet-pouch",
+   "name": "Rose-embossed PU wristlet pouch"
+  },
+  "pouch-hop-vuong-canvas-quai-xach": {
+   "slug": "boxy-canvas-pouch-with-handle",
+   "name": "Boxy canvas pouch with handle"
   }
  },
  "articles": {
