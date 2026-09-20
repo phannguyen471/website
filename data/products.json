@@ -140,7 +140,8 @@
    "https://phannguyenbags.vn/upload/product/f53adb0b8c8b2cd5759a-1200.jpg"
   ],
   "images_local": [
-   "assets/upload/product/f53adb0b8c8b2cd5759a-1200.webp"
+   "assets/upload/product/f53adb0b8c8b2cd5759a-1200.webp",
+   "assets/images/ao-khoac-du-loai-2.webp"
   ]
  },
  {
@@ -266,7 +267,9 @@
    "assets/upload/product/31a8b4da0504a45afd15-2754.webp",
    "assets/upload/product/ca8eb291-4f99-1900-4c34-001aacb8d184-1-9016.webp",
    "assets/upload/product/1d250a32-9c76-1600-c5c5-001aacb8d161-1-6258.webp",
-   "assets/upload/product/d934247e-1904-1700-ade2-001aacb8d170-1-3424.webp"
+   "assets/upload/product/d934247e-1904-1700-ade2-001aacb8d170-1-3424.webp",
+   "assets/images/ao-polo-in-chuyen-5.webp",
+   "assets/images/ao-polo-in-chuyen-6.webp"
   ]
  },
  {
@@ -362,7 +365,9 @@
    "https://phannguyenbags.vn/upload/product/e3b35f69df8b7ed5279a-9722.jpg"
   ],
   "images_local": [
-   "assets/upload/product/e3b35f69df8b7ed5279a-9722.webp"
+   "assets/upload/product/e3b35f69df8b7ed5279a-9722.webp",
+   "assets/images/ao-thun-cotton-den-2.webp",
+   "assets/images/ao-thun-cotton-den-3.webp"
   ]
  },
  {
@@ -410,7 +415,8 @@
    "https://phannguyenbags.vn/upload/product/thiet-ke-chua-co-ten-8-4560.png"
   ],
   "images_local": [
-   "assets/upload/product/thiet-ke-chua-co-ten-8-4560.webp"
+   "assets/upload/product/thiet-ke-chua-co-ten-8-4560.webp",
+   "assets/images/ao-thun-in-chuyen-nhiet-2.webp"
   ]
  },
  {
@@ -700,7 +706,8 @@
    "https://phannguyenbags.vn/upload/product/annotation-2024-06-01-124049-6471.jpg"
   ],
   "images_local": [
-   "assets/upload/product/annotation-2024-06-01-124049-6471.webp"
+   "assets/upload/product/annotation-2024-06-01-124049-6471.webp",
+   "assets/images/balo-hoc-sinh-2.webp"
   ]
  },
  {
@@ -844,7 +851,8 @@
    "https://phannguyenbags.vn/upload/product/a81acf134cdded83b4cc-8103.jpg"
   ],
   "images_local": [
-   "assets/upload/product/a81acf134cdded83b4cc-8103.webp"
+   "assets/upload/product/a81acf134cdded83b4cc-8103.webp",
+   "assets/images/balo-rut-2.webp"
   ]
  },
  {
@@ -1132,7 +1140,8 @@
    "https://phannguyenbags.vn/upload/product/a5291280c15960073948-1321.jpg"
   ],
   "images_local": [
-   "assets/upload/product/a5291280c15960073948-1321.webp"
+   "assets/upload/product/a5291280c15960073948-1321.webp",
+   "assets/images/non-kaki-nhieu-mau-2.webp"
   ]
  },
  {
@@ -1984,7 +1993,8 @@
    "https://phannguyenbags.vn/upload/product/2e679c67098ba8d5f19a-6013.jpg"
   ],
   "images_local": [
-   "assets/upload/product/2e679c67098ba8d5f19a-6013.webp"
+   "assets/upload/product/2e679c67098ba8d5f19a-6013.webp",
+   "assets/images/tui-du-lich-canvas-2.webp"
   ]
  },
  {
@@ -2056,7 +2066,8 @@
    "https://phannguyenbags.vn/upload/product/36b8cd7a6796c6c89f87-1338.jpg"
   ],
   "images_local": [
-   "assets/upload/product/36b8cd7a6796c6c89f87-1338.webp"
+   "assets/upload/product/36b8cd7a6796c6c89f87-1338.webp",
+   "assets/images/tui-du-lich-mini-2.webp"
   ]
  },
  {
@@ -2080,7 +2091,8 @@
    "https://phannguyenbags.vn/upload/product/d132a5493f8d9fd3c69c-2215.jpg"
   ],
   "images_local": [
-   "assets/upload/product/d132a5493f8d9fd3c69c-2215.webp"
+   "assets/upload/product/d132a5493f8d9fd3c69c-2215.webp",
+   "assets/images/tui-du-lich-tien-dung-2.webp"
   ]
  },
  {
@@ -2680,7 +2692,8 @@
    "https://phannguyenbags.vn/upload/product/566d8438ef194e471708-3969.jpg"
   ],
   "images_local": [
-   "assets/upload/product/566d8438ef194e471708-3969.webp"
+   "assets/upload/product/566d8438ef194e471708-3969.webp",
+   "assets/images/tui-xach-tay-tienm-dung-2.webp"
   ]
  },
  {
@@ -3424,7 +3437,8 @@
    "assets/images/tui-du-lich-lon.webp"
   ],
   "images_local": [
-   "assets/images/tui-du-lich-lon.webp"
+   "assets/images/tui-du-lich-lon.webp",
+   "assets/images/tui-du-lich-lon-2.webp"
   ]
  },
  {
@@ -3763,6 +3777,416 @@
   ],
   "images_local": [
    "assets/images/pouch-hop-vuong-canvas-quai-xach.webp"
+  ]
+ },
+ {
+  "slug": "ao-ghi-le-luoi",
+  "url": "https://phannguyenbags.vn/ao-ghi-le-luoi",
+  "name": "Áo ghi lê lưới in logo",
+  "title_tag": "Áo ghi lê lưới in logo",
+  "category_path": [
+   "Sản phẩm",
+   "Áo",
+   "Áo khoác"
+  ],
+  "category": "Áo khoác",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-157"
+  },
+  "description": "",
+  "images": [
+   "assets/images/ao-ghi-le-luoi.webp"
+  ],
+  "images_local": [
+   "assets/images/ao-ghi-le-luoi.webp"
+  ]
+ },
+ {
+  "slug": "ao-bong-ro",
+  "url": "https://phannguyenbags.vn/ao-bong-ro",
+  "name": "Áo bóng rổ",
+  "title_tag": "Áo bóng rổ",
+  "category_path": [
+   "Sản phẩm",
+   "Áo",
+   "Áo thể thao"
+  ],
+  "category": "Áo thể thao",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-158"
+  },
+  "description": "",
+  "images": [
+   "assets/images/ao-bong-ro.webp"
+  ],
+  "images_local": [
+   "assets/images/ao-bong-ro.webp"
+  ]
+ },
+ {
+  "slug": "balo-vai-den-in-logo",
+  "url": "https://phannguyenbags.vn/balo-vai-den-in-logo",
+  "name": "Balo vải đen in logo",
+  "title_tag": "Balo vải đen in logo",
+  "category_path": [
+   "Sản phẩm",
+   "Túi xách",
+   "Balo"
+  ],
+  "category": "Balo",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-159"
+  },
+  "description": "",
+  "images": [
+   "assets/images/balo-vai-den-in-logo.webp"
+  ],
+  "images_local": [
+   "assets/images/balo-vai-den-in-logo.webp"
+  ]
+ },
+ {
+  "slug": "nen-thom-hinh-hoa-hong",
+  "url": "https://phannguyenbags.vn/nen-thom-hinh-hoa-hong",
+  "name": "Nến thơm hình hoa hồng",
+  "title_tag": "Nến thơm hình hoa hồng",
+  "category_path": [
+   "Sản phẩm",
+   "Phụ kiện",
+   "Phụ kiện"
+  ],
+  "category": "Phụ kiện",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-160"
+  },
+  "description": "",
+  "images": [
+   "assets/images/nen-thom-hinh-hoa-hong.webp"
+  ],
+  "images_local": [
+   "assets/images/nen-thom-hinh-hoa-hong.webp"
+  ]
+ },
+ {
+  "slug": "ao-ca-sau-phoi-mau-tay-dai",
+  "url": "https://phannguyenbags.vn/ao-ca-sau-phoi-mau-tay-dai",
+  "name": "Áo cá sấu phối màu tay dài",
+  "title_tag": "Áo cá sấu phối màu tay dài",
+  "category_path": [
+   "Sản phẩm",
+   "Áo",
+   "Áo polo"
+  ],
+  "category": "Áo polo",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-161"
+  },
+  "description": "",
+  "images": [
+   "assets/images/ao-ca-sau-phoi-mau-tay-dai.webp"
+  ],
+  "images_local": [
+   "assets/images/ao-ca-sau-phoi-mau-tay-dai.webp"
+  ]
+ },
+ {
+  "slug": "ao-hoodie-den",
+  "url": "https://phannguyenbags.vn/ao-hoodie-den",
+  "name": "Áo hoodie đen",
+  "title_tag": "Áo hoodie đen",
+  "category_path": [
+   "Sản phẩm",
+   "Áo",
+   "Áo khoác"
+  ],
+  "category": "Áo khoác",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-162"
+  },
+  "description": "",
+  "images": [
+   "assets/images/ao-hoodie-den.webp"
+  ],
+  "images_local": [
+   "assets/images/ao-hoodie-den.webp"
+  ]
+ },
+ {
+  "slug": "ao-hoodie-xam",
+  "url": "https://phannguyenbags.vn/ao-hoodie-xam",
+  "name": "Áo hoodie xám",
+  "title_tag": "Áo hoodie xám",
+  "category_path": [
+   "Sản phẩm",
+   "Áo",
+   "Áo khoác"
+  ],
+  "category": "Áo khoác",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-163"
+  },
+  "description": "",
+  "images": [
+   "assets/images/ao-hoodie-xam.webp"
+  ],
+  "images_local": [
+   "assets/images/ao-hoodie-xam.webp"
+  ]
+ },
+ {
+  "slug": "co-treo-tuong-in-logo",
+  "url": "https://phannguyenbags.vn/co-treo-tuong-in-logo",
+  "name": "Cờ treo tường in logo",
+  "title_tag": "Cờ treo tường in logo",
+  "category_path": [
+   "Sản phẩm",
+   "Phụ kiện",
+   "Phụ kiện"
+  ],
+  "category": "Phụ kiện",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-164"
+  },
+  "description": "",
+  "images": [
+   "assets/images/co-treo-tuong-in-logo.webp"
+  ],
+  "images_local": [
+   "assets/images/co-treo-tuong-in-logo.webp"
+  ]
+ },
+ {
+  "slug": "du-size-dai-in-logo",
+  "url": "https://phannguyenbags.vn/du-size-dai-in-logo",
+  "name": "Dù size đại in logo",
+  "title_tag": "Dù size đại in logo",
+  "category_path": [
+   "Sản phẩm",
+   "Phụ kiện",
+   "Phụ kiện"
+  ],
+  "category": "Phụ kiện",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-165"
+  },
+  "description": "",
+  "images": [
+   "assets/images/du-size-dai-in-logo.webp"
+  ],
+  "images_local": [
+   "assets/images/du-size-dai-in-logo.webp"
+  ]
+ },
+ {
+  "slug": "non-du-loai",
+  "url": "https://phannguyenbags.vn/non-du-loai",
+  "name": "Nón đủ loại",
+  "title_tag": "Nón đủ loại",
+  "category_path": [
+   "Sản phẩm",
+   "Nón",
+   "Nón kết"
+  ],
+  "category": "Nón kết",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-166"
+  },
+  "description": "",
+  "images": [
+   "assets/images/non-du-loai.webp",
+   "assets/images/non-du-loai-2.webp"
+  ],
+  "images_local": [
+   "assets/images/non-du-loai.webp",
+   "assets/images/non-du-loai-2.webp"
+  ]
+ },
+ {
+  "slug": "non-tai-beo-em-be",
+  "url": "https://phannguyenbags.vn/non-tai-beo-em-be",
+  "name": "Nón tai bèo em bé",
+  "title_tag": "Nón tai bèo em bé",
+  "category_path": [
+   "Sản phẩm",
+   "Nón",
+   "Nón tai bèo"
+  ],
+  "category": "Nón tai bèo",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-167"
+  },
+  "description": "",
+  "images": [
+   "assets/images/non-tai-beo-em-be.webp"
+  ],
+  "images_local": [
+   "assets/images/non-tai-beo-em-be.webp"
+  ]
+ },
+ {
+  "slug": "vi-passport-vai-jean",
+  "url": "https://phannguyenbags.vn/vi-passport-vai-jean",
+  "name": "Ví passport vải jean",
+  "title_tag": "Ví passport vải jean",
+  "category_path": [
+   "Sản phẩm",
+   "Phụ kiện",
+   "Phụ kiện"
+  ],
+  "category": "Phụ kiện",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-168"
+  },
+  "description": "",
+  "images": [
+   "assets/images/vi-passport-vai-jean.webp"
+  ],
+  "images_local": [
+   "assets/images/vi-passport-vai-jean.webp"
+  ]
+ },
+ {
+  "slug": "khan-in-logo",
+  "url": "https://phannguyenbags.vn/khan-in-logo",
+  "name": "Khăn in logo",
+  "title_tag": "Khăn in logo",
+  "category_path": [
+   "Sản phẩm",
+   "Phụ kiện",
+   "Phụ kiện"
+  ],
+  "category": "Phụ kiện",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-169"
+  },
+  "description": "",
+  "images": [
+   "assets/images/khan-in-logo.webp"
+  ],
+  "images_local": [
+   "assets/images/khan-in-logo.webp"
+  ]
+ },
+ {
+  "slug": "ao-polo-me-phoi-mau",
+  "url": "https://phannguyenbags.vn/ao-polo-me-phoi-mau",
+  "name": "Áo polo mè phối màu",
+  "title_tag": "Áo polo mè phối màu",
+  "category_path": [
+   "Sản phẩm",
+   "Áo",
+   "Áo polo"
+  ],
+  "category": "Áo polo",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-170"
+  },
+  "description": "",
+  "images": [
+   "assets/images/ao-polo-me-phoi-mau.webp"
+  ],
+  "images_local": [
+   "assets/images/ao-polo-me-phoi-mau.webp"
+  ]
+ },
+ {
+  "slug": "tui-giu-nhiet-2-ngan",
+  "url": "https://phannguyenbags.vn/tui-giu-nhiet-2-ngan",
+  "name": "Túi giữ nhiệt 2 ngăn",
+  "title_tag": "Túi giữ nhiệt 2 ngăn",
+  "category_path": [
+   "Sản phẩm",
+   "Túi xách",
+   "Túi du lịch"
+  ],
+  "category": "Túi du lịch",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-171"
+  },
+  "description": "",
+  "images": [
+   "assets/images/tui-giu-nhiet-2-ngan.webp"
+  ],
+  "images_local": [
+   "assets/images/tui-giu-nhiet-2-ngan.webp"
+  ]
+ },
+ {
+  "slug": "tui-giu-nhiet-hop-com-in-hinh",
+  "url": "https://phannguyenbags.vn/tui-giu-nhiet-hop-com-in-hinh",
+  "name": "Túi giữ nhiệt hộp cơm in hình",
+  "title_tag": "Túi giữ nhiệt hộp cơm in hình",
+  "category_path": [
+   "Sản phẩm",
+   "Túi xách",
+   "Túi du lịch"
+  ],
+  "category": "Túi du lịch",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-172"
+  },
+  "description": "",
+  "images": [
+   "assets/images/tui-giu-nhiet-hop-com-in-hinh.webp"
+  ],
+  "images_local": [
+   "assets/images/tui-giu-nhiet-hop-com-in-hinh.webp"
+  ]
+ },
+ {
+  "slug": "tui-deo-cheo-nam",
+  "url": "https://phannguyenbags.vn/tui-deo-cheo-nam",
+  "name": "Túi đeo chéo nam",
+  "title_tag": "Túi đeo chéo nam",
+  "category_path": [
+   "Sản phẩm",
+   "Túi xách",
+   "Túi đeo chéo"
+  ],
+  "category": "Túi đeo chéo",
+  "price": "Liên hệ",
+  "attributes": {
+   "Giá": "Liên hệ",
+   "Mã sản phẩm": "PN-173"
+  },
+  "description": "",
+  "images": [
+   "assets/images/tui-deo-cheo-nam.webp"
+  ],
+  "images_local": [
+   "assets/images/tui-deo-cheo-nam.webp"
   ]
  }
 ]

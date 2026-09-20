@@ -770,6 +770,74 @@
   "pouch-hop-vuong-canvas-quai-xach": {
    "slug": "boxy-canvas-pouch-with-handle",
    "name": "Boxy canvas pouch with handle"
+  },
+  "ao-ghi-le-luoi": {
+   "slug": "printed-mesh-vest",
+   "name": "Printed mesh vest"
+  },
+  "ao-bong-ro": {
+   "slug": "basketball-jersey",
+   "name": "Basketball jersey"
+  },
+  "balo-vai-den-in-logo": {
+   "slug": "black-fabric-backpack-with-logo",
+   "name": "Black fabric backpack with logo"
+  },
+  "nen-thom-hinh-hoa-hong": {
+   "slug": "rose-shaped-scented-candle",
+   "name": "Rose-shaped scented candle"
+  },
+  "ao-ca-sau-phoi-mau-tay-dai": {
+   "slug": "long-sleeve-colour-block-pique-polo",
+   "name": "Long-sleeve colour-block piqué polo"
+  },
+  "ao-hoodie-den": {
+   "slug": "black-hoodie",
+   "name": "Black hoodie"
+  },
+  "ao-hoodie-xam": {
+   "slug": "grey-hoodie",
+   "name": "Grey hoodie"
+  },
+  "co-treo-tuong-in-logo": {
+   "slug": "printed-wall-pennant",
+   "name": "Printed wall pennant"
+  },
+  "du-size-dai-in-logo": {
+   "slug": "oversized-printed-umbrella",
+   "name": "Oversized printed umbrella"
+  },
+  "non-du-loai": {
+   "slug": "assorted-caps",
+   "name": "Assorted caps"
+  },
+  "non-tai-beo-em-be": {
+   "slug": "kids-bucket-hat",
+   "name": "Kids bucket hat"
+  },
+  "vi-passport-vai-jean": {
+   "slug": "denim-passport-holder",
+   "name": "Denim passport holder"
+  },
+  "khan-in-logo": {
+   "slug": "printed-scarf-and-towel",
+   "name": "Printed scarf and towel"
+  },
+  "ao-polo-me-phoi-mau": {
+   "slug": "colour-block-jersey-polo",
+   "name": "Colour-block jersey polo"
+  },
+  "tui-giu-nhiet-2-ngan": {
+   "slug": "two-compartment-insulated-bag",
+   "name": "Two-compartment insulated bag"
+  },
+  "tui-giu-nhiet-hop-com-in-hinh": {
+   "slug": "printed-insulated-lunch-bag",
+   "name": "Printed insulated lunch bag"
+  },
+  "tui-deo-cheo-nam": {
+   "slug": "mens-crossbody-bag",
+   "name": "Men's crossbody bag"
   }
  },
  "articles": {
