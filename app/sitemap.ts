@@ -16,6 +16,8 @@ const STATIC_SECTIONS: {
   { section: "lien-he", changeFrequency: "yearly", priority: 0.6 },
 ]
 
+const LANDING_SECTIONS: Section[] = ["tui-vai-in-logo", "tui-vai-khong-det-in-logo", "qua-tet-doanh-nghiep"]
+
 /** Khối hreflang cho một trang, trỏ sang bản tương ứng ở ngôn ngữ kia */
 function alternates(section: Section | undefined, key?: string) {
   const languages = Object.fromEntries(
@@ -58,6 +60,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.8,
         alternates: alternates("san-pham", p.key),
+      })
+    }
+
+    // Landing quảng cáo có URL riêng (nhóm `/bao-gia?nhom=` dùng query nên không đưa vào)
+    for (const section of LANDING_SECTIONS) {
+      entries.push({
+        url: absolute(locale, section),
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: alternates(section),
       })
     }
 

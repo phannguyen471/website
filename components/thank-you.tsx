@@ -6,7 +6,7 @@ import { THANK_YOU_PATH } from "@/lib/landing"
 import { path } from "@/lib/routes"
 import LandingTracking from "@/components/landing-tracking"
 import LeadConversion from "@/components/lead-conversion"
-import { landingRobots } from "@/components/landing-sections"
+import { thankYouRobots } from "@/components/landing-sections"
 import { IconZalo } from "@/components/brand-icons"
 import { IconArrowRight, IconCheck } from "@/components/icons"
 
@@ -32,7 +32,7 @@ const COPY = {
 export function thankYouMetadata(locale: Locale): Metadata {
   return {
     title: COPY[locale].meta,
-    robots: landingRobots,
+    robots: thankYouRobots,
     alternates: {
       canonical: THANK_YOU_PATH[locale],
       languages: { vi: THANK_YOU_PATH.vi, en: THANK_YOU_PATH.en },

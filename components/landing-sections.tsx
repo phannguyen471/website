@@ -13,8 +13,11 @@ import { IconArrowRight, IconCheck, IconChat, IconPhone, IconPlus } from "@/comp
  * (components/tet-landing-page.tsx), để hai trang luôn cùng một ngôn ngữ thiết kế.
  */
 
-/** Landing trùng nội dung site chính → không bao giờ index, kể cả khi ALLOW_INDEXING bật */
-export const landingRobots: Metadata["robots"] = ALLOW_INDEXING ? { index: false, follow: true } : robotsMeta
+/** Landing theo công tắc index chung của site (lib/seo.ts) — có canonical riêng nên được index như trang thường */
+export const landingRobots: Metadata["robots"] = robotsMeta
+
+/** Trang cảm ơn sau khi gửi form: không bao giờ index, kể cả khi site cho index */
+export const thankYouRobots: Metadata["robots"] = ALLOW_INDEXING ? { index: false, follow: false } : robotsMeta
 
 export type TbcComponent = (props: { children: React.ReactNode; note?: string }) => React.ReactNode
 
