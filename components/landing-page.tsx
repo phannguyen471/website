@@ -3,20 +3,21 @@ import Image from "next/image"
 import { content } from "@/lib/content"
 import type { Locale } from "@/lib/i18n"
 import { SHOWCASE, VARIANTS, landingPath, type VariantKey } from "@/lib/landing"
-import { ALLOW_INDEXING, robotsMeta } from "@/lib/seo"
 import { media } from "@/lib/utils"
 import ClientMarquee from "@/components/client-marquee"
 import LandingShowcase from "@/components/landing-showcase"
 import LandingTracking from "@/components/landing-tracking"
-import LeadForm from "@/components/lead-form"
-import { IconZalo } from "@/components/brand-icons"
 import {
-  IconArrowRight,
-  IconCheck,
-  IconChat,
-  IconPhone,
-  IconPlus,
-} from "@/components/icons"
+  FaqSection,
+  LandingHero,
+  PriceSection,
+  QuoteSection,
+  ReasonsSection,
+  ReviewBanner,
+  SectionIntro,
+  landingRobots,
+  makeTbc,
+} from "@/components/landing-sections"
 
 /**
  * Thân trang landing chạy Google Ads — chỉ có bản tiếng Việt. Dùng chung cho
@@ -26,13 +27,12 @@ import {
  * Phan Nguyễn xác nhận trước khi chạy quảng cáo.
  */
 
-/** Metadata chung: landing trùng nội dung site chính → không bao giờ index, kể cả khi ALLOW_INDEXING bật */
 export function landingMetadata(key: VariantKey): Metadata {
   const variant = VARIANTS[key]
   return {
     title: variant.metaTitle,
     description: variant.lead,
-    robots: ALLOW_INDEXING ? { index: false, follow: true } : robotsMeta,
+    robots: landingRobots,
     alternates: { canonical: landingPath(key) },
   }
 }
@@ -49,17 +49,7 @@ export default function LandingPage({ variantKey, review }: { variantKey: Varian
   }))
   const showcase = SHOWCASE.map((item) => ({ ...item, image: imageOf(item.slug) }))
   const years = new Date().getFullYear() - brand.founded
-  const tel = `tel:${brand.hotline.replace(/\s/g, "")}`
-
-  /** Thông tin cần khách xác nhận: chỉ tô vàng khi mở `?review=1` */
-  const Tbc = ({ children, note }: { children: React.ReactNode; note?: string }) =>
-    review ? (
-      <mark title={note} className="cursor-help rounded-[2px] bg-brand-gold px-1 text-navy-900">
-        {children}
-      </mark>
-    ) : (
-      <>{children}</>
-    )
+  const Tbc = makeTbc(review)
 
   const facts = [
     { value: "Hợp đồng & VAT", label: "Đầy đủ hồ sơ cho doanh nghiệp" },
@@ -255,87 +245,24 @@ export default function LandingPage({ variantKey, review }: { variantKey: Varian
     },
   ]
 
-  const ctaPrimary =
-    "group inline-flex items-center gap-2.5 rounded-[2px] bg-brand-red px-7 py-4 text-[11px] font-semibold tracking-[0.16em] text-white uppercase transition-colors hover:bg-brand-red-dark"
-
   return (
     <>
       <LandingTracking />
 
-      {/* ═══════════════════════════════════════════════════════════
-          HERO — tiêu đề khớp nhóm quảng cáo + ảnh sản phẩm thật
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="pt-[68px] md:pt-[108px]">
-        {review && (
-          <p className="bg-brand-gold px-6 py-3 text-center text-[13px] leading-relaxed text-navy-900">
-            <b>Chế độ duyệt:</b> phần tô vàng là số liệu tham khảo từ thị trường – cần Phan Nguyễn xác nhận hoặc
-            sửa trước khi chạy quảng cáo. Rê chuột lên để xem nguồn.
-          </p>
-        )}
-        <div className="grid lg:grid-cols-[1.05fr_1fr]">
-          <div className="flex flex-col justify-center px-6 py-14 md:px-12 lg:py-20 xl:px-20">
-            <p className="eyebrow text-brand-red">Xưởng sản xuất trực tiếp · Từ {brand.founded}</p>
-
-            <h1 className="mt-6 font-display text-[2.5rem] leading-[1.08] font-bold text-navy-500 md:text-[3.25rem] xl:text-6xl">
-              {variant.title[0]}
-              <span className="text-brand-red">{variant.title[1]}</span>
-              {variant.title[2]}
-            </h1>
-
-            <p className="mt-6 max-w-xl text-[15px] leading-[1.85] text-ink-soft md:text-base">
-              {variant.lead}
-            </p>
-
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href="#bao-gia" data-track="click_quote_cta" className={ctaPrimary}>
-                Nhận báo giá miễn phí
-                <IconArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-              </a>
-              <a
-                href={brand.social.zalo}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-track="click_zalo"
-                className="inline-flex items-center gap-2.5 rounded-[2px] border border-navy-500 py-3 pr-7 pl-4 text-[11px] font-semibold tracking-[0.16em] text-navy-500 uppercase transition-colors hover:bg-navy-500 hover:text-white"
-              >
-                <IconZalo size={26} />
-                Gửi logo qua Zalo
-              </a>
-            </div>
-
-            <dl className="mt-12 grid grid-cols-2 gap-x-6 gap-y-7 border-t border-line pt-8">
-              {facts.map((f) => (
-                <div key={f.label}>
-                  <dt className="font-display text-lg font-bold text-navy-500 md:text-xl">{f.value}</dt>
-                  <dd className="mt-1 text-[13px] leading-snug text-ink-soft">{f.label}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-
-          {/* Ảnh: 1 lớn + 2 xếp chồng */}
-          <div className="grid min-h-[420px] grid-cols-2 grid-rows-2 gap-1 bg-white lg:min-h-[680px]">
-            {hero.map((img, i) => (
-              <div key={i} className={`relative overflow-hidden bg-shell ${i === 0 ? "row-span-2" : ""}`}>
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <LandingHero
+        top={review && <ReviewBanner />}
+        eyebrow={`Xưởng sản xuất trực tiếp · Từ ${brand.founded}`}
+        title={variant.title}
+        lead={variant.lead}
+        cta="Nhận báo giá miễn phí"
+        facts={facts}
+        images={hero}
+        zaloUrl={brand.social.zalo}
+      />
 
       <ClientMarquee locale={locale} />
 
-      {/* ═══════════════════════════════════════════════════════════
-          SỐ LIỆU
-          ═══════════════════════════════════════════════════════════ */}
+      {/* Số liệu */}
       <section className="bg-navy-500 text-white">
         <div className="container-brand">
           <dl className="grid grid-cols-2 gap-px bg-white/12 lg:grid-cols-4">
@@ -354,65 +281,22 @@ export default function LandingPage({ variantKey, review }: { variantKey: Varian
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          BẢNG GIÁ THAM KHẢO
-          ═══════════════════════════════════════════════════════════ */}
-      <section id="bang-gia" className="container-brand scroll-mt-28 py-20 lg:py-28">
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.4fr] lg:gap-16">
-          <div>
-            <p className="eyebrow text-brand-red">Bảng giá tham khảo</p>
-            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-navy-500 md:text-4xl">
-              Giá bao nhiêu cho một chiếc túi in logo?
-            </h2>
-            <p className="mt-5 text-[15px] leading-[1.85] text-ink-soft">
-              Mức giá dưới đây giúp bạn ước lượng ngân sách. Giá thực tế phụ thuộc chất liệu, kích thước, số màu
-              in và số lượng – gửi yêu cầu để nhận báo giá chính xác.
-            </p>
-            <a href="#bao-gia" data-track="click_quote_cta" className={`${ctaPrimary} mt-8`}>
-              Nhận báo giá chính xác
-              <IconArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-            </a>
-          </div>
+      <PriceSection
+        title="Giá bao nhiêu cho một chiếc túi in logo?"
+        lead="Mức giá dưới đây giúp bạn ước lượng ngân sách. Giá thực tế phụ thuộc chất liệu, kích thước, số màu in và số lượng – gửi yêu cầu để nhận báo giá chính xác."
+        cta="Nhận báo giá chính xác"
+        rows={prices}
+      />
 
-          <div>
-            <div className="hidden grid-cols-[1.5fr_1fr_1.4fr] gap-6 bg-navy-500 px-6 py-4 md:grid">
-              {["Sản phẩm", "Giá tham khảo / cái", "Phù hợp cho"].map((h) => (
-                <span key={h} className="eyebrow text-white/80">
-                  {h}
-                </span>
-              ))}
-            </div>
-            <ul className="border-x border-b border-line max-md:border-t">
-              {prices.map((row) => (
-                <li
-                  key={row.name}
-                  className="grid gap-1.5 border-b border-line px-5 py-5 last:border-b-0 md:grid-cols-[1.5fr_1fr_1.4fr] md:items-center md:gap-6 md:px-6"
-                >
-                  <span className="text-[15px] font-medium text-ink">{row.name}</span>
-                  <span className="font-display text-lg font-bold text-brand-red">{row.price}</span>
-                  <span className="text-[13px] leading-relaxed text-ink-soft">{row.use}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-4 text-xs text-ink-soft">Giá chưa bao gồm VAT. Đơn số lượng lớn có giá tốt hơn.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          SẢN PHẨM
-          ═══════════════════════════════════════════════════════════ */}
+      {/* Sản phẩm */}
       <section id="san-pham" className="scroll-mt-28 border-y border-line bg-shell py-20 lg:py-28">
         <div className="container-brand">
-          <div className="mb-10 max-w-2xl">
-            <p className="eyebrow text-brand-red">Sản phẩm</p>
-            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-navy-500 md:text-4xl">
-              Một xưởng, đủ mọi món quà mang logo của bạn
-            </h2>
-            <p className="mt-5 text-[15px] leading-[1.85] text-ink-soft">
-              Một số đơn hàng thực tế đã sản xuất. Chất liệu, kích thước, màu sắc và cách in đều làm theo yêu cầu.
-            </p>
-          </div>
+          <SectionIntro
+            eyebrow="Sản phẩm"
+            title="Một xưởng, đủ mọi món quà mang logo của bạn"
+            lead="Một số đơn hàng thực tế đã sản xuất. Chất liệu, kích thước, màu sắc và cách in đều làm theo yêu cầu."
+            className="mb-10 max-w-2xl"
+          />
 
           <LandingShowcase items={showcase} />
 
@@ -432,20 +316,13 @@ export default function LandingPage({ variantKey, review }: { variantKey: Varian
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          DỰ ÁN TIÊU BIỂU
-          ═══════════════════════════════════════════════════════════ */}
+      {/* Dự án tiêu biểu */}
       <section id="du-an" className="container-brand scroll-mt-28 py-20 lg:py-28">
-        <div className="mb-12 max-w-2xl">
-          <p className="eyebrow text-brand-red">Dự án tiêu biểu</p>
-          <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-navy-500 md:text-4xl">
-            Sản phẩm thật, làm cho thương hiệu thật
-          </h2>
-          <p className="mt-5 text-[15px] leading-[1.85] text-ink-soft">
-            Các thương hiệu toàn cầu chọn Phan Nguyễn vì chất lượng đồng đều trên cả lô hàng và đúng chuẩn nhận
-            diện thương hiệu.
-          </p>
-        </div>
+        <SectionIntro
+          eyebrow="Dự án tiêu biểu"
+          title="Sản phẩm thật, làm cho thương hiệu thật"
+          lead="Các thương hiệu toàn cầu chọn Phan Nguyễn vì chất lượng đồng đều trên cả lô hàng và đúng chuẩn nhận diện thương hiệu."
+        />
 
         <div className="grid gap-6 md:grid-cols-3">
           {cases.map((c) => (
@@ -478,42 +355,15 @@ export default function LandingPage({ variantKey, review }: { variantKey: Varian
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          VÌ SAO CHỌN PHAN NGUYỄN
-          ═══════════════════════════════════════════════════════════ */}
-      <section className="bg-navy-500 py-20 text-white lg:py-28">
-        <div className="container-brand">
-          <div className="mb-12 max-w-2xl">
-            <p className="eyebrow text-brand-gold">Vì sao chọn Phan Nguyễn</p>
-            <h2 className="mt-5 font-display text-3xl leading-tight font-bold md:text-4xl lg:text-[2.75rem]">
-              Làm việc trực tiếp với xưởng, đầy đủ hồ sơ doanh nghiệp
-            </h2>
-          </div>
+      <ReasonsSection
+        eyebrow="Vì sao chọn Phan Nguyễn"
+        title="Làm việc trực tiếp với xưởng, đầy đủ hồ sơ doanh nghiệp"
+        reasons={reasons}
+      />
 
-          <div className="grid gap-px bg-white/12 sm:grid-cols-2 lg:grid-cols-4">
-            {reasons.map((r, i) => (
-              <div key={r.title} className="bg-navy-500 p-7">
-                <span className="font-display text-sm font-bold tracking-[0.2em] text-brand-gold">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-4 font-display text-lg leading-snug font-bold">{r.title}</h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-white/60">{r.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          QUY TRÌNH
-          ═══════════════════════════════════════════════════════════ */}
+      {/* Quy trình */}
       <section id="quy-trinh" className="container-brand scroll-mt-28 py-20 lg:py-28">
-        <div className="mb-14 max-w-2xl">
-          <p className="eyebrow text-brand-red">Quy trình đặt hàng</p>
-          <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-navy-500 md:text-4xl">
-            6 bước rõ ràng, có hợp đồng
-          </h2>
-        </div>
+        <SectionIntro eyebrow="Quy trình đặt hàng" title="6 bước rõ ràng, có hợp đồng" className="mb-14 max-w-2xl" />
 
         <ol className="grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((s, i) => (
@@ -528,110 +378,20 @@ export default function LandingPage({ variantKey, review }: { variantKey: Varian
         </ol>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════
-          FORM BÁO GIÁ
-          ═══════════════════════════════════════════════════════════ */}
-      <section id="bao-gia" className="scroll-mt-20 border-y border-line bg-shell py-20 lg:py-28">
-        <div className="container-brand grid gap-12 lg:grid-cols-[0.9fr_1.2fr] lg:gap-16">
-          <div>
-            <p className="eyebrow text-brand-red">Nhận báo giá miễn phí</p>
-            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-navy-500 md:text-4xl">
-              Gửi yêu cầu – nhận báo giá{" "}
-              <Tbc note="Cần xác nhận cam kết thời gian phản hồi">trong 24 giờ làm việc</Tbc>
-            </h2>
-            <p className="mt-5 text-[15px] leading-[1.85] text-ink-soft">
-              Càng nhiều thông tin (số lượng, ngân sách, logo, ngày cần hàng), báo giá càng chính xác.
-            </p>
+      <QuoteSection
+        title={
+          <>
+            Gửi yêu cầu – nhận báo giá{" "}
+            <Tbc note="Cần xác nhận cam kết thời gian phản hồi">trong 24 giờ làm việc</Tbc>
+          </>
+        }
+        lead="Càng nhiều thông tin (số lượng, ngân sách, logo, ngày cần hàng), báo giá càng chính xác."
+        Tbc={Tbc}
+        brand={brand}
+        form={{ nhom: variantKey, defaultProduct: variant.product }}
+      />
 
-            <ul className="mt-8 flex flex-col gap-3.5">
-              {[
-                "Báo giá chi tiết theo từng mức số lượng",
-                <Tbc key="mockup">Mockup logo trên sản phẩm miễn phí</Tbc>,
-                "Hợp đồng & hóa đơn VAT đầy đủ",
-              ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-[15px] text-ink">
-                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-navy-500 text-white">
-                    <IconCheck className="size-3.5" />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-10 border border-line bg-white">
-              {[
-                { label: "Hotline", value: brand.hotline, href: tel, Icon: IconPhone, track: "click_call" },
-                {
-                  label: "Zalo – gửi logo, hình mẫu",
-                  value: brand.zaloPhone,
-                  href: brand.social.zalo,
-                  Icon: IconChat,
-                  track: "click_zalo",
-                  external: true,
-                },
-              ].map((x) => (
-                <a
-                  key={x.label}
-                  href={x.href}
-                  data-track={x.track}
-                  {...(x.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="group flex items-center gap-4 border-b border-line px-6 py-5 transition-colors last:border-b-0 hover:bg-shell"
-                >
-                  <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-navy-200 text-navy-500 transition-colors group-hover:border-navy-500 group-hover:bg-navy-500 group-hover:text-white">
-                    <x.Icon className="size-4" />
-                  </span>
-                  <span>
-                    <span className="eyebrow block text-ink-soft">{x.label}</span>
-                    <span className="mt-1 block font-display text-lg font-bold text-navy-500">{x.value}</span>
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          <LeadForm
-            nhom={variantKey}
-            defaultProduct={variant.product}
-            hotline={brand.hotline}
-            zaloPhone={brand.zaloPhone}
-            zaloUrl={brand.social.zalo}
-          />
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
-          FAQ
-          ═══════════════════════════════════════════════════════════ */}
-      {/* Không đệm dưới: footer của layout đã có mt-24 */}
-      <section id="faq" className="container-brand scroll-mt-28 pt-20 lg:pt-28">
-        <div className="grid gap-10 lg:grid-cols-[0.8fr_1.4fr] lg:gap-16">
-          <div>
-            <p className="eyebrow text-brand-red">Câu hỏi thường gặp</p>
-            <h2 className="mt-4 font-display text-3xl leading-tight font-bold text-navy-500 md:text-4xl">
-              Trước khi đặt hàng
-            </h2>
-            <p className="mt-5 text-[15px] leading-[1.85] text-ink-soft">
-              Chưa thấy câu trả lời bạn cần? Gọi{" "}
-              <a href={tel} data-track="click_call" className="font-semibold text-navy-500 hover:text-brand-red">
-                {brand.hotline}
-              </a>{" "}
-              – xưởng tư vấn miễn phí.
-            </p>
-          </div>
-
-          <div className="border-t border-line">
-            {faqs.map((f) => (
-              <details key={f.q} className="group border-b border-line">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-[15px] font-semibold text-navy-500 [&::-webkit-details-marker]:hidden">
-                  {f.q}
-                  <IconPlus className="size-5 shrink-0 text-brand-red transition-transform duration-300 group-open:rotate-45" />
-                </summary>
-                <p className="pb-6 text-[15px] leading-[1.85] text-ink-soft">{f.a}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FaqSection eyebrow="Câu hỏi thường gặp" title="Trước khi đặt hàng" faqs={faqs} brand={brand} />
     </>
   )
 }

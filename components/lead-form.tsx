@@ -8,7 +8,6 @@ import {
   LEAD_QUANTITIES,
   LEAD_STORAGE_KEY,
   SELECT_PRODUCT_EVENT,
-  type LeadProduct,
 } from "@/lib/landing"
 import { cn } from "@/lib/utils"
 
@@ -16,7 +15,11 @@ type Props = {
   /** Nhóm quảng cáo của trang — gửi kèm lead khi URL không có `?nhom=` */
   nhom: string
   /** Sản phẩm chọn sẵn theo nhóm quảng cáo (`?nhom=`) */
-  defaultProduct: LeadProduct
+  defaultProduct: string
+  /** Danh sách ô "Sản phẩm quan tâm" — landing theo mùa có thêm lựa chọn riêng */
+  products?: readonly string[]
+  deadlinePlaceholder?: string
+  notePlaceholder?: string
   hotline: string
   zaloPhone: string
   zaloUrl: string
@@ -43,7 +46,16 @@ const inputClass =
  * riêng), thành công thì chuyển sang `/bao-gia/cam-on` — conversion bắn ở
  * trang đó, đúng một lần cho mỗi lead.
  */
-export default function LeadForm({ nhom, defaultProduct, hotline, zaloPhone, zaloUrl }: Props) {
+export default function LeadForm({
+  nhom,
+  defaultProduct,
+  products = LEAD_PRODUCTS,
+  deadlinePlaceholder = "VD: trước 15/12",
+  notePlaceholder = "Kích thước, chất liệu, màu sắc, số màu logo, vị trí in, cần đóng hộp không...",
+  hotline,
+  zaloPhone,
+  zaloUrl,
+}: Props) {
   const router = useRouter()
   const formRef = useRef<HTMLFormElement>(null)
   const [product, setProduct] = useState<string>(defaultProduct)
@@ -182,7 +194,7 @@ export default function LeadForm({ nhom, defaultProduct, hotline, zaloPhone, zal
             className={cn(inputClass, "appearance-none")}
           >
             <option value="">Chọn sản phẩm</option>
-            {LEAD_PRODUCTS.map((p) => (
+            {products.map((p) => (
               <option key={p}>{p}</option>
             ))}
           </select>
@@ -208,7 +220,7 @@ export default function LeadForm({ nhom, defaultProduct, hotline, zaloPhone, zal
         </label>
         <label className="flex flex-col gap-2">
           <span className="eyebrow text-ink-soft">Ngày cần hàng</span>
-          <input name="deadline" placeholder="VD: trước 15/12" className={cn(inputClass, "placeholder:text-ink-soft/60")} />
+          <input name="deadline" placeholder={deadlinePlaceholder} className={cn(inputClass, "placeholder:text-ink-soft/60")} />
         </label>
 
         <label className="flex flex-col gap-2 sm:col-span-2">
@@ -216,7 +228,7 @@ export default function LeadForm({ nhom, defaultProduct, hotline, zaloPhone, zal
           <textarea
             name="content"
             rows={4}
-            placeholder="Kích thước, chất liệu, màu sắc, số màu logo, vị trí in, cần đóng hộp không..."
+            placeholder={notePlaceholder}
             className={cn(inputClass, "resize-y placeholder:text-ink-soft/60")}
           />
         </label>
