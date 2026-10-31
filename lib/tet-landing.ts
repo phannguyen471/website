@@ -22,10 +22,10 @@ export const TET = {
   lastDelivery: "25/01",
 }
 
-/** Túi không dệt lên đầu vì là nhu cầu lớn nhất mùa Tết, thêm lựa chọn túi đựng quà */
+/** Combo quà tặng lên đầu vì là nhu cầu chính của quà Tết doanh nghiệp, thêm lựa chọn túi đựng quà */
 export const TET_PRODUCT_KEYS: LeadProductKey[] = [
-  "nonwoven",
-  ...DEFAULT_PRODUCT_KEYS.filter((k) => k !== "nonwoven"),
+  "combo",
+  ...DEFAULT_PRODUCT_KEYS.filter((k) => k !== "combo"),
   "tetGift",
 ]
 
@@ -38,21 +38,21 @@ export type TetVariant = {
 }
 
 export const TET_VARIANTS = {
-  "tui-qua": {
+  "qua-tet": {
     title: {
-      vi: ["", "Túi đựng quà Tết in logo", " cho doanh nghiệp"],
-      en: ["", "Logo gift bags for Tet", " for businesses"],
+      vi: ["", "Quà Tết doanh nghiệp", " in logo – sản xuất tại xưởng"],
+      en: ["", "Corporate Tet gifts", " with your logo – made in our factory"],
     },
     lead: {
-      vi: "Túi vải không dệt, túi canvas, túi phối cói in logo để đựng hộp quà, giỏ quà Tết. Khách nhận quà mang túi đi chợ, đi làm cả năm, logo của bạn đi theo họ thay vì nằm trong thùng rác như túi giấy.",
-      en: "Non-woven, canvas and seagrass bags printed with your logo to carry Tet gift boxes and hampers. Recipients reuse them for shopping and commuting all year, so your logo goes with them instead of ending up in the bin like a paper bag.",
+      vi: "Túi canvas, túi da PU, túi mỹ phẩm, balo, áo, nón in logo làm quà Tết cho khách hàng, đối tác và nhân viên. Quà dùng được cả năm nên thương hiệu của bạn còn được nhắc đến lâu sau Tết. Xưởng tại TP.HCM, hợp đồng, hóa đơn VAT, giao toàn quốc.",
+      en: "Logo canvas bags, PU leather bags, cosmetic pouches, backpacks, apparel and caps as Tet gifts for clients, partners and staff. Gifts that get used all year keep your brand in mind long after Tet. Factory in Ho Chi Minh City, contract, VAT invoice, nationwide delivery.",
     },
     metaTitle: {
-      vi: `Túi đựng quà Tết ${TET.year} in logo cho doanh nghiệp`,
-      en: `Logo Gift Bags for Tet ${TET.year} – Corporate Orders`,
+      vi: `Quà Tết doanh nghiệp ${TET.year} in logo – giá xưởng`,
+      en: `Corporate Tet Gifts ${TET.year} with Your Logo`,
     },
-    product: "tetGift",
-    heroSlugs: ["tui-canvas-cotton-phoi-coi", "tui-tote-size-lon", "tui-xach-tay-canvas-phoi-pu-nau"],
+    product: "combo",
+    heroSlugs: ["tui-tote-pu-2-lop", "pouch-canvas-dang-tru-do", "ao-polo-me-phoi-mau"],
   },
   "khong-det": {
     title: {
@@ -91,26 +91,61 @@ export const TET_VARIANTS = {
 
 export type TetVariantKey = keyof typeof TET_VARIANTS
 
-/** `?nhom=` lạ hoặc không có → túi đựng quà (nhóm lớn nhất của chiến dịch Tết) */
+/** `?nhom=` lạ hoặc không có → quà Tết doanh nghiệp (từ khoá chính của chiến dịch Tết) */
 export function tetVariantFor(nhom: string | undefined): { key: TetVariantKey; variant: TetVariant } {
-  const key = nhom && nhom in TET_VARIANTS ? (nhom as TetVariantKey) : "tui-qua"
+  const key = nhom && nhom in TET_VARIANTS ? (nhom as TetVariantKey) : "qua-tet"
   return { key, variant: TET_VARIANTS[key] }
 }
 
 export const TET_SHOWCASE: { slug: string; tag: L; name: L; note: L; product: LeadProductKey }[] = [
   {
-    slug: "tui-canvas-cotton-phoi-coi",
+    slug: "tui-tote-pu-2-lop",
     tag: { vi: "Quà khách hàng VIP", en: "VIP client gift" },
+    name: { vi: "Túi tote da PU 2 lớp", en: "Two-layer PU leather tote" },
+    note: { vi: "Màu đỏ may mắn, logo ép tinh tế", en: "Lucky red, subtly embossed logo" },
+    product: "bag",
+  },
+  {
+    slug: "tui-canvas-cotton-phoi-coi",
+    tag: { vi: "Quà đối tác", en: "Partner gift" },
     name: { vi: "Túi canvas phối cói", en: "Canvas & seagrass tote" },
-    note: { vi: "Sang, dùng lại được, hợp hộp quà cao cấp", en: "Elegant, reusable, suits premium gift boxes" },
+    note: { vi: "Sang, dùng lại được, đựng vừa hộp quà", en: "Elegant, reusable, fits a gift box" },
     product: "canvas",
   },
   {
-    slug: "tui-xach-tay-canvas-phoi-pu-nau",
-    tag: { vi: "Quà đối tác", en: "Partner gift" },
-    name: { vi: "Túi canvas phối quai da PU", en: "Canvas bag with PU handles" },
-    note: { vi: "Ép logo tinh tế, đựng rượu, trà, hộp quà", en: "Subtle embossed logo, fits wine, tea, gift boxes" },
-    product: "canvas",
+    slug: "pouch-canvas-dang-tru-do",
+    tag: { vi: "Quà khách hàng", en: "Client gift" },
+    name: { vi: "Pouch canvas dáng trụ", en: "Barrel canvas pouch" },
+    note: { vi: "Màu đỏ Tết, in logo thương hiệu", en: "Tet red, printed with your brand" },
+    product: "other",
+  },
+  {
+    slug: "tui-dung-my-pham-pu-mo-cao-cap",
+    tag: { vi: "Quà tặng kèm", en: "Gift with purchase" },
+    name: { vi: "Túi mỹ phẩm PU cao cấp", en: "Premium PU cosmetic pouch" },
+    note: { vi: "Logo dập chìm, hợp ngành làm đẹp", en: "Debossed logo, ideal for beauty brands" },
+    product: "other",
+  },
+  {
+    slug: "balo-vai-den-in-logo",
+    tag: { vi: "Quà Tết nhân viên", en: "Staff Tet gift" },
+    name: { vi: "Balo in logo công ty", en: "Company logo backpack" },
+    note: { vi: "Món quà nhân viên dùng mỗi ngày", en: "A gift staff use every day" },
+    product: "bag",
+  },
+  {
+    slug: "ao-polo-me-phoi-mau",
+    tag: { vi: "Year end party", en: "Year-end party" },
+    name: { vi: "Áo polo phối màu thêu logo", en: "Colour-block embroidered polo" },
+    note: { vi: "Đồng phục tất niên, year end party", en: "Uniforms for year-end parties" },
+    product: "uniform",
+  },
+  {
+    slug: "non-du-loai",
+    tag: { vi: "Team building", en: "Team building" },
+    name: { vi: "Nón in / thêu logo", en: "Printed / embroidered caps" },
+    note: { vi: "Quà nhân viên, du xuân đầu năm", en: "Staff gifts, New Year outings" },
+    product: "cap",
   },
   {
     slug: "tui-tote-size-lon",
@@ -118,40 +153,5 @@ export const TET_SHOWCASE: { slug: string; tag: L; name: L; note: L; product: Le
     name: { vi: "Túi tote khổ lớn", en: "Large tote bag" },
     note: { vi: "Vừa giỏ quà, hộp quà Tết cỡ lớn", en: "Fits large Tet hampers and gift boxes" },
     product: "tetGift",
-  },
-  {
-    slug: "tui-bo-in-lua-xach-tay",
-    tag: { vi: "Quà nhân viên", en: "Staff gift" },
-    name: { vi: "Túi vải bố in lụa", en: "Screen-printed cotton tote" },
-    note: { vi: "In logo kèm lời chúc Tết, nhiều màu", en: "Logo plus a Tet greeting, multi-colour" },
-    product: "canvas",
-  },
-  {
-    slug: "tui-canvas-co-day-rut",
-    tag: { vi: "Túi quà nhỏ", en: "Small gift bag" },
-    name: { vi: "Túi dây rút", en: "Drawstring bag" },
-    note: { vi: "Đựng bánh, trà, quà nhỏ kèm thiệp", en: "For cakes, tea and small gifts with a card" },
-    product: "tetGift",
-  },
-  {
-    slug: "tui-canvas-xach-tay",
-    tag: { vi: "Số lượng lớn", en: "Bulk order" },
-    name: { vi: "Túi canvas xách cơ bản", en: "Basic canvas tote" },
-    note: { vi: "Giá tốt cho đơn nghìn túi", en: "Best price for orders of thousands" },
-    product: "canvas",
-  },
-  {
-    slug: "balo-hoc-sinh",
-    tag: { vi: "Quà Tết nhân viên", en: "Staff Tet gift" },
-    name: { vi: "Balo in logo công ty", en: "Company logo backpack" },
-    note: { vi: "Món quà nhân viên dùng mỗi ngày", en: "A gift staff use every day" },
-    product: "bag",
-  },
-  {
-    slug: "ao-polo",
-    tag: { vi: "Year end party", en: "Year-end party" },
-    name: { vi: "Áo polo thêu logo", en: "Embroidered logo polo" },
-    note: { vi: "Đồng phục tất niên, year end party", en: "Uniforms for year-end parties" },
-    product: "uniform",
   },
 ]

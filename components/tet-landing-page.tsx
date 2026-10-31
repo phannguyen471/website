@@ -85,7 +85,7 @@ export default function TetLandingPage({
       value: (
         <Tbc note="Tham khảo: hầu hết đối thủ đều miễn phí thiết kế">{tr("Mockup miễn phí", "Free mockup")}</Tbc>
       ),
-      label: tr("Xem túi Tết trước khi đặt", "See your Tet bag before ordering"),
+      label: tr("Xem quà Tết trước khi đặt", "See your Tet gift before ordering"),
     },
   ]
 
@@ -133,39 +133,39 @@ export default function TetLandingPage({
   const audiences = [
     {
       tag: tr("Quà khách hàng, đối tác", "Client & partner gifts"),
-      title: tr("Doanh nghiệp tặng quà Tết", "Companies giving Tet gifts"),
+      title: tr("Tri ân khách hàng dịp Tết", "Thanking clients at Tet"),
       text: tr(
-        "Túi canvas phối cói, phối da PU in logo tinh tế, xứng với hộp quà cao cấp.",
-        "Canvas bags with seagrass or PU leather and a subtle logo, worthy of a premium gift box.",
+        "Túi da PU, túi canvas phối cói, túi mỹ phẩm in logo tinh tế, xứng tầm thương hiệu và đặt vừa hộp quà cao cấp.",
+        "PU leather bags, canvas & seagrass totes and cosmetic pouches with a subtle logo – on-brand and sized for premium gift boxes.",
       ),
-      fit: tr("Túi canvas cao cấp", "Premium canvas bags"),
+      fit: tr("Túi da PU, canvas cao cấp, pouch", "PU bags, premium canvas, pouches"),
     },
     {
       tag: tr("Quà nhân viên", "Staff gifts"),
       title: tr("Phòng nhân sự, công đoàn", "HR teams & trade unions"),
       text: tr(
-        "Túi đựng phần quà Tết, hoặc tặng luôn balo, túi canvas mang logo công ty.",
-        "Bags for staff Tet gift sets, or backpacks and canvas bags with the company logo as the gift itself.",
+        "Balo, áo, nón, túi canvas mang logo công ty – món quà nhân viên dùng hằng ngày, gắn kết với công ty cả năm.",
+        "Backpacks, apparel, caps and canvas bags with the company logo – gifts staff use every day that build connection all year.",
       ),
-      fit: tr("Túi canvas, balo", "Canvas bags, backpacks"),
+      fit: tr("Balo, áo polo, nón", "Backpacks, polos, caps"),
     },
     {
-      tag: tr("Bán giỏ quà, hộp quà", "Hamper sellers"),
-      title: tr("Đơn vị bán quà Tết", "Tet gift retailers"),
+      tag: tr("Tất niên, du xuân", "Year-end & New Year events"),
+      title: tr("Year end party, team building", "Year-end parties, team building"),
       text: tr(
-        "Túi in thương hiệu của bạn để đựng giỏ quà, số lượng lớn, giá xưởng.",
-        "Bags printed with your brand for hampers, in bulk, at factory prices.",
+        "Áo đồng phục, nón, túi in logo và thông điệp năm mới cho tiệc tất niên, chuyến du xuân đầu năm.",
+        "Uniforms, caps and bags printed with your logo and New Year message for year-end parties and spring outings.",
+      ),
+      fit: tr("Áo, nón, túi sự kiện", "Shirts, caps, event bags"),
+    },
+    {
+      tag: tr("Đựng giỏ quà, khuyến mãi", "Hampers & promotions"),
+      title: tr("Giỏ quà, siêu thị, hội chợ", "Hampers, retailers, fairs"),
+      text: tr(
+        "Túi in thương hiệu để đựng giỏ quà, hộp quà Tết hoặc tặng kèm đơn hàng – số lượng lớn, giá xưởng.",
+        "Branded bags to carry Tet hampers and gift boxes or to give away with purchases – in bulk, at factory prices.",
       ),
       fit: tr("Túi không dệt, tote lớn", "Non-woven, large totes"),
-    },
-    {
-      tag: tr("Khuyến mãi Tết", "Tet promotions"),
-      title: tr("Siêu thị, chuỗi bán lẻ, hội chợ", "Supermarkets, retail chains, fairs"),
-      text: tr(
-        "Túi tặng kèm đơn hàng Tết, in logo và chương trình khuyến mãi.",
-        "Free bags with Tet purchases, printed with your logo and promotion.",
-      ),
-      fit: tr("Túi không dệt", "Non-woven bags"),
     },
   ]
 
@@ -185,43 +185,30 @@ export default function TetLandingPage({
   )
   const comparison: [string, ...React.ReactNode[]][] = [
     [
-      tr("Được dùng lại sau Tết", "Reused after Tet"),
-      cell(tr("Hiếm", "Rarely"), "no"),
-      cell(tr("Có", "Yes"), "yes"),
-      cell(tr("Rất thường xuyên", "Very often"), "yes"),
+      tr("Thời gian sử dụng", "How long it is used"),
+      cell(tr("Vài ngày đến vài tuần", "A few days to a few weeks"), "no"),
+      cell(tr("Cả năm, mỗi ngày", "All year, every day"), "yes"),
     ],
     [
-      tr("Chịu được giỏ quà nặng", "Holds heavy hampers"),
-      cell(tr("Hạn chế", "Limited"), "no"),
-      cell(tr("Tốt", "Good"), "yes"),
-      cell(tr("Rất tốt", "Very good"), "yes"),
+      tr("Logo thương hiệu", "Your brand logo"),
+      cell(tr("Trên bao bì, bỏ đi sau Tết", "On the packaging, thrown away after Tet"), "no"),
+      cell(tr("Xuất hiện mỗi lần dùng", "Seen every time it is used"), "yes"),
     ],
     [
-      tr("Cảm giác cao cấp", "Premium feel"),
-      cell(tr("Trung bình", "Average")),
-      cell(tr("Trung bình", "Average")),
-      cell(tr("Cao", "High"), "yes"),
+      tr("Khác biệt", "Stands out"),
+      cell(tr("Dễ trùng với quà nơi khác", "Easily mixed up with other gifts")),
+      cell(tr("Thiết kế riêng theo nhận diện", "Custom-designed to your brand"), "yes"),
     ],
     [
       tr("Phù hợp nhất", "Best for"),
-      cell(tr("Quà nhỏ, nhẹ", "Small, light gifts")),
-      cell(tr("Giỏ quà số lượng lớn, khuyến mãi", "Bulk hampers, promotions")),
-      cell(tr("Quà khách VIP, đối tác, nhân viên", "VIP clients, partners, staff")),
+      cell(tr("Quà truyền thống, quà kèm", "Traditional or add-on gifts")),
+      cell(tr("Khách hàng, đối tác, nhân viên", "Clients, partners, staff")),
     ],
   ]
 
   const prices = [
     {
-      name: tr("Túi vải không dệt in logo", "Logo non-woven bag"),
-      price: (
-        <Tbc note="Cần Phan Nguyễn cung cấp giá và số lượng tối thiểu">
-          {tr("Báo giá theo số lượng", "Quoted by quantity")}
-        </Tbc>
-      ),
-      use: tr("Giỏ quà, hội chợ, khuyến mãi Tết", "Hampers, fairs, Tet promotions"),
-    },
-    {
-      name: tr("Túi canvas / vải bố cơ bản, in 1–2 màu", "Basic canvas / cotton bag, 1–2 colour print"),
+      name: tr("Túi canvas / vải bố in logo, in 1–2 màu", "Logo canvas / cotton bag, 1–2 colour print"),
       price: <Tbc note="Tham khảo: tuivaiinlogo.com 25–40k">{tr("Từ 25.000đ", "From 25,000 VND")}</Tbc>,
       use: tr("Quà nhân viên, quà đối tác số lượng lớn", "Bulk staff and partner gifts"),
     },
@@ -231,14 +218,28 @@ export default function TetLandingPage({
       use: tr("Quà khách hàng", "Client gifts"),
     },
     {
-      name: tr("Túi canvas phối da PU, phối cói", "Canvas with PU leather or seagrass"),
+      name: tr("Túi da PU, canvas phối cói cao cấp", "PU leather or premium canvas & seagrass bag"),
       price: <Tbc note="Tham khảo: tuivaiinlogo.com 80–120k">{tr("Từ 80.000đ", "From 80,000 VND")}</Tbc>,
-      use: tr("Quà VIP, hộp quà cao cấp", "VIP gifts, premium gift boxes"),
+      use: tr("Quà VIP, đối tác chiến lược", "VIP and key partner gifts"),
     },
     {
-      name: tr("Balo, áo in logo làm quà nhân viên", "Logo backpacks and apparel for staff"),
+      name: tr("Túi mỹ phẩm, pouch in logo", "Logo cosmetic pouches"),
+      price: tr("Báo giá theo mẫu", "Quoted per design"),
+      use: tr("Quà khách hàng, quà tặng kèm sản phẩm", "Client gifts, gift-with-purchase"),
+    },
+    {
+      name: tr("Balo, áo polo, nón in / thêu logo", "Logo backpacks, polos, caps"),
       price: tr("Báo giá theo mẫu", "Quoted per design"),
       use: tr("Quà Tết nhân viên, year end party", "Staff Tet gifts, year-end parties"),
+    },
+    {
+      name: tr("Túi vải không dệt đựng giỏ quà", "Non-woven hamper bags"),
+      price: (
+        <Tbc note="Cần Phan Nguyễn cung cấp giá và số lượng tối thiểu">
+          {tr("Báo giá theo số lượng", "Quoted by quantity")}
+        </Tbc>
+      ),
+      use: tr("Giỏ quà, hội chợ, khuyến mãi Tết", "Hampers, fairs, Tet promotions"),
     },
   ]
 
@@ -329,6 +330,13 @@ export default function TetLandingPage({
       ),
     },
     {
+      q: tr("Đặt nhiều loại quà trong cùng một đơn được không?", "Can I order several kinds of gifts in one order?"),
+      a: tr(
+        "Được. Xưởng làm trọn gói túi, balo, áo, nón và phụ kiện in logo – một hợp đồng, một hóa đơn VAT, giao cùng một đợt. Bạn có thể chọn quà khác nhau cho khách hàng, đối tác và nhân viên.",
+        "Yes. We make bags, backpacks, apparel, caps and accessories in one package – one contract, one VAT invoice, one delivery. You can choose different gifts for clients, partners and staff.",
+      ),
+    },
+    {
       q: tr("Tôi cần túi vừa hộp quà, giỏ quà có sẵn?", "I need bags to fit my existing gift boxes or hampers"),
       a: tr(
         "Gửi số đo dài, rộng, cao của hộp hoặc giỏ quà. Xưởng đề xuất kích thước túi, kiểu đáy và quai để vừa khít và chịu được trọng lượng.",
@@ -347,8 +355,8 @@ export default function TetLandingPage({
       a: (
         <>
           <Tbc>{tr("Từ 100 sản phẩm mỗi mẫu", "From 100 pieces per design")}</Tbc>
-          {tr(" với túi canvas. Túi không dệt ", " for canvas bags. For non-woven bags, ")}
-          <Tbc>{tr("cần xác nhận số lượng tối thiểu", "please ask for the minimum")}</Tbc>
+          {tr(" với túi canvas; balo, áo, nón và túi không dệt ", " for canvas bags. For backpacks, apparel, caps and non-woven bags, ")}
+          <Tbc>{tr("tùy mẫu, vui lòng liên hệ", "it depends on the design – please ask")}</Tbc>
           {tr(". Số lượng càng lớn đơn giá càng tốt.", ". The larger the order, the better the unit price.")}
         </>
       ),
@@ -404,8 +412,8 @@ export default function TetLandingPage({
             eyebrow={tr(`Lịch đặt hàng Tết ${TET.year}`, `Tet ${TET.year} ordering calendar`)}
             title={tr("Đặt càng sớm, càng chắc kịp Tết", "The earlier you order, the safer your Tet delivery")}
             lead={tr(
-              "Túi in logo cần làm mẫu, duyệt mẫu rồi mới sản xuất hàng loạt. Tháng 12 và tháng 1 là cao điểm, lịch xưởng kín nhanh.",
-              "Logo bags need a sample and approval before mass production. December and January are peak months, and our schedule fills up fast.",
+              "Quà in logo cần làm mẫu, duyệt mẫu rồi mới sản xuất hàng loạt. Tháng 12 và tháng 1 là cao điểm, lịch xưởng kín nhanh.",
+              "Logo gifts need a sample and approval before mass production. December and January are peak months, and our schedule fills up fast.",
             )}
             dark
           />
@@ -428,11 +436,11 @@ export default function TetLandingPage({
         </div>
       </section>
 
-      {/* Túi quà Tết cho ai */}
+      {/* Quà Tết cho ai */}
       <section className="container-brand py-20 lg:py-28">
         <SectionIntro
-          eyebrow={tr("Túi quà Tết cho ai", "Who Tet gift bags are for")}
-          title={tr("Một xưởng, đủ loại túi cho mọi kiểu quà Tết", "One factory, the right bag for every kind of Tet gift")}
+          eyebrow={tr("Quà Tết cho ai", "Who the gifts are for")}
+          title={tr("Một xưởng, đủ quà Tết cho mọi đối tượng", "One factory, the right Tet gift for everyone")}
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {audiences.map((a) => (
@@ -449,15 +457,15 @@ export default function TetLandingPage({
         </div>
       </section>
 
-      {/* So sánh túi giấy / không dệt / canvas */}
+      {/* So sánh quà ăn hết và quà in logo dùng hằng ngày */}
       <section className="border-y border-line bg-shell py-20 lg:py-28">
         <div className="container-brand grid gap-10 lg:grid-cols-[0.8fr_1.6fr] lg:gap-16">
           <SectionIntro
-            eyebrow={tr("Túi giấy hay túi vải?", "Paper or fabric?")}
-            title={tr("Chọn túi nào cho quà Tết?", "Which bag for your Tet gifts?")}
+            eyebrow={tr("Quà ăn hết hay quà dùng được?", "Consumed or kept?")}
+            title={tr("Chọn quà Tết doanh nghiệp thế nào?", "How to choose corporate Tet gifts")}
             lead={tr(
-              "Túi giấy thường bị bỏ sau khi mở quà. Túi vải được dùng lại, nên logo của bạn còn xuất hiện sau Tết.",
-              "Paper bags are usually thrown away once the gift is opened. Fabric bags get reused, so your logo stays visible long after Tet.",
+              "Giỏ bánh kẹo, rượu dùng hết sau vài tuần. Quà in logo dùng hằng ngày nên thương hiệu của bạn còn xuất hiện cả năm. Nhiều doanh nghiệp kết hợp cả hai: đặt giỏ quà truyền thống trong túi in logo.",
+              "Hampers of sweets and wine are gone within weeks. Logo gifts get used every day, so your brand stays in sight all year. Many companies combine both: a traditional hamper inside a logo bag.",
             )}
             className=""
           />
@@ -465,11 +473,10 @@ export default function TetLandingPage({
             <DataTable
               head={[
                 tr("Tiêu chí", "Criteria"),
-                tr("Túi giấy", "Paper bag"),
-                tr("Túi không dệt", "Non-woven bag"),
-                tr("Túi canvas", "Canvas bag"),
+                tr("Bánh kẹo, rượu, giỏ quà", "Sweets, wine, hampers"),
+                tr("Quà in logo dùng hằng ngày", "Everyday logo gifts"),
               ]}
-              cols="md:grid-cols-[1.2fr_1fr_1fr_1fr]"
+              cols="md:grid-cols-[1fr_1.3fr_1.3fr]"
               mobileLabels
               rows={comparison.map(([label, ...cells]) => ({
                 key: label,
@@ -487,32 +494,32 @@ export default function TetLandingPage({
 
       <PriceSection
         locale={locale}
-        title={tr("Ngân sách cho một chiếc túi quà Tết", "Budgeting for a Tet gift bag")}
+        title={tr("Ngân sách cho một món quà Tết in logo", "Budgeting for a logo Tet gift")}
         lead={tr(
-          "Giá phụ thuộc chất liệu, kích thước, số màu in và số lượng. Gửi kích thước hộp quà hoặc giỏ quà để nhận báo giá chính xác.",
-          "Price depends on material, size, print colours and quantity. Send your gift box or hamper size for an exact quote.",
+          "Giá phụ thuộc loại quà, chất liệu, số màu in và số lượng. Cho xưởng biết ngân sách mỗi phần quà để được gợi ý phù hợp.",
+          "Price depends on the gift type, material, print colours and quantity. Tell us your budget per gift and we will suggest options.",
         )}
-        cta={tr("Nhận báo giá túi quà Tết", "Get a Tet gift bag quote")}
+        cta={tr("Nhận báo giá quà Tết", "Get a Tet gift quote")}
         rows={prices}
       />
 
-      {/* Mẫu túi quà Tết */}
+      {/* Gợi ý quà Tết doanh nghiệp */}
       <section id="san-pham" className="scroll-mt-28 border-y border-line bg-shell py-20 lg:py-28">
         <div className="container-brand">
           <SectionIntro
-            eyebrow={tr("Mẫu túi quà Tết", "Tet gift bag ideas")}
-            title={tr("Gợi ý mẫu cho mùa Tết", "Suggestions for the Tet season")}
+            eyebrow={tr("Gợi ý quà Tết doanh nghiệp", "Corporate Tet gift ideas")}
+            title={tr("Quà Tết in logo cho từng đối tượng", "Logo Tet gifts for every recipient")}
             lead={tr(
-              "Một số đơn hàng thực tế đã sản xuất. Màu vải, màu in và kích thước đều đổi được theo hộp quà và nhận diện Tết của bạn.",
-              "A selection of real orders we have produced. Fabric colour, print colour and size can all be adapted to your gift box and Tet branding.",
+              "Một số đơn hàng thực tế đã sản xuất cho các thương hiệu. Màu sắc, chất liệu và cách in đều đổi được theo nhận diện Tết của bạn.",
+              "A selection of real orders we have produced for brands. Colours, materials and printing can all be adapted to your Tet branding.",
             )}
             className="mb-10 max-w-2xl"
           />
           <LandingShowcase locale={locale} items={showcase} tabs={false} />
           <p className="mt-10 text-[15px] text-ink-soft">
             {tr(
-              "Có sẵn kích thước hộp quà? Gửi số đo hoặc ảnh hộp quà qua",
-              "Already have your gift box size? Send the measurements or a photo via",
+              "Đã có ý tưởng quà Tết? Gửi hình tham khảo hoặc logo qua",
+              "Already have a gift idea? Send a reference photo or your logo via",
             )}{" "}
             <a
               href={brand.social.zalo}
@@ -523,7 +530,7 @@ export default function TetLandingPage({
             >
               Zalo
             </a>{" "}
-            {tr("để xưởng đề xuất kích thước túi vừa khít.", "and we will suggest a bag size that fits perfectly.")}
+            {tr("để xưởng làm mẫu đúng ý bạn.", "and we will make a sample to match.")}
           </p>
         </div>
       </section>
@@ -557,8 +564,8 @@ export default function TetLandingPage({
           productKeys: TET_PRODUCT_KEYS,
           deadlinePlaceholder: tr(`VD: trước 15/01/${TET.year}`, `e.g. before 15 Jan ${TET.year}`),
           notePlaceholder: tr(
-            "Kích thước hộp/giỏ quà cần đựng, màu (đỏ, vàng...), số màu logo, có in thêm chữ chúc Tết không...",
-            "Gift box/hamper size, colours (red, gold...), number of logo colours, whether to add a Tet greeting...",
+            "Loại quà, số lượng từng loại, tặng khách hàng hay nhân viên, màu (đỏ, vàng...), số màu logo, có in lời chúc Tết không...",
+            "Gift types, quantity of each, for clients or staff, colours (red, gold...), number of logo colours, whether to add a Tet greeting...",
           ),
         }}
       />
@@ -566,7 +573,7 @@ export default function TetLandingPage({
       <FaqSection
         locale={locale}
         eyebrow={tr("Câu hỏi mùa Tết", "Tet season FAQ")}
-        title={tr("Trước khi đặt túi quà Tết", "Before you order Tet gift bags")}
+        title={tr("Trước khi đặt quà Tết doanh nghiệp", "Before you order corporate Tet gifts")}
         faqs={faqs}
         brand={brand}
       />
