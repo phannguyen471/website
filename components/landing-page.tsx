@@ -486,7 +486,7 @@ export default function LandingPage({ variantKey, review }: { variantKey: Varian
           <div className="mb-12 max-w-2xl">
             <p className="eyebrow text-brand-gold">Vì sao chọn Phan Nguyễn</p>
             <h2 className="mt-5 font-display text-3xl leading-tight font-bold md:text-4xl lg:text-[2.75rem]">
-              Làm việc thẳng với xưởng, đầy đủ hồ sơ doanh nghiệp
+              Làm việc trực tiếp với xưởng, đầy đủ hồ sơ doanh nghiệp
             </h2>
           </div>
 
