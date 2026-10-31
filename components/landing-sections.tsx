@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Image from "next/image"
 import type { LBrand } from "@/lib/content"
+import type { Locale } from "@/lib/i18n"
 import { ALLOW_INDEXING, robotsMeta } from "@/lib/seo"
 import LeadForm from "@/components/lead-form"
 import { IconZalo } from "@/components/brand-icons"
@@ -29,6 +30,32 @@ export function makeTbc(review: boolean): TbcComponent {
     )
   }
 }
+
+/** Chuỗi giao diện dùng chung của các khối landing */
+const UI = {
+  vi: {
+    zalo: "Gửi logo qua Zalo",
+    priceEyebrow: "Bảng giá tham khảo",
+    priceHead: ["Sản phẩm", "Giá tham khảo / cái", "Phù hợp cho"],
+    priceNote: "Giá chưa bao gồm VAT. Đơn số lượng lớn có giá tốt hơn.",
+    quoteEyebrow: "Nhận báo giá miễn phí",
+    assure: ["Báo giá chi tiết theo từng mức số lượng", "Mockup logo trên sản phẩm miễn phí", "Hợp đồng & hóa đơn VAT đầy đủ"],
+    hotline: "Hotline",
+    zaloLabel: "Zalo – gửi logo, hình mẫu",
+    faqLead: ["Chưa thấy câu trả lời bạn cần? Gọi", "– xưởng tư vấn miễn phí."],
+  },
+  en: {
+    zalo: "Send logo via Zalo",
+    priceEyebrow: "Indicative pricing",
+    priceHead: ["Product", "Indicative price / unit", "Best for"],
+    priceNote: "Prices exclude VAT. Larger orders get better unit prices.",
+    quoteEyebrow: "Free quote",
+    assure: ["Detailed quote for each quantity tier", "Free logo mockup on the product", "Full contract & VAT invoice"],
+    hotline: "Hotline",
+    zaloLabel: "Zalo – send logo, samples",
+    faqLead: ["Can't find your answer? Call", "for free advice from our factory."],
+  },
+} satisfies Record<Locale, unknown>
 
 export const ctaPrimary =
   "group inline-flex items-center gap-2.5 rounded-[2px] bg-brand-red px-7 py-4 text-[11px] font-semibold tracking-[0.16em] text-white uppercase transition-colors hover:bg-brand-red-dark"
@@ -73,6 +100,7 @@ export function SectionIntro({
 
 /** Hero chia đôi: chữ + 4 điểm mạnh bên trái, 3 ảnh sản phẩm bên phải */
 export function LandingHero({
+  locale,
   eyebrow,
   title,
   lead,
@@ -82,6 +110,7 @@ export function LandingHero({
   zaloUrl,
   top,
 }: {
+  locale: Locale
   eyebrow: string
   /** Phần giữa tô đỏ là cụm từ khoá chính */
   title: [string, string, string]
@@ -121,7 +150,7 @@ export function LandingHero({
               className="inline-flex items-center gap-2.5 rounded-[2px] border border-navy-500 py-3 pr-7 pl-4 text-[11px] font-semibold tracking-[0.16em] text-navy-500 uppercase transition-colors hover:bg-navy-500 hover:text-white"
             >
               <IconZalo size={26} />
-              Gửi logo qua Zalo
+              {UI[locale].zalo}
             </a>
           </div>
 
@@ -195,11 +224,13 @@ export function DataTable({
 
 /** Bảng giá tham khảo: chữ dẫn + CTA bên trái, bảng bên phải */
 export function PriceSection({
+  locale,
   title,
   lead,
   cta,
   rows,
 }: {
+  locale: Locale
   title: string
   lead: string
   cta: string
@@ -209,16 +240,16 @@ export function PriceSection({
     <section id="bang-gia" className="container-brand scroll-mt-28 py-20 lg:py-28">
       <div className="grid gap-10 lg:grid-cols-[0.8fr_1.4fr] lg:gap-16">
         <div>
-          <SectionIntro eyebrow="Bảng giá tham khảo" title={title} lead={lead} className="" />
+          <SectionIntro eyebrow={UI[locale].priceEyebrow} title={title} lead={lead} className="" />
           <a href="#bao-gia" data-track="click_quote_cta" className={`${ctaPrimary} mt-8`}>
             {cta}
             <IconArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
         <DataTable
-          head={["Sản phẩm", "Giá tham khảo / cái", "Phù hợp cho"]}
+          head={UI[locale].priceHead}
           cols="md:grid-cols-[1.5fr_1fr_1.4fr]"
-          note="Giá chưa bao gồm VAT. Đơn số lượng lớn có giá tốt hơn."
+          note={UI[locale].priceNote}
           rows={rows.map((r) => ({
             key: r.name,
             cells: [
@@ -273,30 +304,33 @@ export function ReasonsSection({
 
 /** Form báo giá: lời hứa + liên hệ nhanh bên trái, form bên phải */
 export function QuoteSection({
+  locale,
   title,
   lead,
   Tbc,
   brand,
   form,
 }: {
+  locale: Locale
   title: React.ReactNode
   lead: string
   Tbc: TbcComponent
   brand: LBrand
-  form: Omit<React.ComponentProps<typeof LeadForm>, "hotline" | "zaloPhone" | "zaloUrl">
+  form: Omit<React.ComponentProps<typeof LeadForm>, "locale" | "hotline" | "zaloPhone" | "zaloUrl">
 }) {
+  const ui = UI[locale]
   const tel = `tel:${brand.hotline.replace(/\s/g, "")}`
   return (
     <section id="bao-gia" className="scroll-mt-20 border-y border-line bg-shell py-20 lg:py-28">
       <div className="container-brand grid gap-12 lg:grid-cols-[0.9fr_1.2fr] lg:gap-16">
         <div>
-          <SectionIntro eyebrow="Nhận báo giá miễn phí" title={title} lead={lead} className="" />
+          <SectionIntro eyebrow={ui.quoteEyebrow} title={title} lead={lead} className="" />
 
           <ul className="mt-8 flex flex-col gap-3.5">
             {[
-              "Báo giá chi tiết theo từng mức số lượng",
-              <Tbc key="mockup">Mockup logo trên sản phẩm miễn phí</Tbc>,
-              "Hợp đồng & hóa đơn VAT đầy đủ",
+              ui.assure[0],
+              <Tbc key="mockup">{ui.assure[1]}</Tbc>,
+              ui.assure[2],
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-[15px] text-ink">
                 <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-navy-500 text-white">
@@ -309,9 +343,9 @@ export function QuoteSection({
 
           <div className="mt-10 border border-line bg-white">
             {[
-              { label: "Hotline", value: brand.hotline, href: tel, Icon: IconPhone, track: "click_call" },
+              { label: ui.hotline, value: brand.hotline, href: tel, Icon: IconPhone, track: "click_call" },
               {
-                label: "Zalo – gửi logo, hình mẫu",
+                label: ui.zaloLabel,
                 value: brand.zaloPhone,
                 href: brand.social.zalo,
                 Icon: IconChat,
@@ -338,7 +372,7 @@ export function QuoteSection({
           </div>
         </div>
 
-        <LeadForm {...form} hotline={brand.hotline} zaloPhone={brand.zaloPhone} zaloUrl={brand.social.zalo} />
+        <LeadForm {...form} locale={locale} hotline={brand.hotline} zaloPhone={brand.zaloPhone} zaloUrl={brand.social.zalo} />
       </div>
     </section>
   )
@@ -346,11 +380,13 @@ export function QuoteSection({
 
 /** Câu hỏi thường gặp dạng accordion; không đệm dưới vì footer của layout đã có mt-24 */
 export function FaqSection({
+  locale,
   eyebrow,
   title,
   faqs,
   brand,
 }: {
+  locale: Locale
   eyebrow: string
   title: string
   faqs: { q: string; a: React.ReactNode }[]
@@ -365,7 +401,7 @@ export function FaqSection({
           className=""
           lead={
             <>
-              Chưa thấy câu trả lời bạn cần? Gọi{" "}
+              {UI[locale].faqLead[0]}{" "}
               <a
                 href={`tel:${brand.hotline.replace(/\s/g, "")}`}
                 data-track="click_call"
@@ -373,7 +409,7 @@ export function FaqSection({
               >
                 {brand.hotline}
               </a>{" "}
-              – xưởng tư vấn miễn phí.
+              {UI[locale].faqLead[1]}
             </>
           }
         />

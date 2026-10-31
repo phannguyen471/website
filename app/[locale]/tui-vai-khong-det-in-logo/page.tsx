@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
+import { isLocale } from "@/lib/i18n"
 import LandingPage, { landingMetadata } from "@/components/landing-page"
 
 type Props = {
@@ -9,12 +10,12 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params
-  return locale === "vi" ? landingMetadata("khong-det") : {}
+  return isLocale(locale) ? landingMetadata("khong-det", locale) : {}
 }
 
-/** Landing quảng cáo nhóm túi vải không dệt */
+/** Landing quảng cáo nhóm túi vải không dệt — `/tui-vai-khong-det-in-logo`, `/en/custom-non-woven-bags` */
 export default async function NonWovenLandingPage({ params, searchParams }: Props) {
   const { locale } = await params
-  if (locale !== "vi") notFound()
-  return <LandingPage variantKey="khong-det" review={(await searchParams).review === "1"} />
+  if (!isLocale(locale)) notFound()
+  return <LandingPage variantKey="khong-det" locale={locale} review={(await searchParams).review === "1"} />
 }

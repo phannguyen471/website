@@ -2,7 +2,8 @@
 
 import Image from "next/image"
 import { useState } from "react"
-import { PRODUCT_TABS, SELECT_PRODUCT_EVENT, type ProductTab } from "@/lib/landing"
+import type { Locale } from "@/lib/i18n"
+import { PRODUCT_TABS, SELECT_PRODUCT_EVENT, type LeadProductKey, type ProductTab } from "@/lib/landing"
 import { track } from "@/lib/track"
 import { cn } from "@/lib/utils"
 import { IconArrowRight } from "@/components/icons"
@@ -14,8 +15,8 @@ export type ShowcaseItem = {
   tag: string
   name: string
   note: string
-  /** Giá trị chọn sẵn trong ô "Sản phẩm quan tâm" của form */
-  product: string
+  /** Sản phẩm chọn sẵn trong ô "Sản phẩm quan tâm" của form */
+  product: LeadProductKey
   image: string
 }
 
@@ -24,11 +25,19 @@ export type ShowcaseItem = {
  * chọn sẵn sản phẩm trong form cuối trang rồi cuộn xuống — giữ khách ở lại
  * landing thay vì lạc sang catalog.
  */
-export default function LandingShowcase({ items, tabs = true }: { items: ShowcaseItem[]; tabs?: boolean }) {
+export default function LandingShowcase({
+  locale,
+  items,
+  tabs = true,
+}: {
+  locale: Locale
+  items: ShowcaseItem[]
+  tabs?: boolean
+}) {
   const [tab, setTab] = useState<ProductTab>("all")
   const visible = tab === "all" ? items : items.filter((i) => i.tab === tab)
 
-  function pick(product: string) {
+  function pick(product: LeadProductKey) {
     track("click_product_quote", { product })
     window.dispatchEvent(new CustomEvent(SELECT_PRODUCT_EVENT, { detail: product }))
   }
@@ -38,7 +47,7 @@ export default function LandingShowcase({ items, tabs = true }: { items: Showcas
       {tabs && (
         <div
           role="group"
-          aria-label="Lọc sản phẩm"
+          aria-label={locale === "en" ? "Filter products" : "Lọc sản phẩm"}
           className="no-scrollbar -mx-6 mb-10 flex gap-2 overflow-x-auto px-6 lg:mx-0 lg:px-0"
         >
           {PRODUCT_TABS.map((t) => (
@@ -54,7 +63,7 @@ export default function LandingShowcase({ items, tabs = true }: { items: Showcas
                   : "border-line text-navy-500 hover:border-navy-500",
               )}
             >
-              {t.label}
+              {t.label[locale]}
             </button>
           ))}
         </div>
@@ -81,7 +90,7 @@ export default function LandingShowcase({ items, tabs = true }: { items: Showcas
                 onClick={() => pick(item.product)}
                 className="group/btn mt-auto flex w-fit items-center gap-1.5 pt-2 text-[11px] font-semibold tracking-[0.14em] text-brand-red uppercase transition-colors hover:text-brand-red-dark"
               >
-                Nhận báo giá
+                {locale === "en" ? "Get a quote" : "Nhận báo giá"}
                 <IconArrowRight className="size-3.5 transition-transform group-hover/btn:translate-x-0.5" />
               </button>
             </div>

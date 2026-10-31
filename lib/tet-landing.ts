@@ -1,17 +1,20 @@
-import { LEAD_PRODUCTS } from "@/lib/landing"
+import type { Locale } from "@/lib/i18n"
+import { DEFAULT_PRODUCT_KEYS, type LeadProductKey } from "@/lib/landing"
 
 /**
- * Landing quà Tết doanh nghiệp (`/qua-tet-doanh-nghiep`).
+ * Landing quà Tết doanh nghiệp (`/qua-tet-doanh-nghiep`, `/en/corporate-tet-gifts`).
  *
  * Chạy theo mùa: khi qua Tết, cập nhật `TET` (năm, ngày Tết, hạn chốt mẫu)
  * cho mùa sau thay vì sửa từng chỗ trong trang.
  */
 
-export const TET_PATH = "/qua-tet-doanh-nghiep"
+type L<T = string> = Record<Locale, T>
+
+export const TET_PATH: L = { vi: "/qua-tet-doanh-nghiep", en: "/en/corporate-tet-gifts" }
 
 export const TET = {
   year: 2027,
-  name: "Tết Đinh Mùi",
+  name: { vi: "Tết Đinh Mùi", en: "Lunar New Year (Year of the Goat)" },
   date: "06/02/2027",
   /** Hạn chốt mẫu / giao đợt cuối — chưa được xưởng xác nhận (tô vàng ở ?review=1) */
   sampleDeadline: "10/01/2027",
@@ -19,44 +22,69 @@ export const TET = {
   lastDelivery: "25/01",
 }
 
-export const TET_GIFT_BAG = "Túi đựng hộp quà / giỏ quà Tết"
-
 /** Túi không dệt lên đầu vì là nhu cầu lớn nhất mùa Tết, thêm lựa chọn túi đựng quà */
-export const TET_PRODUCTS = [
-  "Túi vải không dệt",
-  ...LEAD_PRODUCTS.filter((p) => p !== "Túi vải không dệt"),
-  TET_GIFT_BAG,
+export const TET_PRODUCT_KEYS: LeadProductKey[] = [
+  "nonwoven",
+  ...DEFAULT_PRODUCT_KEYS.filter((k) => k !== "nonwoven"),
+  "tetGift",
 ]
 
 export type TetVariant = {
-  title: [before: string, highlight: string, after: string]
-  lead: string
-  metaTitle: string
-  product: string
+  title: L<[before: string, highlight: string, after: string]>
+  lead: L
+  metaTitle: L
+  product: LeadProductKey
   heroSlugs: [string, string, string]
 }
 
 export const TET_VARIANTS = {
   "tui-qua": {
-    title: ["", "Túi đựng quà Tết in logo", " cho doanh nghiệp"],
-    lead: "Túi vải không dệt, túi canvas, túi phối cói in logo để đựng hộp quà, giỏ quà Tết. Khách nhận quà mang túi đi chợ, đi làm cả năm, logo của bạn đi theo họ thay vì nằm trong thùng rác như túi giấy.",
-    metaTitle: `Túi đựng quà Tết ${TET.year} in logo cho doanh nghiệp`,
-    product: TET_GIFT_BAG,
+    title: {
+      vi: ["", "Túi đựng quà Tết in logo", " cho doanh nghiệp"],
+      en: ["", "Logo gift bags for Tet", " for businesses"],
+    },
+    lead: {
+      vi: "Túi vải không dệt, túi canvas, túi phối cói in logo để đựng hộp quà, giỏ quà Tết. Khách nhận quà mang túi đi chợ, đi làm cả năm, logo của bạn đi theo họ thay vì nằm trong thùng rác như túi giấy.",
+      en: "Non-woven, canvas and seagrass bags printed with your logo to carry Tet gift boxes and hampers. Recipients reuse them for shopping and commuting all year, so your logo goes with them instead of ending up in the bin like a paper bag.",
+    },
+    metaTitle: {
+      vi: `Túi đựng quà Tết ${TET.year} in logo cho doanh nghiệp`,
+      en: `Logo Gift Bags for Tet ${TET.year} – Corporate Orders`,
+    },
+    product: "tetGift",
     heroSlugs: ["tui-canvas-cotton-phoi-coi", "tui-tote-size-lon", "tui-xach-tay-canvas-phoi-pu-nau"],
   },
   "khong-det": {
-    title: ["", "Túi vải không dệt đựng quà Tết", " in logo – giá xưởng"],
-    lead: "Túi không dệt in logo cho giỏ quà, hộp quà Tết, hội chợ và khuyến mãi Tết. Chọn màu đỏ, vàng, in logo kèm lời chúc. Xưởng tại TP.HCM, hợp đồng, VAT, giao toàn quốc.",
-    metaTitle: "Túi vải không dệt đựng quà Tết in logo",
-    product: "Túi vải không dệt",
+    title: {
+      vi: ["", "Túi vải không dệt đựng quà Tết", " in logo – giá xưởng"],
+      en: ["", "Non-woven Tet gift bags", " with your logo – factory prices"],
+    },
+    lead: {
+      vi: "Túi không dệt in logo cho giỏ quà, hộp quà Tết, hội chợ và khuyến mãi Tết. Chọn màu đỏ, vàng, in logo kèm lời chúc. Xưởng tại TP.HCM, hợp đồng, VAT, giao toàn quốc.",
+      en: "Logo-printed non-woven bags for Tet hampers, gift boxes, fairs and promotions. Choose red or gold, add your logo and a New Year greeting. Factory in Ho Chi Minh City, contract, VAT invoice, nationwide delivery.",
+    },
+    metaTitle: {
+      vi: "Túi vải không dệt đựng quà Tết in logo",
+      en: "Non-Woven Tet Gift Bags with Logo",
+    },
+    product: "nonwoven",
     // TODO: catalog chưa có túi không dệt — thay bằng ảnh thật khi xưởng gửi
     heroSlugs: ["tui-tote-size-lon", "tui-canvas-poly-deo-vai-in-chuyen", "tui-bo-in-lua-xach-tay"],
   },
   "nhan-vien": {
-    title: ["", "Quà Tết nhân viên", " mang logo công ty – dùng cả năm"],
-    lead: "Túi canvas, balo, áo in logo làm quà Tết cho nhân viên hoặc làm túi đựng phần quà. Món quà dùng mỗi ngày, nhắc tên công ty quanh năm. Hợp đồng, hóa đơn VAT đầy đủ.",
-    metaTitle: "Quà Tết nhân viên in logo công ty",
-    product: "Nhiều loại / combo quà tặng",
+    title: {
+      vi: ["", "Quà Tết nhân viên", " mang logo công ty – dùng cả năm"],
+      en: ["", "Tet gifts for employees", " with your company logo – used all year"],
+    },
+    lead: {
+      vi: "Túi canvas, balo, áo in logo làm quà Tết cho nhân viên hoặc làm túi đựng phần quà. Món quà dùng mỗi ngày, nhắc tên công ty quanh năm. Hợp đồng, hóa đơn VAT đầy đủ.",
+      en: "Logo canvas bags, backpacks and apparel as Tet gifts for your staff, or as bags for their gift sets. An everyday gift that keeps your company name in sight all year. Full contract and VAT invoice.",
+    },
+    metaTitle: {
+      vi: "Quà Tết nhân viên in logo công ty",
+      en: "Tet Gifts for Employees with Company Logo",
+    },
+    product: "combo",
     heroSlugs: ["balo-hoc-sinh", "tui-canvas-poly-deo-vai-in-chuyen", "ao-polo"],
   },
 } satisfies Record<string, TetVariant>
@@ -69,13 +97,61 @@ export function tetVariantFor(nhom: string | undefined): { key: TetVariantKey; v
   return { key, variant: TET_VARIANTS[key] }
 }
 
-export const TET_SHOWCASE: { slug: string; tag: string; name: string; note: string; product: string }[] = [
-  { slug: "tui-canvas-cotton-phoi-coi", tag: "Quà khách hàng VIP", name: "Túi canvas phối cói", note: "Sang, dùng lại được, hợp hộp quà cao cấp", product: "Túi vải / canvas" },
-  { slug: "tui-xach-tay-canvas-phoi-pu-nau", tag: "Quà đối tác", name: "Túi canvas phối quai da PU", note: "Ép logo tinh tế, đựng rượu, trà, hộp quà", product: "Túi vải / canvas" },
-  { slug: "tui-tote-size-lon", tag: "Đựng giỏ quà", name: "Túi tote khổ lớn", note: "Vừa giỏ quà, hộp quà Tết cỡ lớn", product: TET_GIFT_BAG },
-  { slug: "tui-bo-in-lua-xach-tay", tag: "Quà nhân viên", name: "Túi vải bố in lụa", note: "In logo kèm lời chúc Tết, nhiều màu", product: "Túi vải / canvas" },
-  { slug: "tui-canvas-co-day-rut", tag: "Túi quà nhỏ", name: "Túi dây rút", note: "Đựng bánh, trà, quà nhỏ kèm thiệp", product: TET_GIFT_BAG },
-  { slug: "tui-canvas-xach-tay", tag: "Số lượng lớn", name: "Túi canvas xách cơ bản", note: "Giá tốt cho đơn nghìn túi", product: "Túi vải / canvas" },
-  { slug: "balo-hoc-sinh", tag: "Quà Tết nhân viên", name: "Balo in logo công ty", note: "Món quà nhân viên dùng mỗi ngày", product: "Balo / túi xách" },
-  { slug: "ao-polo", tag: "Year end party", name: "Áo polo thêu logo", note: "Đồng phục tất niên, year end party", product: "Áo đồng phục" },
+export const TET_SHOWCASE: { slug: string; tag: L; name: L; note: L; product: LeadProductKey }[] = [
+  {
+    slug: "tui-canvas-cotton-phoi-coi",
+    tag: { vi: "Quà khách hàng VIP", en: "VIP client gift" },
+    name: { vi: "Túi canvas phối cói", en: "Canvas & seagrass tote" },
+    note: { vi: "Sang, dùng lại được, hợp hộp quà cao cấp", en: "Elegant, reusable, suits premium gift boxes" },
+    product: "canvas",
+  },
+  {
+    slug: "tui-xach-tay-canvas-phoi-pu-nau",
+    tag: { vi: "Quà đối tác", en: "Partner gift" },
+    name: { vi: "Túi canvas phối quai da PU", en: "Canvas bag with PU handles" },
+    note: { vi: "Ép logo tinh tế, đựng rượu, trà, hộp quà", en: "Subtle embossed logo, fits wine, tea, gift boxes" },
+    product: "canvas",
+  },
+  {
+    slug: "tui-tote-size-lon",
+    tag: { vi: "Đựng giỏ quà", en: "Hamper bag" },
+    name: { vi: "Túi tote khổ lớn", en: "Large tote bag" },
+    note: { vi: "Vừa giỏ quà, hộp quà Tết cỡ lớn", en: "Fits large Tet hampers and gift boxes" },
+    product: "tetGift",
+  },
+  {
+    slug: "tui-bo-in-lua-xach-tay",
+    tag: { vi: "Quà nhân viên", en: "Staff gift" },
+    name: { vi: "Túi vải bố in lụa", en: "Screen-printed cotton tote" },
+    note: { vi: "In logo kèm lời chúc Tết, nhiều màu", en: "Logo plus a Tet greeting, multi-colour" },
+    product: "canvas",
+  },
+  {
+    slug: "tui-canvas-co-day-rut",
+    tag: { vi: "Túi quà nhỏ", en: "Small gift bag" },
+    name: { vi: "Túi dây rút", en: "Drawstring bag" },
+    note: { vi: "Đựng bánh, trà, quà nhỏ kèm thiệp", en: "For cakes, tea and small gifts with a card" },
+    product: "tetGift",
+  },
+  {
+    slug: "tui-canvas-xach-tay",
+    tag: { vi: "Số lượng lớn", en: "Bulk order" },
+    name: { vi: "Túi canvas xách cơ bản", en: "Basic canvas tote" },
+    note: { vi: "Giá tốt cho đơn nghìn túi", en: "Best price for orders of thousands" },
+    product: "canvas",
+  },
+  {
+    slug: "balo-hoc-sinh",
+    tag: { vi: "Quà Tết nhân viên", en: "Staff Tet gift" },
+    name: { vi: "Balo in logo công ty", en: "Company logo backpack" },
+    note: { vi: "Món quà nhân viên dùng mỗi ngày", en: "A gift staff use every day" },
+    product: "bag",
+  },
+  {
+    slug: "ao-polo",
+    tag: { vi: "Year end party", en: "Year-end party" },
+    name: { vi: "Áo polo thêu logo", en: "Embroidered logo polo" },
+    note: { vi: "Đồng phục tất niên, year end party", en: "Uniforms for year-end parties" },
+    product: "uniform",
+  },
 ]

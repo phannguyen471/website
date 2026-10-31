@@ -13,6 +13,11 @@ export const SEGMENTS = {
   "tin-tuc": { vi: "tin-tuc", en: "news" },
   "uu-dai": { vi: "uu-dai", en: "promotions" },
   "lien-he": { vi: "lien-he", en: "contact" },
+  // Landing quảng cáo — không có trong nav/sitemap, chỉ cần map URL hai ngôn ngữ
+  "bao-gia": { vi: "bao-gia", en: "quote" },
+  "tui-vai-in-logo": { vi: "tui-vai-in-logo", en: "custom-logo-tote-bags" },
+  "tui-vai-khong-det-in-logo": { vi: "tui-vai-khong-det-in-logo", en: "custom-non-woven-bags" },
+  "qua-tet-doanh-nghiep": { vi: "qua-tet-doanh-nghiep", en: "corporate-tet-gifts" },
 } as const
 
 export type Section = keyof typeof SEGMENTS
