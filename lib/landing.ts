@@ -43,6 +43,8 @@ export type LandingVariant = {
   product: LeadProduct
   /** 3 slug sản phẩm: ảnh lớn bên trái + 2 ảnh xếp chồng bên phải */
   heroSlugs: [string, string, string]
+  /** URL riêng cho nhóm này; không có thì dùng `/bao-gia?nhom=<key>` */
+  path?: string
 }
 
 export const VARIANTS = {
@@ -58,6 +60,7 @@ export const VARIANTS = {
     lead: "Túi vải không dệt in logo cho sự kiện, hội chợ, siêu thị và khuyến mãi – chọn định lượng vải, màu, kiểu quai theo yêu cầu, sản xuất tại xưởng ở TP.HCM, có hợp đồng và hóa đơn VAT.",
     metaTitle: "Túi vải không dệt in logo theo yêu cầu",
     product: "Túi vải không dệt",
+    path: "/tui-vai-khong-det-in-logo",
     // TODO: catalog chưa có túi không dệt — thay bằng ảnh thật khi xưởng gửi
     heroSlugs: ["tui-tote-size-lon", "tui-canvas-poly-deo-vai-in-chuyen", "tui-bo-in-lua-xach-tay"],
   },
@@ -85,6 +88,11 @@ export const VARIANTS = {
 } satisfies Record<string, LandingVariant>
 
 export type VariantKey = keyof typeof VARIANTS
+
+export function landingPath(key: VariantKey): string {
+  const variant: LandingVariant = VARIANTS[key]
+  return variant.path ?? `/bao-gia?nhom=${key}`
+}
 
 /** `?nhom=` lạ hoặc không có → rơi về nhóm túi vải (nhóm lớn nhất) */
 export function variantFor(nhom: string | undefined): { key: VariantKey; variant: LandingVariant } {

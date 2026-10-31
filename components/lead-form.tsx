@@ -13,6 +13,8 @@ import {
 import { cn } from "@/lib/utils"
 
 type Props = {
+  /** Nhóm quảng cáo của trang — gửi kèm lead khi URL không có `?nhom=` */
+  nhom: string
   /** Sản phẩm chọn sẵn theo nhóm quảng cáo (`?nhom=`) */
   defaultProduct: LeadProduct
   hotline: string
@@ -41,7 +43,7 @@ const inputClass =
  * riêng), thành công thì chuyển sang `/bao-gia/cam-on` — conversion bắn ở
  * trang đó, đúng một lần cho mỗi lead.
  */
-export default function LeadForm({ defaultProduct, hotline, zaloPhone, zaloUrl }: Props) {
+export default function LeadForm({ nhom, defaultProduct, hotline, zaloPhone, zaloUrl }: Props) {
   const router = useRouter()
   const formRef = useRef<HTMLFormElement>(null)
   const [product, setProduct] = useState<string>(defaultProduct)
@@ -94,6 +96,7 @@ export default function LeadForm({ defaultProduct, hotline, zaloPhone, zaloUrl }
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
+          nhom,
           ...tracking,
           landing: window.location.pathname,
           source: "landing",
