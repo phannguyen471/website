@@ -3,9 +3,9 @@ import nodemailer from "nodemailer"
 import { brand } from "@/lib/data"
 
 /**
- * Nhận yêu cầu báo giá từ form (trang Liên hệ và form trên trang chi tiết
- * sản phẩm dùng chung route này) và gửi email tới hộp thư kinh doanh qua
- * Gmail SMTP.
+ * Nhận yêu cầu báo giá từ form (trang Liên hệ, form trên trang chi tiết
+ * sản phẩm và landing quảng cáo `/bao-gia` dùng chung route này) và gửi
+ * email tới hộp thư kinh doanh qua Gmail SMTP.
  *
  * Cần 2 biến môi trường:
  *   GMAIL_USER         — địa chỉ Gmail dùng để gửi (thường là contact.email)
@@ -26,7 +26,32 @@ type QuoteRequest = {
   content?: string
   /** Ngôn ngữ người gửi đang dùng — để đội bán hàng trả lời đúng thứ tiếng */
   locale?: string
+  /** "landing" khi gửi từ landing quảng cáo — công ty và nội dung không bắt buộc */
+  source?: string
+  budget?: string
+  deadline?: string
+  vat?: string
+  /** Nguồn quảng cáo, để đối chiếu lead với chiến dịch */
+  gclid?: string
+  utm_source?: string
+  utm_campaign?: string
+  utm_term?: string
+  nhom?: string
+  landing?: string
 }
+
+/** Trường riêng của landing quảng cáo, theo thứ tự hiện trong email */
+const LANDING_FIELDS: [keyof QuoteRequest, string][] = [
+  ["budget", "Ngân sách / sản phẩm"],
+  ["deadline", "Ngày cần hàng"],
+  ["vat", "Cần hóa đơn VAT"],
+  ["nhom", "Nhóm quảng cáo"],
+  ["utm_source", "utm_source"],
+  ["utm_campaign", "utm_campaign"],
+  ["utm_term", "Từ khoá (utm_term)"],
+  ["gclid", "gclid"],
+  ["landing", "Trang gửi"],
+]
 
 function escapeHtml(s: string): string {
   return s
@@ -55,8 +80,14 @@ export async function POST(request: Request) {
   const quantity = (body.quantity || "").trim()
   const subject = (body.subject || "").trim()
   const locale = (body.locale || "vi").trim()
+  const isLanding = body.source === "landing"
+  const field = (k: keyof QuoteRequest) => String(body[k] ?? "").trim()
 
-  if (!fullname || !phone || !company || !content) {
+  // Landing quảng cáo: chỉ bắt buộc tên, điện thoại, sản phẩm — form ngắn để không mất lead
+  const missing = isLanding
+    ? !fullname || !phone || !productInterest
+    : !fullname || !phone || !company || !content
+  if (missing) {
     return NextResponse.json({ ok: false, error: "missing_fields" }, { status: 422 })
   }
 
@@ -78,6 +109,9 @@ export async function POST(request: Request) {
     subject,
     content,
     locale,
+    ...(isLanding
+      ? Object.fromEntries(LANDING_FIELDS.map(([k]) => [k, field(k)]))
+      : {}),
     receivedAt,
   })
 
@@ -91,12 +125,15 @@ export async function POST(request: Request) {
 
   const rows: [string, string][] = [
     ["Họ tên", fullname],
-    ["Công ty", company],
+    ...(company ? ([["Công ty", company]] as [string, string][]) : []),
     ["Điện thoại", phone],
     ...(email ? ([["Email", email]] as [string, string][]) : []),
     ...(country ? ([["Quốc gia", country]] as [string, string][]) : []),
     ...(productInterest ? ([["Sản phẩm quan tâm", productInterest]] as [string, string][]) : []),
     ...(quantity ? ([["Số lượng", quantity]] as [string, string][]) : []),
+    ...(isLanding
+      ? LANDING_FIELDS.flatMap(([k, label]) => (field(k) ? [[label, field(k)] as [string, string]] : []))
+      : []),
     ["Ngôn ngữ", locale === "en" ? "Tiếng Anh" : "Tiếng Việt"],
   ]
 
@@ -115,8 +152,12 @@ export async function POST(request: Request) {
           )
           .join("")}
       </table>
-      <p style="font-weight: 600; margin-bottom: 4px;">Nội dung yêu cầu</p>
-      <p style="white-space: pre-wrap; padding: 12px; background: #f6f7f9; border: 1px solid #e3e7ec;">${escapeHtml(content)}</p>
+      ${
+        content
+          ? `<p style="font-weight: 600; margin-bottom: 4px;">Nội dung yêu cầu</p>
+      <p style="white-space: pre-wrap; padding: 12px; background: #f6f7f9; border: 1px solid #e3e7ec;">${escapeHtml(content)}</p>`
+          : ""
+      }
       <p style="color: #6C757D; font-size: 12px; margin-top: 24px;">Gửi lúc ${new Date(receivedAt).toLocaleString("vi-VN")}</p>
     </div>
   `

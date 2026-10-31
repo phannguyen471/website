@@ -23,6 +23,7 @@ export default function FloatingContact({ locale }: { locale: Locale }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={label}
+          data-track="click_zalo"
           className="block drop-shadow-lg transition-transform hover:scale-110"
         >
           <Icon size={44} />
@@ -32,6 +33,7 @@ export default function FloatingContact({ locale }: { locale: Locale }) {
       <a
         href={`tel:${brand.hotline}`}
         aria-label={t.common.call(brand.hotline)}
+        data-track="click_call"
         className="flex items-center gap-2 rounded-full bg-brand-red py-2.5 pr-4 pl-3 text-white shadow-lg transition-colors hover:bg-brand-red-dark"
       >
         <IconPhone className="size-4" />
