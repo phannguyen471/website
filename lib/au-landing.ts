@@ -15,6 +15,7 @@ export const AU_PATH = "/en/au"
 /** Túi thành viên AFLW (Brisbane Lions) — ảnh thật từ mockup, catalog chưa có */
 export const AFLW_TOTE = "/media/au/bag-aflw-member-tote.webp"
 export const AU_THANK_YOU_PATH = "/en/au/thank-you"
+export const AU_COSMETIC_PATH = "/en/au/custom-cosmetic-bags"
 
 export type AuVariant = {
   title: [before: string, highlight: string, after: string]
@@ -97,12 +98,12 @@ export const AU_PRODUCT_KEYS: LeadProductKey[] = [
 export const AU_QUANTITIES = ["Under 300", "300 – 1,000", "1,000 – 5,000", "5,000+"]
 export const AU_BUDGETS = ["Under $5", "$5 – $10", "$10 – $20", "$20+", "Not sure yet"]
 
-/** 4 danh mục lớn — tạm trỏ về biến thể `?grp=` của trang này cho tới khi có trang riêng từng loại */
+/** 4 danh mục lớn — trỏ sang trang riêng nếu đã có, còn lại về biến thể `?grp=` của trang chung */
 export const AU_CATEGORIES = [
-  { title: "Custom bags", text: "Totes, calico, drawstring, backpacks, coolers", image: "/media/au/bag-olaplex-tote.webp", grp: "tote" },
-  { title: "Cosmetic bags", text: "Pouches, makeup bags, vanity cases for beauty brands", image: "/media/au/cos-lancome-round.webp", grp: "cosmetic" },
-  { title: "Caps & hats", text: "Caps, truckers, visors, bucket and sun hats", image: "/media/au/cap-kiehls-denim.webp", grp: "caps" },
-  { title: "Polos & apparel", text: "Polos, tees, jerseys, hoodies, jackets", image: "/media/au/app-polo-navy.webp", grp: "apparel" },
+  { title: "Custom bags", text: "Totes, calico, drawstring, backpacks, coolers", image: "/media/au/bag-olaplex-tote.webp", href: `${AU_PATH}?grp=tote` },
+  { title: "Cosmetic bags", text: "Pouches, makeup bags, vanity cases for beauty brands", image: "/media/au/cos-lancome-round.webp", href: AU_COSMETIC_PATH },
+  { title: "Caps & hats", text: "Caps, truckers, visors, bucket and sun hats", image: "/media/au/cap-kiehls-denim.webp", href: `${AU_PATH}?grp=caps` },
+  { title: "Polos & apparel", text: "Polos, tees, jerseys, hoodies, jackets", image: "/media/au/app-polo-navy.webp", href: `${AU_PATH}?grp=apparel` },
 ]
 
 export const AU_TABS: readonly TabDef[] = [
@@ -142,3 +143,19 @@ export const AU_SHOWCASE: {
 export function whatsappUrl(intlPhone: string): string {
   return `https://wa.me/${intlPhone.replace(/\D/g, "")}`
 }
+
+/** Trang túi mỹ phẩm (`/en/au/custom-cosmetic-bags`) — ảnh thật làm cho các thương hiệu làm đẹp, lấy từ mockup */
+export const AU_COSMETIC_SHOWCASE: { image: string; tag: string; name: string; note: string }[] = [
+  { image: "/media/au/cos-kiehls-red.webp", tag: "Canvas pouch", name: "Canvas cosmetic bag", note: "Made for Kiehl's – logo zip puller" },
+  { image: "/media/au/cos-lancome-round.webp", tag: "Round pouch", name: "Glossy round PU pouch", note: "Made for Lancôme – Idôle campaign" },
+  { image: "/media/au/cos-paulas-choice.webp", tag: "PU bag", name: "Faux-leather cosmetic bag", note: "Made for Paula's Choice – foil logo" },
+  { image: "/media/au/cos-la-roche-posay.webp", tag: "PU pouch", name: "Faux-leather pouch", note: "Made for La Roche-Posay" },
+  { image: "/media/au/cos-lancome-square.webp", tag: "Travel kit", name: "Clear-window travel pouch", note: "Made for Lancôme – travel kit packaging" },
+  { image: "/media/au/cos-kerastase.webp", tag: "Flat pouch", name: "Striped canvas pouch", note: "Made for Kérastase – woven label" },
+  { image: "/media/au/cos-kiehls-vanity.webp", tag: "Vanity case", name: "Structured vanity case", note: "Made for Kiehl's – hanging handle" },
+  { image: "/media/au/cos-kiehls-cylinder.webp", tag: "Cylinder pouch", name: "Cylinder canvas pouch", note: "Made for Kiehl's flagship store" },
+  { image: "/media/au/cos-holographic.webp", tag: "Holographic", name: "Holographic TPU bag", note: "Made for Pantene – GWP bundle" },
+  { image: "/media/au/cos-mesh.webp", tag: "Mesh bag", name: "Mesh cosmetic bag", note: "Made for Paula's Choice – printed patches" },
+  { image: "/media/au/cos-pvc-canvas.webp", tag: "Clear bag", name: "Clear PVC + canvas bag", note: "Airport-friendly travel bag" },
+  { image: "/media/au/cos-vanity-case.webp", tag: "Vanity case", name: "Faux-leather vanity case", note: "Top handle, structured base" },
+]
