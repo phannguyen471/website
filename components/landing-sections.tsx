@@ -111,6 +111,7 @@ export function LandingHero({
   facts,
   images,
   zaloUrl,
+  secondary,
   top,
 }: {
   locale: Locale
@@ -121,10 +122,18 @@ export function LandingHero({
   cta: string
   facts: { value: React.ReactNode; label: string }[]
   images: { src: string; alt: string }[]
-  zaloUrl: string
+  zaloUrl?: string
+  /** Nút phụ cạnh CTA chính — mặc định "Gửi logo qua Zalo", thị trường nước ngoài dùng WhatsApp */
+  secondary?: { href: string; label: string; icon: React.ReactNode; track: string }
   /** Dải hiển thị ngay dưới header (chế độ duyệt, dải thông báo mùa vụ) */
   top?: React.ReactNode
 }) {
+  const alt = secondary ?? {
+    href: zaloUrl ?? "",
+    label: UI[locale].zalo,
+    icon: <IconZalo size={26} />,
+    track: "click_zalo",
+  }
   return (
     <section className="pt-[68px] md:pt-[108px]">
       {top}
@@ -146,14 +155,14 @@ export function LandingHero({
               <IconArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href={zaloUrl}
+              href={alt.href}
               target="_blank"
               rel="noopener noreferrer"
-              data-track="click_zalo"
+              data-track={alt.track}
               className="inline-flex items-center gap-2.5 rounded-[2px] border border-navy-500 py-3 pr-7 pl-4 text-[11px] font-semibold tracking-[0.16em] text-navy-500 uppercase transition-colors hover:bg-navy-500 hover:text-white"
             >
-              <IconZalo size={26} />
-              {UI[locale].zalo}
+              {alt.icon}
+              {alt.label}
             </a>
           </div>
 
@@ -305,6 +314,15 @@ export function ReasonsSection({
   )
 }
 
+export type ContactLink = {
+  label: string
+  value: React.ReactNode
+  href: string
+  icon: React.ReactNode
+  track: string
+  external?: boolean
+}
+
 /** Form báo giá: lời hứa + liên hệ nhanh bên trái, form bên phải */
 export function QuoteSection({
   locale,
@@ -313,6 +331,9 @@ export function QuoteSection({
   Tbc,
   brand,
   form,
+  eyebrow,
+  assure,
+  contacts,
 }: {
   locale: Locale
   title: React.ReactNode
@@ -320,21 +341,33 @@ export function QuoteSection({
   Tbc: TbcComponent
   brand: LBrand
   form: Omit<React.ComponentProps<typeof LeadForm>, "locale" | "hotline" | "zaloPhone" | "zaloUrl">
+  eyebrow?: string
+  /** Các cam kết có dấu tick — mặc định báo giá theo số lượng / mockup / hợp đồng VAT */
+  assure?: React.ReactNode[]
+  /** Kênh liên hệ nhanh — mặc định hotline + Zalo */
+  contacts?: ContactLink[]
 }) {
   const ui = UI[locale]
   const tel = `tel:${brand.hotline.replace(/\s/g, "")}`
+  const contactList: ContactLink[] = contacts ?? [
+    { label: ui.hotline, value: brand.hotline, href: tel, icon: <IconPhone className="size-4" />, track: "click_call" },
+    {
+      label: ui.zaloLabel,
+      value: brand.zaloPhone,
+      href: brand.social.zalo,
+      icon: <IconChat className="size-4" />,
+      track: "click_zalo",
+      external: true,
+    },
+  ]
   return (
     <section id="bao-gia" className="scroll-mt-20 border-y border-line bg-shell py-20 lg:py-28">
       <div className="container-brand grid gap-12 lg:grid-cols-[0.9fr_1.2fr] lg:gap-16">
         <div>
-          <SectionIntro eyebrow={ui.quoteEyebrow} title={title} lead={lead} className="" />
+          <SectionIntro eyebrow={eyebrow ?? ui.quoteEyebrow} title={title} lead={lead} className="" />
 
           <ul className="mt-8 flex flex-col gap-3.5">
-            {[
-              ui.assure[0],
-              <Tbc key="mockup">{ui.assure[1]}</Tbc>,
-              ui.assure[2],
-            ].map((item, i) => (
+            {(assure ?? [ui.assure[0], <Tbc key="mockup">{ui.assure[1]}</Tbc>, ui.assure[2]]).map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-[15px] text-ink">
                 <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-navy-500 text-white">
                   <IconCheck className="size-3.5" />
@@ -345,17 +378,7 @@ export function QuoteSection({
           </ul>
 
           <div className="mt-10 border border-line bg-white">
-            {[
-              { label: ui.hotline, value: brand.hotline, href: tel, Icon: IconPhone, track: "click_call" },
-              {
-                label: ui.zaloLabel,
-                value: brand.zaloPhone,
-                href: brand.social.zalo,
-                Icon: IconChat,
-                track: "click_zalo",
-                external: true,
-              },
-            ].map((x) => (
+            {contactList.map((x) => (
               <a
                 key={x.label}
                 href={x.href}
@@ -364,7 +387,7 @@ export function QuoteSection({
                 className="group flex items-center gap-4 border-b border-line px-6 py-5 transition-colors last:border-b-0 hover:bg-shell"
               >
                 <span className="flex size-10 shrink-0 items-center justify-center rounded-full border border-navy-200 text-navy-500 transition-colors group-hover:border-navy-500 group-hover:bg-navy-500 group-hover:text-white">
-                  <x.Icon className="size-4" />
+                  {x.icon}
                 </span>
                 <span>
                   <span className="eyebrow block text-ink-soft">{x.label}</span>
@@ -388,12 +411,15 @@ export function FaqSection({
   title,
   faqs,
   brand,
+  lead,
 }: {
   locale: Locale
   eyebrow: string
   title: string
   faqs: { q: string; a: React.ReactNode }[]
   brand: LBrand
+  /** Lời dẫn bên trái — mặc định mời gọi hotline */
+  lead?: React.ReactNode
 }) {
   return (
     <section id="faq" className="container-brand scroll-mt-28 pt-20 lg:pt-28">
@@ -403,6 +429,7 @@ export function FaqSection({
           title={title}
           className=""
           lead={
+            lead ?? (
             <>
               {UI[locale].faqLead[0]}{" "}
               <a
@@ -414,6 +441,7 @@ export function FaqSection({
               </a>{" "}
               {UI[locale].faqLead[1]}
             </>
+            )
           }
         />
 
@@ -428,6 +456,58 @@ export function FaqSection({
             </details>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+/** Dự án tiêu biểu: 3 thẻ ảnh + thương hiệu + sản phẩm + điểm khó */
+export function CasesSection({
+  locale,
+  eyebrow,
+  title,
+  lead,
+  cases,
+}: {
+  locale: Locale
+  eyebrow: string
+  title: string
+  lead?: string
+  cases: { brand: string; image: string; product: string; challenge: string }[]
+}) {
+  const vi = locale === "vi"
+  return (
+    <section id="du-an" className="container-brand scroll-mt-28 py-20 lg:py-28">
+      <SectionIntro eyebrow={eyebrow} title={title} lead={lead} />
+
+      <div className="grid gap-6 md:grid-cols-3">
+        {cases.map((c) => (
+          <article key={c.brand} className="flex flex-col border border-line">
+            <div className="relative aspect-[4/3] overflow-hidden bg-shell">
+              <Image
+                src={c.image}
+                alt={`${c.product} – ${c.brand}`}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="flex-1 p-6 lg:p-7">
+              <h3 className="font-display text-2xl font-bold text-navy-500">{c.brand}</h3>
+              <div className="mt-3 h-px w-8 bg-brand-gold" />
+              <dl className="mt-5 flex flex-col gap-4 text-sm leading-relaxed">
+                <div>
+                  <dt className="eyebrow text-ink-soft/70">{vi ? "Sản phẩm" : "Product"}</dt>
+                  <dd className="mt-1.5 text-ink">{c.product}</dd>
+                </div>
+                <div>
+                  <dt className="eyebrow text-ink-soft/70">{vi ? "Điểm khó" : "Challenge"}</dt>
+                  <dd className="mt-1.5 text-ink-soft">{c.challenge}</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   )

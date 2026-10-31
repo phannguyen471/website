@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import type { Locale } from "@/lib/i18n"
-import { PRODUCT_TABS, SELECT_PRODUCT_EVENT, type LeadProductKey, type ProductTab } from "@/lib/landing"
+import { PRODUCT_TABS, SELECT_PRODUCT_EVENT, type LeadProductKey, type TabDef } from "@/lib/landing"
 import { track } from "@/lib/track"
 import { cn } from "@/lib/utils"
 import { IconArrowRight } from "@/components/icons"
@@ -11,7 +11,7 @@ import { IconArrowRight } from "@/components/icons"
 export type ShowcaseItem = {
   slug: string
   /** Không có tab → thẻ chỉ hiện ở "Tất cả" (dùng khi lưới tắt tab lọc) */
-  tab?: Exclude<ProductTab, "all">
+  tab?: string
   tag: string
   name: string
   note: string
@@ -29,12 +29,15 @@ export default function LandingShowcase({
   locale,
   items,
   tabs = true,
+  tabList = PRODUCT_TABS,
 }: {
   locale: Locale
   items: ShowcaseItem[]
   tabs?: boolean
+  /** Bộ tab lọc; tab đầu tiên phải có key "all" */
+  tabList?: readonly TabDef[]
 }) {
-  const [tab, setTab] = useState<ProductTab>("all")
+  const [tab, setTab] = useState("all")
   const visible = tab === "all" ? items : items.filter((i) => i.tab === tab)
 
   function pick(product: LeadProductKey) {
@@ -50,7 +53,7 @@ export default function LandingShowcase({
           aria-label={locale === "en" ? "Filter products" : "Lọc sản phẩm"}
           className="no-scrollbar -mx-6 mb-10 flex gap-2 overflow-x-auto px-6 lg:mx-0 lg:px-0"
         >
-          {PRODUCT_TABS.map((t) => (
+          {tabList.map((t) => (
             <button
               key={t.key}
               type="button"

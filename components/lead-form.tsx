@@ -25,6 +25,17 @@ type Props = {
   productKeys?: LeadProductKey[]
   deadlinePlaceholder?: string
   notePlaceholder?: string
+  /** Kênh liên hệ bắt buộc: khách trong nước để lại số điện thoại, khách nước ngoài để lại email */
+  required?: "phone" | "email"
+  quantities?: string[]
+  budgets?: string[]
+  /** Ghi đè từng chuỗi giao diện (vd. "Budget per unit (AUD)") */
+  copy?: Partial<FormCopy>
+  thankYouPath?: string
+  /** Nội dung báo lỗi khi gửi thất bại — mặc định gợi ý gọi hotline / nhắn Zalo */
+  failedNode?: React.ReactNode
+  /** Link liên hệ ở dòng cuối form — mặc định Zalo */
+  contactLink?: { href: string; label: string; track: string }
   hotline: string
   zaloPhone: string
   zaloUrl: string
@@ -95,6 +106,8 @@ const COPY = {
   },
 } satisfies Record<Locale, unknown>
 
+type FormCopy = Omit<(typeof COPY)["en"], "errors" | "failed">
+
 /** Nguồn quảng cáo lưu kèm lead, đọc từ URL lúc khách vào trang (`group` là tên tham số nhóm bên tiếng Anh) */
 const TRACKING_KEYS = ["gclid", "utm_source", "utm_campaign", "utm_term", "nhom", "group"] as const
 
@@ -114,11 +127,18 @@ export default function LeadForm({
   productKeys = DEFAULT_PRODUCT_KEYS,
   deadlinePlaceholder,
   notePlaceholder,
+  required = "phone",
+  quantities = LEAD_QUANTITIES[locale],
+  budgets = LEAD_BUDGETS[locale],
+  copy,
+  thankYouPath = THANK_YOU_PATH[locale],
+  failedNode,
+  contactLink,
   hotline,
   zaloPhone,
   zaloUrl,
 }: Props) {
-  const c = COPY[locale]
+  const c = { ...COPY[locale], ...copy }
   const router = useRouter()
   const formRef = useRef<HTMLFormElement>(null)
   const [product, setProduct] = useState<string>(leadProduct(defaultProduct, locale))
@@ -151,10 +171,12 @@ export default function LeadForm({
     const form = e.currentTarget
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
 
+    const phone = data.phone?.trim() ?? ""
+    const email = data.email?.trim() ?? ""
     const bad: Partial<Record<Field, boolean>> = {
       fullname: !data.fullname?.trim(),
-      phone: !/^[\d\s.+()-]{9,15}$/.test(data.phone?.trim() ?? ""),
-      email: Boolean(data.email) && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email),
+      phone: (required === "phone" || Boolean(phone)) && !/^[\d\s.+()-]{8,20}$/.test(phone),
+      email: (required === "email" || Boolean(email)) && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email),
       productInterest: !data.productInterest,
     }
     setInvalid(bad)
@@ -193,15 +215,16 @@ export default function LeadForm({
           }),
         )
       } catch {}
-      router.push(THANK_YOU_PATH[locale])
+      router.push(thankYouPath)
     } catch {
       setSending(false)
       setFailed(true)
     }
   }
 
-  const error = (f: Field) => (invalid[f] ? <span className="text-xs text-brand-red">{c.errors[f]}</span> : null)
-  const required = <span className="ml-1 text-brand-red">*</span>
+  const error = (f: Field) =>
+    invalid[f] ? <span className="text-xs text-brand-red">{COPY[locale].errors[f]}</span> : null
+  const requiredMark = <span className="ml-1 text-brand-red">*</span>
 
   return (
     <form
@@ -218,7 +241,7 @@ export default function LeadForm({
         <label className="flex flex-col gap-2">
           <span className="eyebrow text-ink-soft">
             {c.fullname}
-            {required}
+            {requiredMark}
           </span>
           <input name="fullname" autoComplete="name" aria-invalid={invalid.fullname} className={inputClass} />
           {error("fullname")}
@@ -230,7 +253,7 @@ export default function LeadForm({
         <label className="flex flex-col gap-2">
           <span className="eyebrow text-ink-soft">
             {c.phone}
-            {required}
+            {required === "phone" && requiredMark}
           </span>
           <input
             name="phone"
@@ -243,7 +266,10 @@ export default function LeadForm({
           {error("phone")}
         </label>
         <label className="flex flex-col gap-2">
-          <span className="eyebrow text-ink-soft">{c.email}</span>
+          <span className="eyebrow text-ink-soft">
+            {c.email}
+            {required === "email" && requiredMark}
+          </span>
           <input name="email" type="email" autoComplete="email" aria-invalid={invalid.email} className={inputClass} />
           {error("email")}
         </label>
@@ -251,7 +277,7 @@ export default function LeadForm({
         <label className="flex flex-col gap-2">
           <span className="eyebrow text-ink-soft">
             {c.product}
-            {required}
+            {requiredMark}
           </span>
           <select
             name="productInterest"
@@ -271,7 +297,7 @@ export default function LeadForm({
           <span className="eyebrow text-ink-soft">{c.quantity}</span>
           <select name="quantity" defaultValue="" className={cn(inputClass, "appearance-none")}>
             <option value="">{c.rangePlaceholder}</option>
-            {LEAD_QUANTITIES[locale].map((q) => (
+            {quantities.map((q) => (
               <option key={q}>{q}</option>
             ))}
           </select>
@@ -280,7 +306,7 @@ export default function LeadForm({
           <span className="eyebrow text-ink-soft">{c.budget}</span>
           <select name="budget" defaultValue="" className={cn(inputClass, "appearance-none")}>
             <option value="">{c.rangePlaceholder}</option>
-            {LEAD_BUDGETS[locale].map((b) => (
+            {budgets.map((b) => (
               <option key={b}>{b}</option>
             ))}
           </select>
@@ -312,15 +338,19 @@ export default function LeadForm({
 
       {failed && (
         <p className="mt-5 border-l-2 border-brand-red bg-brand-red/5 px-4 py-3 text-sm text-ink" role="status">
-          {c.failed[0]}{" "}
-          <a href={`tel:${hotline.replace(/\s/g, "")}`} className="font-semibold text-brand-red">
-            {hotline}
-          </a>{" "}
-          {c.failed[1]}{" "}
-          <a href={zaloUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-red">
-            {zaloPhone}
-          </a>
-          .
+          {failedNode ?? (
+            <>
+              {COPY[locale].failed[0]}{" "}
+              <a href={`tel:${hotline.replace(/\s/g, "")}`} className="font-semibold text-brand-red">
+                {hotline}
+              </a>{" "}
+              {COPY[locale].failed[1]}{" "}
+              <a href={zaloUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-red">
+                {zaloPhone}
+              </a>
+              .
+            </>
+          )}
         </p>
       )}
 
@@ -335,13 +365,13 @@ export default function LeadForm({
       <p className="mt-4 text-xs leading-relaxed text-ink-soft">
         {c.consent}{" "}
         <a
-          href={zaloUrl}
+          href={contactLink?.href ?? zaloUrl}
           target="_blank"
           rel="noopener noreferrer"
-          data-track="click_zalo"
+          data-track={contactLink?.track ?? "click_zalo"}
           className="font-medium text-navy-500 underline underline-offset-2"
         >
-          Zalo {zaloPhone}
+          {contactLink?.label ?? `Zalo ${zaloPhone}`}
         </a>
         .
       </p>

@@ -83,16 +83,16 @@ export async function POST(request: Request) {
   const isLanding = body.source === "landing"
   const field = (k: keyof QuoteRequest) => String(body[k] ?? "").trim()
 
-  // Landing quảng cáo: chỉ bắt buộc tên, điện thoại, sản phẩm — form ngắn để không mất lead
+  // Landing quảng cáo: chỉ bắt buộc tên, sản phẩm và một kênh liên hệ (khách nước ngoài thường chỉ để email)
   const missing = isLanding
-    ? !fullname || !phone || !productInterest
+    ? !fullname || !productInterest || (!phone && !email)
     : !fullname || !phone || !company || !content
   if (missing) {
     return NextResponse.json({ ok: false, error: "missing_fields" }, { status: 422 })
   }
 
-  // Số điện thoại Việt Nam: 9–11 chữ số, cho phép khoảng trắng và dấu chấm
-  if (!/^[\d\s.+()-]{9,15}$/.test(phone)) {
+  // Số điện thoại trong nước hoặc quốc tế (+61...), cho phép khoảng trắng và dấu chấm
+  if (phone && !/^[\d\s.+()-]{8,20}$/.test(phone)) {
     return NextResponse.json({ ok: false, error: "invalid_phone" }, { status: 422 })
   }
 
@@ -126,7 +126,7 @@ export async function POST(request: Request) {
   const rows: [string, string][] = [
     ["Họ tên", fullname],
     ...(company ? ([["Công ty", company]] as [string, string][]) : []),
-    ["Điện thoại", phone],
+    ...(phone ? ([["Điện thoại", phone]] as [string, string][]) : []),
     ...(email ? ([["Email", email]] as [string, string][]) : []),
     ...(country ? ([["Quốc gia", country]] as [string, string][]) : []),
     ...(productInterest ? ([["Sản phẩm quan tâm", productInterest]] as [string, string][]) : []),

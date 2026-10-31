@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Image from "next/image"
 import { content } from "@/lib/content"
 import type { Locale } from "@/lib/i18n"
 import { SHOWCASE, VARIANTS, landingPath, type VariantKey } from "@/lib/landing"
@@ -8,6 +7,7 @@ import ClientMarquee from "@/components/client-marquee"
 import LandingShowcase from "@/components/landing-showcase"
 import LandingTracking from "@/components/landing-tracking"
 import {
+  CasesSection,
   FaqSection,
   LandingHero,
   PriceSection,
@@ -457,47 +457,16 @@ export default function LandingPage({
         </div>
       </section>
 
-      {/* Dự án tiêu biểu */}
-      <section id="du-an" className="container-brand scroll-mt-28 py-20 lg:py-28">
-        <SectionIntro
-          eyebrow={tr("Dự án tiêu biểu", "Featured projects")}
-          title={tr("Sản phẩm thật, làm cho thương hiệu thật", "Real products for real brands")}
-          lead={tr(
-            "Các thương hiệu toàn cầu chọn Phan Nguyễn vì chất lượng đồng đều trên cả lô hàng và đúng chuẩn nhận diện thương hiệu.",
-            "Global brands choose Phan Nguyen for consistent quality across every batch and faithful brand identity.",
-          )}
-        />
-
-        <div className="grid gap-6 md:grid-cols-3">
-          {cases.map((c) => (
-            <article key={c.brand} className="flex flex-col border border-line">
-              <div className="relative aspect-[4/3] overflow-hidden bg-shell">
-                <Image
-                  src={imageOf(c.slug)}
-                  alt={`${c.product} – ${c.brand}`}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex-1 p-6 lg:p-7">
-                <h3 className="font-display text-2xl font-bold text-navy-500">{c.brand}</h3>
-                <div className="mt-3 h-px w-8 bg-brand-gold" />
-                <dl className="mt-5 flex flex-col gap-4 text-sm leading-relaxed">
-                  <div>
-                    <dt className="eyebrow text-ink-soft/70">{tr("Sản phẩm", "Product")}</dt>
-                    <dd className="mt-1.5 text-ink">{c.product}</dd>
-                  </div>
-                  <div>
-                    <dt className="eyebrow text-ink-soft/70">{tr("Điểm khó", "Challenge")}</dt>
-                    <dd className="mt-1.5 text-ink-soft">{c.challenge}</dd>
-                  </div>
-                </dl>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      <CasesSection
+        locale={locale}
+        eyebrow={tr("Dự án tiêu biểu", "Featured projects")}
+        title={tr("Sản phẩm thật, làm cho thương hiệu thật", "Real products for real brands")}
+        lead={tr(
+          "Các thương hiệu toàn cầu chọn Phan Nguyễn vì chất lượng đồng đều trên cả lô hàng và đúng chuẩn nhận diện thương hiệu.",
+          "Global brands choose Phan Nguyen for consistent quality across every batch and faithful brand identity.",
+        )}
+        cases={cases.map((c) => ({ ...c, image: imageOf(c.slug) }))}
+      />
 
       <ReasonsSection
         eyebrow={tr("Vì sao chọn Phan Nguyễn", "Why Phan Nguyen")}

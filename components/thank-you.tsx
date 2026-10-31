@@ -2,12 +2,13 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { content } from "@/lib/content"
 import type { Locale } from "@/lib/i18n"
+import { AU_PATH, AU_THANK_YOU_PATH, whatsappUrl } from "@/lib/au-landing"
 import { THANK_YOU_PATH } from "@/lib/landing"
 import { path } from "@/lib/routes"
 import LandingTracking from "@/components/landing-tracking"
 import LeadConversion from "@/components/lead-conversion"
 import { thankYouRobots } from "@/components/landing-sections"
-import { IconZalo } from "@/components/brand-icons"
+import { IconWhatsApp, IconZalo } from "@/components/brand-icons"
 import { IconArrowRight, IconCheck } from "@/components/icons"
 
 const COPY = {
@@ -29,21 +30,30 @@ const COPY = {
   },
 } satisfies Record<Locale, unknown>
 
-export function thankYouMetadata(locale: Locale): Metadata {
+/** Landing thị trường Úc: liên hệ qua WhatsApp, nút quay lại trang AU */
+const AU_COPY = {
+  ...COPY.en,
+  body: "We've received your quote request. Our team will reply in English within 24 hours on Australian business days. To speed things up, send your logo and reference photos on WhatsApp now.",
+  zalo: "Send logo on WhatsApp",
+  more: "Back to the range",
+}
+
+export function thankYouMetadata(locale: Locale, market?: "au"): Metadata {
   return {
     title: COPY[locale].meta,
     robots: thankYouRobots,
-    alternates: {
-      canonical: THANK_YOU_PATH[locale],
-      languages: { vi: THANK_YOU_PATH.vi, en: THANK_YOU_PATH.en },
-    },
+    alternates:
+      market === "au"
+        ? { canonical: AU_THANK_YOU_PATH }
+        : { canonical: THANK_YOU_PATH[locale], languages: { vi: THANK_YOU_PATH.vi, en: THANK_YOU_PATH.en } },
   }
 }
 
 /** Trang cảm ơn sau khi gửi form landing — nơi duy nhất bắn conversion `generate_lead` */
-export default function ThankYou({ locale }: { locale: Locale }) {
+export default function ThankYou({ locale, market }: { locale: Locale; market?: "au" }) {
   const { brand } = content(locale)
-  const c = COPY[locale]
+  const au = market === "au"
+  const c = au ? AU_COPY : COPY[locale]
 
   return (
     <section className="flex min-h-[80vh] items-center bg-shell pt-[68px] md:pt-[108px]">
@@ -62,17 +72,17 @@ export default function ThankYou({ locale }: { locale: Locale }) {
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <a
-              href={brand.social.zalo}
+              href={au ? whatsappUrl(brand.zaloPhone) : brand.social.zalo}
               target="_blank"
               rel="noopener noreferrer"
-              data-track="click_zalo"
+              data-track={au ? "click_whatsapp" : "click_zalo"}
               className="inline-flex items-center gap-2.5 rounded-[2px] bg-navy-500 py-3 pr-7 pl-4 text-[11px] font-semibold tracking-[0.16em] text-white uppercase transition-colors hover:bg-navy-600"
             >
-              <IconZalo size={26} />
+              {au ? <IconWhatsApp size={26} /> : <IconZalo size={26} />}
               {c.zalo}
             </a>
             <Link
-              href={path(locale, "san-pham")}
+              href={au ? AU_PATH : path(locale, "san-pham")}
               className="group inline-flex items-center gap-2 rounded-[2px] border border-navy-500 px-7 py-4 text-[11px] font-semibold tracking-[0.16em] text-navy-500 uppercase transition-colors hover:bg-navy-500 hover:text-white"
             >
               {c.more}

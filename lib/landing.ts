@@ -26,6 +26,14 @@ export const LEAD_PRODUCTS = {
   other: { vi: "Phụ kiện / khác", en: "Accessories / other" },
   combo: { vi: "Nhiều loại / combo quà tặng", en: "Multiple items / gift set" },
   tetGift: { vi: "Túi đựng hộp quà / giỏ quà Tết", en: "Tet gift box / hamper bags" },
+  // Landing thị trường Úc (lib/au-landing.ts) — nhãn tiếng Việt chỉ để đủ kiểu, trang chỉ chạy tiếng Anh
+  auTote: { vi: "Túi tote / canvas", en: "Tote / canvas bag" },
+  auCosmetic: { vi: "Túi mỹ phẩm / pouch", en: "Cosmetic bag / pouch" },
+  auDrawstring: { vi: "Túi dây rút / balo", en: "Drawstring / backpack" },
+  auCooler: { vi: "Túi giữ nhiệt / túi cơm", en: "Cooler / lunch bag" },
+  auCaps: { vi: "Nón / mũ bucket", en: "Caps / bucket hats" },
+  auApparel: { vi: "Áo polo / áo thun / hoodie", en: "Polos / T-shirts / hoodies" },
+  auSeveral: { vi: "Nhiều sản phẩm", en: "Several products" },
 } satisfies Record<string, L>
 
 export type LeadProductKey = keyof typeof LEAD_PRODUCTS
@@ -179,6 +187,9 @@ export const PRODUCT_TABS = [
 ] as const
 
 export type ProductTab = (typeof PRODUCT_TABS)[number]["key"]
+
+/** Tab lọc của lưới sản phẩm — landing theo thị trường có thể dùng bộ tab riêng */
+export type TabDef = { readonly key: string; readonly label: Readonly<L> }
 
 export type ShowcaseEntry = {
   slug: string

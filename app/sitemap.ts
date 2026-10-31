@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { AU_PATH } from "@/lib/au-landing"
 import { content } from "@/lib/content"
 import { locales, type Locale } from "@/lib/i18n"
 import { SITE, absolute, path, type Section } from "@/lib/routes"
@@ -84,6 +85,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       })
     }
   }
+
+  // Landing thị trường Úc chỉ có tiếng Anh
+  entries.push({ url: SITE + AU_PATH, lastModified: now, changeFrequency: "monthly", priority: 0.7 })
 
   return entries
 }
