@@ -53,6 +53,7 @@ export const VARIANTS = {
     lead: "Túi canvas, túi vải bố, túi tote in logo thương hiệu – làm theo mẫu hoặc thiết kế riêng, sản xuất tại xưởng ở TP.HCM, giao toàn quốc và quốc tế.",
     metaTitle: "Xưởng sản xuất túi vải in logo theo yêu cầu",
     product: "Túi vải / canvas",
+    path: "/tui-vai-in-logo",
     heroSlugs: ["tui-canvas-cotton-phoi-coi", "tui-bo-in-lua-xach-tay", "tui-tote-size-lon"],
   },
   "khong-det": {
