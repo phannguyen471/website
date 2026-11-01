@@ -35,7 +35,7 @@ export default function FloatingContact({ locale }: { locale: Locale }) {
         className="flex items-center gap-2 rounded-full bg-brand-red py-2.5 pr-4 pl-3 text-white shadow-lg transition-colors hover:bg-brand-red-dark"
       >
         <IconMail className="size-4" />
-        <span className="text-xs font-semibold tracking-wide">Email us</span>
+        <span className="text-xs font-semibold tracking-wide">Email</span>
       </a>
     </div>
   )

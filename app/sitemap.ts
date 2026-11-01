@@ -86,9 +86,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Landing thị trường Úc chỉ có tiếng Anh
-  for (const url of [AU_PATH, AU_COSMETIC_PATH]) {
-    entries.push({ url: SITE + url, lastModified: now, changeFrequency: "monthly", priority: 0.7 })
+  // Landing thị trường Úc: mỗi trang con có slug riêng theo ngôn ngữ
+  for (const page of [AU_PATH, AU_COSMETIC_PATH]) {
+    for (const locale of locales) {
+      entries.push({
+        url: SITE + page[locale],
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.7,
+        alternates: { languages: { vi: SITE + page.vi, en: SITE + page.en } },
+      })
+    }
   }
 
   return entries

@@ -66,6 +66,10 @@ function translateQuery(search: string, current: Locale, target: Locale): string
     if (value) to.set(QUERY_KEYS[kind][target], table?.[value] ?? value)
   }
 
+  // Biến thể nhóm quảng cáo của landing Úc — giữ nguyên khi đổi ngôn ngữ
+  const grp = from.get("grp")
+  if (grp) to.set("grp", grp)
+
   const qs = to.toString()
   return qs ? `?${qs}` : ""
 }

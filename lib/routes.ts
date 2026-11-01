@@ -18,6 +18,8 @@ export const SEGMENTS = {
   "tui-vai-in-logo": { vi: "tui-vai-in-logo", en: "custom-logo-tote-bags" },
   "tui-vai-khong-det-in-logo": { vi: "tui-vai-khong-det-in-logo", en: "custom-non-woven-bags" },
   "qua-tet-doanh-nghiep": { vi: "qua-tet-doanh-nghiep", en: "corporate-tet-gifts" },
+  // Landing thị trường Úc: trang con dùng slug riêng mỗi ngôn ngữ, mỗi thư mục tự chuyển hướng sang slug đúng
+  au: { vi: "au", en: "au" },
 } as const
 
 export type Section = keyof typeof SEGMENTS

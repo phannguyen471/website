@@ -32,11 +32,19 @@ const COPY = {
 
 /** Landing thị trường Úc: liên hệ qua WhatsApp, nút quay lại trang AU */
 const AU_COPY = {
-  ...COPY.en,
-  body: "We've received your quote request. Our team will reply in English within 24 hours on Australian business days. To speed things up, send your logo and reference photos on WhatsApp now.",
-  zalo: "Send logo on WhatsApp",
-  more: "Back to the range",
-}
+  vi: {
+    ...COPY.vi,
+    body: "Phan Nguyễn đã nhận yêu cầu báo giá. Chúng tôi sẽ trả lời trong vòng 24 giờ vào ngày làm việc ở Úc. Để báo giá nhanh hơn, bạn có thể gửi logo và hình tham khảo qua WhatsApp ngay bây giờ.",
+    zalo: "Gửi logo qua WhatsApp",
+    more: "Quay lại trang sản phẩm",
+  },
+  en: {
+    ...COPY.en,
+    body: "We've received your quote request. Our team will reply in English within 24 hours on Australian business days. To speed things up, send your logo and reference photos on WhatsApp now.",
+    zalo: "Send logo on WhatsApp",
+    more: "Back to the range",
+  },
+} satisfies Record<Locale, unknown>
 
 export function thankYouMetadata(locale: Locale, market?: "au"): Metadata {
   return {
@@ -44,7 +52,7 @@ export function thankYouMetadata(locale: Locale, market?: "au"): Metadata {
     robots: thankYouRobots,
     alternates:
       market === "au"
-        ? { canonical: AU_THANK_YOU_PATH }
+        ? { canonical: AU_THANK_YOU_PATH[locale], languages: { vi: AU_THANK_YOU_PATH.vi, en: AU_THANK_YOU_PATH.en } }
         : { canonical: THANK_YOU_PATH[locale], languages: { vi: THANK_YOU_PATH.vi, en: THANK_YOU_PATH.en } },
   }
 }
@@ -53,7 +61,7 @@ export function thankYouMetadata(locale: Locale, market?: "au"): Metadata {
 export default function ThankYou({ locale, market }: { locale: Locale; market?: "au" }) {
   const { brand } = content(locale)
   const au = market === "au"
-  const c = au ? AU_COPY : COPY[locale]
+  const c = au ? AU_COPY[locale] : COPY[locale]
 
   return (
     <section className="flex min-h-[80vh] items-center bg-shell pt-[68px] md:pt-[108px]">
@@ -82,7 +90,7 @@ export default function ThankYou({ locale, market }: { locale: Locale; market?: 
               {c.zalo}
             </a>
             <Link
-              href={au ? AU_PATH : path(locale, "san-pham")}
+              href={au ? AU_PATH[locale] : path(locale, "san-pham")}
               className="group inline-flex items-center gap-2 rounded-[2px] border border-navy-500 px-7 py-4 text-[11px] font-semibold tracking-[0.16em] text-navy-500 uppercase transition-colors hover:bg-navy-500 hover:text-white"
             >
               {c.more}
