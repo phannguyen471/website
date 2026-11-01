@@ -69,12 +69,7 @@ export default function AuCosmeticPage({ review }: { review: boolean }) {
     },
     {
       q: "Can you pack for gift-with-purchase?",
-      a: (
-        <>
-          Yes.{" "}
-          <Tbc>Each pouch can be individually bagged, barcoded and carton-packed to your warehouse spec</Tbc>.
-        </>
-      ),
+      a: "Yes. Each pouch is individually bagged and labelled with the barcodes you supply, then carton-packed to your warehouse spec.",
     },
     {
       q: "Do you provide material test reports?",
